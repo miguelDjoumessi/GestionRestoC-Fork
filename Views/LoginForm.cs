@@ -39,5 +39,26 @@ namespace PROJET_C__GESTIONRESTO.Views
         {
 
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            var result = guna2MessageDialog1.Show();
+            if (result == DialogResult.Yes)
+            {
+
+                Application.Exit(); // Utilisez Application.Exit() pour fermer complètement l'application
+            }
+
+        }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
