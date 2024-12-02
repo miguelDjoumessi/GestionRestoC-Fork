@@ -1,0 +1,40 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HP\\source\\repos\\PROJET_C#_GESTIONRESTO\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\hp\\source\\repos\\projet_c#_gestionresto\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{f2bd8fb8-fc94-3dae-a733-fd993c73cc87}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\PROJET_C#_GESTIONRESTO\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\PROJET_C#_GESTIONRESTO\\Form1.cs [Conception]",
+              "RelativeToolTip": "Form1.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T23:52:42.648Z",
+              "EditorCaption": " [Conception]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
