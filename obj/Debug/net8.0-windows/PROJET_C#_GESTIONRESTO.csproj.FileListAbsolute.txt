@@ -37,3 +37,5 @@ C:\Users\HP\source\repos\PROJET_C#_GESTIONRESTO\obj\Debug\net8.0-windows\refint\
 C:\Users\HP\source\repos\PROJET_C#_GESTIONRESTO\obj\Debug\net8.0-windows\PROJET_C#_GESTIONRESTO.pdb
 C:\Users\HP\source\repos\PROJET_C#_GESTIONRESTO\obj\Debug\net8.0-windows\PROJET_C#_GESTIONRESTO.genruntimeconfig.cache
 C:\Users\HP\source\repos\PROJET_C#_GESTIONRESTO\obj\Debug\net8.0-windows\ref\PROJET_C#_GESTIONRESTO.dll
+C:\Users\HP\source\repos\PROJET_C#_GESTIONRESTO\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.MainForm.resources
+C:\Users\HP\source\repos\PROJET_C#_GESTIONRESTO\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.HomeForm.resources

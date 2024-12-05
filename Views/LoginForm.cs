@@ -31,7 +31,7 @@ namespace PROJET_C__GESTIONRESTO.Views
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("ok");
+            (new MainForm()).ShowDialog();
 
         }
 
@@ -57,6 +57,11 @@ namespace PROJET_C__GESTIONRESTO.Views
         }
 
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox1_Click_1(object sender, EventArgs e)
         {
 
         }
