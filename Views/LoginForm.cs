@@ -16,7 +16,7 @@ namespace PROJET_C__GESTIONRESTO.Views
 {
     public partial class LoginForm : Form
     {
-        private string connectionString;
+        private string? connectionString = "";
         public LoginForm()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace PROJET_C__GESTIONRESTO.Views
         private void LoginForm_Load(object sender, EventArgs e)
         {
             var configuration = ConfigurationHelper.GetConfiguration();
-            connectionString = configuration.GetConnectionString("MySqlConnection");
+            connectionString = configuration.GetValue<string>("ConnectionString:MySqlConnection"); // Obtenir la chaine de connexion depuis l'appsettings.json
         }
 
         private void guna2ToggleSwitch1_CheckedChanged(object sender, EventArgs e)
@@ -50,9 +50,7 @@ namespace PROJET_C__GESTIONRESTO.Views
                 MessageBox.Show("les deux champs sont obligatoire");
                 return;
             }
-            var contexte = new AppContext(connectionString);
-            MessageBox.Show("retour: " + contexte.Operateurs.FirstOrDefault(o => o.Email == name && o.Password == password));
-            return;
+
             using (var context = new AppContext(connectionString))
             {
                 Operateur? operateur = context.Operateurs.FirstOrDefault(o => o.Email == name && o.Password == password);
