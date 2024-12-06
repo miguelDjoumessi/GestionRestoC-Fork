@@ -8,8 +8,10 @@ namespace PROJET_C__GESTIONRESTO.Orm;
 
 public partial class AppContext : DbContext
 {
-    public AppContext()
+    private string connectionString;
+    public AppContext(string connectionString)
     {
+        this.connectionString = connectionString;
     }
 
     public AppContext(DbContextOptions<AppContext> options)
@@ -47,7 +49,7 @@ public partial class AppContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySql("database=db_resto;data source=localhost;user id=root", ServerVersion.Parse("10.4.28-mariadb"));
+        => optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 3)));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -70,8 +72,11 @@ public partial class AppContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("createdAt");
             entity.Property(e => e.Intitule)
-                .HasMaxLength(45)
+                .HasMaxLength(150)
                 .HasColumnName("intitule");
+            entity.Property(e => e.Description)
+                .HasMaxLength(255)
+                .HasColumnName("description");
         });
 
         modelBuilder.Entity<Client>(entity =>

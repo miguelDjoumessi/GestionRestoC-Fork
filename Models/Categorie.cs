@@ -9,6 +9,8 @@ public partial class Categorie
 
     public string? Intitule { get; set; }
 
+    public string? Description { get; set; }
+
     public DateTime? CreatedAt { get; set; }
 
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();

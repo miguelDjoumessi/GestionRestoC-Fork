@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.Extensions.Configuration;
+using PROJET_C__GESTIONRESTO.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,12 +10,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppContext = PROJET_C__GESTIONRESTO.Orm.AppContext;
 
 namespace PROJET_C__GESTIONRESTO.Views
 {
     public partial class LoginForm : Form
     {
-        private string? connectionString;
+        private string connectionString;
         public LoginForm()
         {
             InitializeComponent();
@@ -29,18 +32,39 @@ namespace PROJET_C__GESTIONRESTO.Views
         {
             if (guna2ToggleSwitch1.Checked)
             {
-                guna2TextBox2.PasswordChar = '\0'; // On efface le caractère de masquage
+                txtPwd.PasswordChar = '\0'; // On efface le caractère de masquage
             }
             else
             {
-                guna2TextBox2.PasswordChar = '*'; // On remet le caractère de masquage
+                txtPwd.PasswordChar = '*'; // On remet le caractère de masquage
             }
         }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("ok");
+            string name = txtName.Text;
+            string password = txtPwd.Text;
 
+            if (name.Length == 0 || password.Length == 0)
+            {
+                MessageBox.Show("les deux champs sont obligatoire");
+                return;
+            }
+            var contexte = new AppContext(connectionString);
+            MessageBox.Show("retour: " + contexte.Operateurs.FirstOrDefault(o => o.Email == name && o.Password == password));
+            return;
+            using (var context = new AppContext(connectionString))
+            {
+                Operateur? operateur = context.Operateurs.FirstOrDefault(o => o.Email == name && o.Password == password);
+
+                if (operateur == null)
+                {
+                    MessageBox.Show("Connexion reussie");
+                    return;
+                }
+
+                MessageBox.Show("Connexion reussie");
+            }
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
