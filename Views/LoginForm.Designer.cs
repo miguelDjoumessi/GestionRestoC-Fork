@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-﻿using Guna.UI2.WinForms.Suite;
-=======
 ﻿//using Guna.UI2.WinForms;
 using Guna.UI2.WinForms.Suite;
->>>>>>> fc536df83a0d1af3fb10533c929fcefacb71d2e9
 
 namespace PROJET_C__GESTIONRESTO.Views
 {

@@ -25,11 +25,7 @@ namespace PROJET_C__GESTIONRESTO.Views
         private void LoginForm_Load(object sender, EventArgs e)
         {
             var configuration = ConfigurationHelper.GetConfiguration();
-<<<<<<< HEAD
-            connectionString = "";//configuration.GetValue<String>("ConnecionString: MySqlConnection");
-=======
             connectionString = configuration.GetValue<string>("ConnectionString:MySqlConnection");
->>>>>>> fc536df83a0d1af3fb10533c929fcefacb71d2e9
             
             if (connectionString == null) { 
                 MessageBox.Show("Aucune chaine de connection trouvée", connectionString, MessageBoxButtons.OK, MessageBoxIcon.Warning); 
@@ -41,31 +37,18 @@ namespace PROJET_C__GESTIONRESTO.Views
         {
             if (guna2ToggleSwitch1.Checked)
             {
-<<<<<<< HEAD
-                //txtPwd.PasswordChar = '\0'; // On efface le caractère de masquage
-            }
-            else
-            {
-                //txtPwd.PasswordChar = '*'; // On remet le caractère de masquage
-=======
                 guna2TextBox2.PasswordChar = '\0'; // On efface le caractère de masquage
             }
             else
             {
                 guna2TextBox2.PasswordChar = '*'; // On remet le caractère de masquage
->>>>>>> fc536df83a0d1af3fb10533c929fcefacb71d2e9
             }
         }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            string name = "";//txtName.Text;
-            string password = "";//txtPwd.Text;
-=======
             string name = guna2TextBox1.Text;
             string password = guna2TextBox2.Text;
->>>>>>> fc536df83a0d1af3fb10533c929fcefacb71d2e9
 
             if (name.Length == 0 || password.Length == 0)
             {
@@ -79,7 +62,7 @@ namespace PROJET_C__GESTIONRESTO.Views
 
                 if (operateur == null)
                 {
-                    MessageBox.Show("Connexion reussie");
+                    MessageBox.Show("Ses information sont incorrect", "Security Violation", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
