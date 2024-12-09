@@ -8,8 +8,8 @@ namespace PROJET_C__GESTIONRESTO.Orm;
 
 public partial class AppContext : DbContext
 {
-    private string? connectionString;
-    public AppContext(string? connectionString)
+    private string connectionString;
+    public AppContext(string connectionString)
     {
         this.connectionString = connectionString;
     }

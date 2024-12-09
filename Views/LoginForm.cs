@@ -16,7 +16,7 @@ namespace PROJET_C__GESTIONRESTO.Views
 {
     public partial class LoginForm : Form
     {
-        private string? connectionString = "";
+        private string? connectionString;
         public LoginForm()
         {
             InitializeComponent();
@@ -25,25 +25,30 @@ namespace PROJET_C__GESTIONRESTO.Views
         private void LoginForm_Load(object sender, EventArgs e)
         {
             var configuration = ConfigurationHelper.GetConfiguration();
-            connectionString = configuration.GetValue<string>("ConnectionString:MySqlConnection"); // Obtenir la chaine de connexion depuis l'appsettings.json
+            connectionString = configuration.GetValue<string>("ConnectionString:MySqlConnection");
+            
+            if (connectionString == null) { 
+                MessageBox.Show("Aucune chaine de connection trouvée", connectionString, MessageBoxButtons.OK, MessageBoxIcon.Warning); 
+                return;
+            }
         }
 
         private void guna2ToggleSwitch1_CheckedChanged(object sender, EventArgs e)
         {
             if (guna2ToggleSwitch1.Checked)
             {
-                txtPwd.PasswordChar = '\0'; // On efface le caractère de masquage
+                guna2TextBox2.PasswordChar = '\0'; // On efface le caractère de masquage
             }
             else
             {
-                txtPwd.PasswordChar = '*'; // On remet le caractère de masquage
+                guna2TextBox2.PasswordChar = '*'; // On remet le caractère de masquage
             }
         }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text;
-            string password = txtPwd.Text;
+            string name = guna2TextBox1.Text;
+            string password = guna2TextBox2.Text;
 
             if (name.Length == 0 || password.Length == 0)
             {
@@ -82,6 +87,11 @@ namespace PROJET_C__GESTIONRESTO.Views
         }
 
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox1_Click_1(object sender, EventArgs e)
         {
 
         }
