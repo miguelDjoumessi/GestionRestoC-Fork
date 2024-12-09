@@ -2779,8 +2779,7 @@
         "net8.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Users\\AMD\\.nuget\\packages": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -2857,17 +2856,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Le package 'Microsoft.Extensions.Caching.Memory' 8.0.0 présente une vulnérabilité de gravité élevé(e) connue, https://github.com/advisories/GHSA-qj66-m88j-hmgj.",
-      "libraryId": "Microsoft.Extensions.Caching.Memory",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    }
-  ]
+  }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jDxZx28aYnQ=",
+  "dgSpecHash": "msnMFYAVliM=",
   "success": true,
   "projectFilePath": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\PROJET_C#_GESTIONRESTO.csproj",
   "expectedPackageFiles": [
@@ -55,16 +55,5 @@
     "C:\\Users\\AMD\\.nuget\\packages\\system.text.json\\9.0.0\\system.text.json.9.0.0.nupkg.sha512",
     "C:\\Users\\AMD\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Le package 'Microsoft.Extensions.Caching.Memory' 8.0.0 présente une vulnérabilité de gravité élevé(e) connue, https://github.com/advisories/GHSA-qj66-m88j-hmgj.",
-      "libraryId": "Microsoft.Extensions.Caching.Memory",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }
