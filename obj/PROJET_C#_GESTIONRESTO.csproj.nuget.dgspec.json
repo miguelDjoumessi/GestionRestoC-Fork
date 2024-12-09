@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\PROJET_C#_GESTIONRESTO.csproj": {}
+    "C:\\Users\\AMD\\Documents\\LiPRO Dev\\GestionRestoC-Fork\\PROJET_C#_GESTIONRESTO.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\PROJET_C#_GESTIONRESTO.csproj": {
+    "C:\\Users\\AMD\\Documents\\LiPRO Dev\\GestionRestoC-Fork\\PROJET_C#_GESTIONRESTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\PROJET_C#_GESTIONRESTO.csproj",
+        "projectUniqueName": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\GestionRestoC-Fork\\PROJET_C#_GESTIONRESTO.csproj",
         "projectName": "PROJET_C#_GESTIONRESTO",
-        "projectPath": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\PROJET_C#_GESTIONRESTO.csproj",
+        "projectPath": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\GestionRestoC-Fork\\PROJET_C#_GESTIONRESTO.csproj",
         "packagesPath": "C:\\Users\\AMD\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\obj\\",
+        "outputPath": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\GestionRestoC-Fork\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

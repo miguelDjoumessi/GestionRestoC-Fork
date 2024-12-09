@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "msnMFYAVliM=",
+  "dgSpecHash": "lGCVken2Pb0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\PROJET_C#_GESTIONRESTO.csproj",
+  "projectFilePath": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\GestionRestoC-Fork\\PROJET_C#_GESTIONRESTO.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AMD\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.6\\guna.ui2.winforms.2.0.4.6.nupkg.sha512",
     "C:\\Users\\AMD\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
