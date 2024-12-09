@@ -1,4 +1,6 @@
-﻿namespace PROJET_C__GESTIONRESTO.Views
+﻿using Guna.UI2.WinForms.Suite;
+
+namespace PROJET_C__GESTIONRESTO.Views
 {
     partial class LoginForm
     {
@@ -29,9 +31,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -98,7 +100,7 @@
             guna2TextBox1.TabIndex = 4;
             guna2TextBox1.TextAlign = HorizontalAlignment.Center;
             // 
-            // guna2TextBox2
+            // txtPwd
             // 
             guna2TextBox2.BorderColor = Color.White;
             guna2TextBox2.BorderRadius = 8;
@@ -134,8 +136,8 @@
             guna2ToggleSwitch1.CustomizableEdges = customizableEdges6;
             guna2ToggleSwitch1.Location = new Point(198, 411);
             guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
-            guna2ToggleSwitch1.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            guna2ToggleSwitch1.Size = new Size(42, 22);
+            guna2ToggleSwitch1.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            guna2ToggleSwitch1.Size = new Size(34, 18);
             guna2ToggleSwitch1.TabIndex = 6;
             guna2ToggleSwitch1.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
             guna2ToggleSwitch1.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
@@ -150,11 +152,11 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(246, 411);
             label3.Name = "label3";
-            label3.Size = new Size(145, 22);
+            label3.Size = new Size(120, 18);
             label3.TabIndex = 7;
             label3.Text = "Show password";
             // 
-            // guna2GradientButton1
+            // btnLogin
             // 
             guna2GradientButton1.AutoRoundedCorners = true;
             guna2GradientButton1.BackColor = Color.Transparent;
@@ -253,7 +255,7 @@
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(41, 39, 40);
             ClientSize = new Size(435, 563);
@@ -268,6 +270,7 @@
             Controls.Add(guna2TextBox2);
             Controls.Add(guna2TextBox1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
@@ -293,5 +296,9 @@
         private Label label1;
         private LinkLabel linkLabel1;
         private Label label2;
+        private CustomizableEdges customizableEdges11;
+        private CustomizableEdges customizableEdges8;
+        private CustomizableEdges customizableEdges17;
+        private CustomizableEdges customizableEdges10;
     }
 }
