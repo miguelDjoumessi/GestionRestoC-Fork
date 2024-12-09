@@ -62,7 +62,7 @@ namespace PROJET_C__GESTIONRESTO.Views
 
                 if (operateur == null)
                 {
-                    MessageBox.Show("Connexion reussie");
+                    MessageBox.Show("Ses information sont incorrect", "Security Violation", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
