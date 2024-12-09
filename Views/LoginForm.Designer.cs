@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿using Guna.UI2.WinForms.Suite;
+=======
+﻿//using Guna.UI2.WinForms;
+using Guna.UI2.WinForms.Suite;
+>>>>>>> fc536df83a0d1af3fb10533c929fcefacb71d2e9
 
 namespace PROJET_C__GESTIONRESTO.Views
 {
@@ -278,6 +283,17 @@ namespace PROJET_C__GESTIONRESTO.Views
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        //public override bool Equals(object obj)
+        //{
+        //    return obj is LoginForm form &&
+        //           EqualityComparer<Guna2Elipse>.Default.Equals(this.guna2Elipse1, form.guna2Elipse1);
+        //}
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.guna2Elipse1);
         }
 
         #endregion
