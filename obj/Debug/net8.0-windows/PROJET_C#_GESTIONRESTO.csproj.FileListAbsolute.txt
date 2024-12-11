@@ -38,6 +38,7 @@ C:\Users\HP\source\repos\PROJET_C#_GESTIONRESTO\obj\Debug\net8.0-windows\PROJET_
 C:\Users\HP\source\repos\PROJET_C#_GESTIONRESTO\obj\Debug\net8.0-windows\PROJET_C#_GESTIONRESTO.genruntimeconfig.cache
 C:\Users\HP\source\repos\PROJET_C#_GESTIONRESTO\obj\Debug\net8.0-windows\ref\PROJET_C#_GESTIONRESTO.dll
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\bin\Debug\net8.0-windows\Resources\restaurant2.png
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\bin\Debug\net8.0-windows\PROJET_C#_GESTIONRESTO.exe
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\bin\Debug\net8.0-windows\PROJET_C#_GESTIONRESTO.deps.json
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\bin\Debug\net8.0-windows\PROJET_C#_GESTIONRESTO.runtimeconfig.json
@@ -141,8 +142,14 @@ C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Form1.resources
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Properties.Resources.resources
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.HomeForm.resources
+C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.IgdForm.resources
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.LoginForm.resources
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.MainForm.resources
+C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.NewIgdForm.resources
+C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.NewTableForm.resources
+C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.SimpleView.Add.resources
+C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.SimpleView.ListForm.resources
+C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.TableForm.resources
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C#_GESTIONRESTO.csproj.GenerateResource.cache
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C#_GESTIONRESTO.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C#_GESTIONRESTO.AssemblyInfoInputs.cache

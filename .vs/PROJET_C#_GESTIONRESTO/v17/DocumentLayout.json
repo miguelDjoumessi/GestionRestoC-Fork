@@ -3,20 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\amd\\documents\\lipro dev\\c#\\gestionrestoc-fork\\views\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:views\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\amd\\documents\\lipro dev\\c#\\gestionrestoc-fork\\views\\igdform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:views\\igdform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\amd\\documents\\lipro dev\\c#\\gestionrestoc-fork\\orm\\appcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:orm\\appcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\amd\\documents\\lipro dev\\c#\\gestionrestoc-fork\\views\\igdform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:views\\igdform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\amd\\documents\\lipro dev\\c#\\gestionrestoc-fork\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\amd\\documents\\lipro dev\\c#\\gestionrestoc-fork\\views\\newigdform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:views\\newigdform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\views\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:views\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\amd\\documents\\lipro dev\\c#\\gestionrestoc-fork\\logicapp\\igdviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:logicapp\\igdviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\amd\\documents\\lipro dev\\c#\\gestionrestoc-fork\\views\\igdform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:views\\igdform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\amd\\documents\\lipro dev\\c#\\gestionrestoc-fork\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\amd\\documents\\lipro dev\\c#\\gestionrestoc-fork\\projet_c#_gestionresto.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:projet_c#_gestionresto.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\amd\\documents\\lipro dev\\c#\\gestionrestoc-fork\\views\\tableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:views\\tableform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\amd\\documents\\lipro dev\\c#\\gestionrestoc-fork\\logicapp\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|solutionrelative:logicapp\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8CCA44D5-6ECB-43F4-A4F3-26ECF7EBD13F}|PROJET_C#_GESTIONRESTO.csproj|c:\\users\\amd\\documents\\lipro dev\\c#\\gestionrestoc-fork\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +54,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -46,56 +66,124 @@
               "IsPinned": true
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{f2bd8fb8-fc94-3dae-a733-fd993c73cc87}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-09T14:04:08.133Z"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AppContext.cs",
-              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Orm\\AppContext.cs",
-              "RelativeDocumentMoniker": "Orm\\AppContext.cs",
-              "ToolTip": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Orm\\AppContext.cs",
-              "RelativeToolTip": "Orm\\AppContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
+              "Title": "IgdForm.cs",
+              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\IgdForm.cs",
+              "RelativeDocumentMoniker": "Views\\IgdForm.cs",
+              "ToolTip": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\IgdForm.cs*",
+              "RelativeToolTip": "Views\\IgdForm.cs*",
+              "ViewState": "AgIAABwAAAAAAAAAAAAIwCcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T13:57:39.054Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoginForm.cs",
-              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\LoginForm.cs",
-              "RelativeDocumentMoniker": "Views\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\LoginForm.cs",
-              "RelativeToolTip": "Views\\LoginForm.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAswDUAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T13:44:36.899Z",
+              "WhenOpened": "2024-12-11T14:43:30.713Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "LoginForm.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\LoginForm.cs",
-              "RelativeDocumentMoniker": "Views\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\LoginForm.cs [Conception]",
-              "RelativeToolTip": "Views\\LoginForm.cs [Conception]",
+              "Title": "IgdViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\LogicApp\\IgdViewModel.cs",
+              "RelativeDocumentMoniker": "LogicApp\\IgdViewModel.cs",
+              "ToolTip": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\LogicApp\\IgdViewModel.cs*",
+              "RelativeToolTip": "LogicApp\\IgdViewModel.cs*",
+              "ViewState": "AgIAAGEAAAAAAAAAAADwv3cAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T13:42:00.292Z"
+              "WhenOpened": "2024-12-11T14:28:00.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NewIgdForm.cs",
+              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\NewIgdForm.cs",
+              "RelativeDocumentMoniker": "Views\\NewIgdForm.cs",
+              "ToolTip": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\NewIgdForm.cs",
+              "RelativeToolTip": "Views\\NewIgdForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T14:21:29.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IgdForm.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\IgdForm.cs",
+              "RelativeDocumentMoniker": "Views\\IgdForm.cs",
+              "ToolTip": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\IgdForm.cs [Conception]*",
+              "RelativeToolTip": "Views\\IgdForm.cs [Conception]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T11:02:09.17Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PROJET_C#_GESTIONRESTO",
+              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\PROJET_C#_GESTIONRESTO.csproj",
+              "RelativeDocumentMoniker": "PROJET_C#_GESTIONRESTO.csproj",
+              "ToolTip": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\PROJET_C#_GESTIONRESTO.csproj",
+              "RelativeToolTip": "PROJET_C#_GESTIONRESTO.csproj",
+              "ViewState": "AgIAABkAAAAgMzMzMzMrwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-11T07:48:11.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Resources.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Properties\\Resources.Designer.cs",
+              "RelativeDocumentMoniker": "Properties\\Resources.Designer.cs",
+              "ToolTip": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Properties\\Resources.Designer.cs",
+              "RelativeToolTip": "Properties\\Resources.Designer.cs",
+              "ViewState": "AgIAABsBAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T07:52:12.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TableForm.cs",
+              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\TableForm.cs",
+              "RelativeDocumentMoniker": "Views\\TableForm.cs",
+              "ToolTip": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\TableForm.cs",
+              "RelativeToolTip": "Views\\TableForm.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAwwBMAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T07:47:26.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\LogicApp\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "LogicApp\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\LogicApp\\LoginViewModel.cs",
+              "RelativeToolTip": "LogicApp\\LoginViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowA0AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T07:46:50.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IgdForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\IgdForm.Designer.cs",
+              "RelativeDocumentMoniker": "Views\\IgdForm.Designer.cs",
+              "ToolTip": "C:\\Users\\AMD\\Documents\\LiPRO Dev\\C#\\GestionRestoC-Fork\\Views\\IgdForm.Designer.cs",
+              "RelativeToolTip": "Views\\IgdForm.Designer.cs",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAAAIsAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T07:44:17.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{f2bd8fb8-fc94-3dae-a733-fd993c73cc87}"
             }
           ]
         }
