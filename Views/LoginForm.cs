@@ -10,7 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AppContext = PROJET_C__GESTIONRESTO.Orm.AppContext;
+using PROJET_C__GESTIONRESTO.Orm;
+using PROJET_C__GESTIONRESTO.Services;
+using PROJET_C__GESTIONRESTO.Usefull.Mail;
 
 namespace PROJET_C__GESTIONRESTO.Views
 {
@@ -26,9 +28,10 @@ namespace PROJET_C__GESTIONRESTO.Views
         {
             var configuration = ConfigurationHelper.GetConfiguration();
             connectionString = configuration.GetValue<string>("ConnectionString:MySqlConnection");
-            
-            if (connectionString == null) { 
-                MessageBox.Show("Aucune chaine de connection trouvée", connectionString, MessageBoxButtons.OK, MessageBoxIcon.Warning); 
+
+            if (connectionString == null)
+            {
+                MessageBox.Show("Aucune chaine de connection trouvée", connectionString, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
         }
@@ -56,7 +59,7 @@ namespace PROJET_C__GESTIONRESTO.Views
                 return;
             }
 
-            using (var context = new AppContext(connectionString))
+            using (var context = new AppDbContext(connectionString))
             {
                 Operateur? operateur = context.Operateurs.FirstOrDefault(o => o.Email == name && o.Password == password);
 
@@ -92,6 +95,11 @@ namespace PROJET_C__GESTIONRESTO.Views
         }
 
         private void guna2PictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
