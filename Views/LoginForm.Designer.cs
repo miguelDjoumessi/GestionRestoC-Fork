@@ -32,18 +32,17 @@ namespace PROJET_C__GESTIONRESTO.Views
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            CustomizableEdges customizableEdges10 = new CustomizableEdges();
+            CustomizableEdges customizableEdges11 = new CustomizableEdges();
+            CustomizableEdges customizableEdges8 = new CustomizableEdges();
+            CustomizableEdges customizableEdges9 = new CustomizableEdges();
+            CustomizableEdges customizableEdges6 = new CustomizableEdges();
+            CustomizableEdges customizableEdges7 = new CustomizableEdges();
+            CustomizableEdges customizableEdges4 = new CustomizableEdges();
+            CustomizableEdges customizableEdges5 = new CustomizableEdges();
+            CustomizableEdges customizableEdges2 = new CustomizableEdges();
+            CustomizableEdges customizableEdges3 = new CustomizableEdges();
+            CustomizableEdges customizableEdges1 = new CustomizableEdges();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
@@ -100,8 +99,9 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2TextBox1.Size = new Size(392, 43);
             guna2TextBox1.TabIndex = 4;
             guna2TextBox1.TextAlign = HorizontalAlignment.Center;
+            guna2TextBox1.TextChanged += guna2TextBox1_TextChanged;
             // 
-            // txtPwd
+            // guna2TextBox2
             // 
             guna2TextBox2.BorderColor = Color.White;
             guna2TextBox2.BorderRadius = 8;
@@ -115,7 +115,6 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2TextBox2.Font = new Font("Segoe UI", 9F);
             guna2TextBox2.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.IconLeft = (Image)resources.GetObject("guna2TextBox2.IconLeft");
             guna2TextBox2.Location = new Point(24, 342);
             guna2TextBox2.Margin = new Padding(4, 5, 4, 5);
             guna2TextBox2.Name = "guna2TextBox2";
@@ -137,7 +136,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2ToggleSwitch1.CustomizableEdges = customizableEdges6;
             guna2ToggleSwitch1.Location = new Point(198, 411);
             guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
-            guna2ToggleSwitch1.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            guna2ToggleSwitch1.ShadowDecoration.CustomizableEdges = customizableEdges7;
             guna2ToggleSwitch1.Size = new Size(34, 18);
             guna2ToggleSwitch1.TabIndex = 6;
             guna2ToggleSwitch1.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
@@ -157,7 +156,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             label3.TabIndex = 7;
             label3.Text = "Show password";
             // 
-            // btnLogin
+            // guna2GradientButton1
             // 
             guna2GradientButton1.AutoRoundedCorners = true;
             guna2GradientButton1.BackColor = Color.Transparent;
@@ -227,7 +226,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             label1.ForeColor = Color.White;
             label1.Location = new Point(62, 35);
             label1.Name = "label1";
-            label1.Size = new Size(329, 23);
+            label1.Size = new Size(283, 21);
             label1.TabIndex = 13;
             label1.Text = "Restaurant Management System";
             // 
@@ -238,7 +237,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             linkLabel1.LinkColor = Color.FromArgb(174, 34, 73);
             linkLabel1.Location = new Point(12, 529);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(156, 25);
+            linkLabel1.Size = new Size(127, 20);
             linkLabel1.TabIndex = 15;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Forgot password?";
@@ -250,7 +249,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             label2.ForeColor = Color.FromArgb(174, 34, 73);
             label2.Location = new Point(167, 9);
             label2.Name = "label2";
-            label2.Size = new Size(109, 23);
+            label2.Size = new Size(91, 19);
             label2.TabIndex = 16;
             label2.Text = "User Login";
             // 
@@ -271,7 +270,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             Controls.Add(guna2TextBox2);
             Controls.Add(guna2TextBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";

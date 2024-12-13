@@ -9,6 +9,13 @@ public class LoginViewModel
     public string Username { get; set; }
     public string Password { get; set; }
     Guna2MessageDialog Dialog = new Guna2MessageDialog();
+
+
+    public void sendMail(string email)
+    {
+        
+    }
+
     public void Login(Form loginForm)
     {
         //using (var context = new AppDbContext())

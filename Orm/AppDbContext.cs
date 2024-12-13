@@ -6,15 +6,15 @@ using PROJET_C__GESTIONRESTO.Models;
 
 namespace PROJET_C__GESTIONRESTO.Orm;
 
-public partial class AppContext : DbContext
+public partial class AppDbContext : DbContext
 {
     private string connectionString;
-    public AppContext(string connectionString)
+    public AppDbContext(string connectionString)
     {
         this.connectionString = connectionString;
     }
 
-    public AppContext(DbContextOptions<AppContext> options)
+    public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
 
