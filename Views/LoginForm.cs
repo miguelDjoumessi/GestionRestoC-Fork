@@ -63,7 +63,6 @@ namespace PROJET_C__GESTIONRESTO.Views
             using (var context = new AppDbContext(connectionString))
             {
                 Operateur? operateur = context.Operateurs.FirstOrDefault(o => o.Email == name && o.Password == password);
-                context.Operateurs.PaginedData(1);
 
                 if (operateur == null)
                 {
