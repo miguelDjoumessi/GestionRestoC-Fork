@@ -9,7 +9,7 @@ namespace PROJET_C__GESTIONRESTO.Usefull
 {
     static class QueryBuilderExtension
     {
-        public static async Task<PaginationContext<object>> PaginedData(
+        public static async Task<PaginationContext<object>> GetPaginedItems(
             this IQueryable<object> query, // var permetre de construire une requete personnaliser pour le Dbset<>
             int pageIndex,
             int itemPerPage = 15,

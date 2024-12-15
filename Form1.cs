@@ -1,3 +1,7 @@
+using System.Security.AccessControl;
+using System.Security.Principal;
+using System.Windows.Forms;
+
 namespace PROJET_C__GESTIONRESTO
 {
     public partial class Form1 : Form
@@ -5,6 +9,6 @@ namespace PROJET_C__GESTIONRESTO
         public Form1()
         {
             InitializeComponent();
-        }
+        } 
     }
 }
