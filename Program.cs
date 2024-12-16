@@ -13,7 +13,8 @@ namespace PROJET_C__GESTIONRESTO
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Views.LoginForm());
+            //Application.Run(new Views.LoginForm());
+            Application.Run(new Form1());
         }
     }
 }

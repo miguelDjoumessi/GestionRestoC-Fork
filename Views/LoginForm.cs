@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using PROJET_C__GESTIONRESTO.Orm;
 using PROJET_C__GESTIONRESTO.Services;
 using PROJET_C__GESTIONRESTO.Usefull.Mail;
+using PROJET_C__GESTIONRESTO.Usefull;
 
 namespace PROJET_C__GESTIONRESTO.Views
 {

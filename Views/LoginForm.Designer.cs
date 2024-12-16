@@ -57,6 +57,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             label1 = new Label();
             linkLabel1 = new LinkLabel();
             label2 = new Label();
+            guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -311,5 +312,6 @@ namespace PROJET_C__GESTIONRESTO.Views
         private CustomizableEdges customizableEdges8;
         private CustomizableEdges customizableEdges17;
         private CustomizableEdges customizableEdges10;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }
