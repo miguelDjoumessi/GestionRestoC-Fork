@@ -25,7 +25,7 @@
           "net8.0-windows"
         ],
         "sources": {
-          "C:\\Users\\AMD\\.nuget\\packages": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
@@ -78,6 +78,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "System.Linq.Dynamic.Core": {
+              "target": "Package",
+              "version": "[1.5.1, )"
             }
           },
           "imports": [

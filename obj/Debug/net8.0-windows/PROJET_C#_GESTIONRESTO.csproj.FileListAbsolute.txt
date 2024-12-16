@@ -162,3 +162,4 @@ C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C#_GESTIONRESTO.pdb
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C#_GESTIONRESTO.genruntimeconfig.cache
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\ref\PROJET_C#_GESTIONRESTO.dll
+C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\bin\Debug\net8.0-windows\System.Linq.Dynamic.Core.dll
