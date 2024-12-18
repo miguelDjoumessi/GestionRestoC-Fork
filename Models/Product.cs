@@ -11,17 +11,21 @@ public partial class Product
 
     public string? Description { get; set; }
 
-    public DateTime? CreatedAt { get; set; }
+    public float? UnityPrice { get; set; }
 
-    public DateTime? UpdatedAt { get; set; }
+    public string? Image { get; set; }
 
-    public int CategorieId { get; set; }
+    public DateTime CreatedAt { get; set; }
 
-    public virtual Categorie Categorie { get; set; } = null!;
+    public DateTime UpdatedAt { get; set; }
 
-    public virtual ICollection<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
+    public int? Category { get; set; }
 
-    public virtual ICollection<Itemcommande> Itemcommandes { get; set; } = new List<Itemcommande>();
+    public virtual Category? CategoryNavigation { get; set; }
+
+    public virtual ICollection<Justification> Justifications { get; set; } = new List<Justification>();
 
     public virtual ICollection<Menuitem> Menuitems { get; set; } = new List<Menuitem>();
+
+    public virtual ICollection<Orderitem> Orderitems { get; set; } = new List<Orderitem>();
 }

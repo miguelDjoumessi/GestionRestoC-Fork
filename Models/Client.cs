@@ -15,15 +15,15 @@ public partial class Client
 
     public string? Tel { get; set; }
 
-    public DateTime? CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; }
 
-    public DateTime? UpdatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
 
-    public int OperateurId { get; set; }
+    public int Employee { get; set; }
 
-    public virtual ICollection<Commande> Commandes { get; set; } = new List<Commande>();
+    public virtual ICollection<Attribution> Attributions { get; set; } = new List<Attribution>();
 
-    public virtual Operateur Operateur { get; set; } = null!;
+    public virtual Employee EmployeeNavigation { get; set; } = null!;
 
-    public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }

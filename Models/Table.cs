@@ -9,7 +9,11 @@ public partial class Table
 
     public string? Position { get; set; }
 
-    public int? Capacite { get; set; }
+    public int? Capacity { get; set; }
 
-    public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
+    public DateTime CreatedAt { get; set; }
+
+    public DateTime UpdateAt { get; set; }
+
+    public virtual ICollection<Attribution> Attributions { get; set; } = new List<Attribution>();
 }
