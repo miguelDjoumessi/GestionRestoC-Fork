@@ -11,13 +11,13 @@ public partial class Zone
 
     public string? Description { get; set; }
 
-    public DateTime? CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; }
 
-    public DateTime? UpdatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
 
-    public int CoverId { get; set; }
+    public int Cover { get; set; }
 
-    public virtual ICollection<Commande> Commandes { get; set; } = new List<Commande>();
+    public virtual Cover CoverNavigation { get; set; } = null!;
 
-    public virtual Cover Cover { get; set; } = null!;
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }

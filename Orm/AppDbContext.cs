@@ -17,42 +17,43 @@ public partial class AppDbContext : DbContext
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
-
     }
 
-    public virtual DbSet<Categorie> Categories { get; set; }
+    public virtual DbSet<Attribution> Attributions { get; set; }
+
+    public virtual DbSet<Cart> Carts { get; set; }
+
+    public virtual DbSet<Cartitem> Cartitems { get; set; }
+
+    public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<Client> Clients { get; set; }
 
-    public virtual DbSet<Commande> Commandes { get; set; }
-
     public virtual DbSet<Cover> Covers { get; set; }
 
-    public virtual DbSet<Ingredient> Ingredients { get; set; }
+    public virtual DbSet<Employee> Employees { get; set; }
 
-    public virtual DbSet<Itemcommande> Itemcommandes { get; set; }
+    public virtual DbSet<Inventory> Inventories { get; set; }
+
+    public virtual DbSet<Justification> Justifications { get; set; }
 
     public virtual DbSet<Menu> Menus { get; set; }
 
     public virtual DbSet<Menuitem> Menuitems { get; set; }
 
-    public virtual DbSet<Operateur> Operateurs { get; set; }
+    public virtual DbSet<Order> Orders { get; set; }
+
+    public virtual DbSet<Orderitem> Orderitems { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }
-
-    public virtual DbSet<Provision> Provisions { get; set; }
-
-    public virtual DbSet<Reservation> Reservations { get; set; }
 
     public virtual DbSet<Table> Tables { get; set; }
 
     public virtual DbSet<Zone> Zones { get; set; }
 
-    
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseMySql(connectionString, ServerVersion.Parse("10.4.28-mariadb"));
-
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -60,11 +61,110 @@ public partial class AppDbContext : DbContext
             .UseCollation("utf8_general_ci")
             .HasCharSet("utf8");
 
-        modelBuilder.Entity<Categorie>(entity =>
+        modelBuilder.Entity<Attribution>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
-            entity.ToTable("categorie");
+            entity.ToTable("attribution");
+
+            entity.HasIndex(e => e.Client, "fk_Reservation_Client1_idx");
+
+            entity.HasIndex(e => e.Table, "fk_Reservation_Table1_idx");
+
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
+            entity.Property(e => e.Client).HasColumnType("int(11)");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("createdAt");
+            entity.Property(e => e.FinishAt)
+                .HasColumnType("datetime")
+                .HasColumnName("finishAt");
+            entity.Property(e => e.StartAt)
+                .HasColumnType("datetime")
+                .HasColumnName("startAt");
+            entity.Property(e => e.State)
+                .HasMaxLength(45)
+                .HasColumnName("state");
+            entity.Property(e => e.Table).HasColumnType("int(11)");
+            entity.Property(e => e.UpdatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("updatedAt");
+
+            entity.HasOne(d => d.ClientNavigation).WithMany(p => p.Attributions)
+                .HasForeignKey(d => d.Client)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_Reservation_Client1");
+
+            entity.HasOne(d => d.TableNavigation).WithMany(p => p.Attributions)
+                .HasForeignKey(d => d.Table)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_Reservation_Table1");
+        });
+
+        modelBuilder.Entity<Cart>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("cart");
+
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("createdAt");
+            entity.Property(e => e.UpdatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("updatedAt");
+        });
+
+        modelBuilder.Entity<Cartitem>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("cartitem");
+
+            entity.HasIndex(e => e.Cart, "fk_CartItem_Cart1_idx");
+
+            entity.HasIndex(e => e.Inventory, "fk_CartItem_Inventory1_idx");
+
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
+            entity.Property(e => e.Cart).HasColumnType("int(11)");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("createdAt");
+            entity.Property(e => e.Inventory).HasColumnType("int(11)");
+            entity.Property(e => e.Quantity)
+                .HasColumnType("int(11)")
+                .HasColumnName("quantity");
+            entity.Property(e => e.Unity)
+                .HasMaxLength(45)
+                .HasColumnName("unity");
+            entity.Property(e => e.UpdatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("updatedAt");
+
+            entity.HasOne(d => d.CartNavigation).WithMany(p => p.Cartitems)
+                .HasForeignKey(d => d.Cart)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_CartItem_Cart1");
+
+            entity.HasOne(d => d.InventoryNavigation).WithMany(p => p.Cartitems)
+                .HasForeignKey(d => d.Inventory)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_CartItem_Inventory1");
+        });
+
+        modelBuilder.Entity<Category>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("category");
 
             entity.HasIndex(e => e.Id, "id_UNIQUE").IsUnique();
 
@@ -75,11 +175,11 @@ public partial class AppDbContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("createdAt");
             entity.Property(e => e.Intitule)
-                .HasMaxLength(150)
+                .HasMaxLength(45)
                 .HasColumnName("intitule");
-            entity.Property(e => e.Description)
-                .HasMaxLength(255)
-                .HasColumnName("description");
+            entity.Property(e => e.UpdatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("updatedAt");
         });
 
         modelBuilder.Entity<Client>(entity =>
@@ -88,7 +188,7 @@ public partial class AppDbContext : DbContext
 
             entity.ToTable("client");
 
-            entity.HasIndex(e => e.OperateurId, "fk_Client_Operateur1_idx");
+            entity.HasIndex(e => e.Employee, "fk_Client_Operateur1_idx");
 
             entity.HasIndex(e => e.Id, "id_UNIQUE").IsUnique();
 
@@ -100,15 +200,12 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.CreatedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("createdAt");
-            entity.Property(e => e.DateNaiss)
-                .HasColumnType("datetime")
-                .HasColumnName("dateNaiss");
+            entity.Property(e => e.Employee)
+                .HasColumnType("int(11)")
+                .HasColumnName("employee");
             entity.Property(e => e.Name)
                 .HasMaxLength(150)
                 .HasColumnName("name");
-            entity.Property(e => e.OperateurId)
-                .HasColumnType("int(11)")
-                .HasColumnName("Operateur_id");
             entity.Property(e => e.Prenom)
                 .HasMaxLength(150)
                 .HasColumnName("prenom");
@@ -119,56 +216,10 @@ public partial class AppDbContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("updatedAt");
 
-            entity.HasOne(d => d.Operateur).WithMany(p => p.Clients)
-                .HasForeignKey(d => d.OperateurId)
+            entity.HasOne(d => d.EmployeeNavigation).WithMany(p => p.Clients)
+                .HasForeignKey(d => d.Employee)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_Client_Operateur1");
-        });
-
-        modelBuilder.Entity<Commande>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PRIMARY");
-
-            entity.ToTable("commande");
-
-            entity.HasIndex(e => e.ClientId, "fk_Commande_Client1_idx");
-
-            entity.HasIndex(e => e.ZoneId, "fk_Commande_Zone1_idx");
-
-            entity.HasIndex(e => e.Id, "id_UNIQUE").IsUnique();
-
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("id");
-            entity.Property(e => e.ClientId)
-                .HasColumnType("int(11)")
-                .HasColumnName("Client_id");
-            entity.Property(e => e.CreatedAt)
-                .HasColumnType("datetime")
-                .HasColumnName("createdAt");
-            entity.Property(e => e.NumCom)
-                .HasMaxLength(45)
-                .HasColumnName("numCom");
-            entity.Property(e => e.Status).HasMaxLength(45);
-            entity.Property(e => e.Type)
-                .HasMaxLength(45)
-                .HasColumnName("type");
-            entity.Property(e => e.UpdatedAt)
-                .HasColumnType("datetime")
-                .HasColumnName("updatedAt");
-            entity.Property(e => e.ZoneId)
-                .HasColumnType("int(11)")
-                .HasColumnName("Zone_id");
-
-            entity.HasOne(d => d.Client).WithMany(p => p.Commandes)
-                .HasForeignKey(d => d.ClientId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_Commande_Client1");
-
-            entity.HasOne(d => d.Zone).WithMany(p => p.Commandes)
-                .HasForeignKey(d => d.ZoneId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_Commande_Zone1");
         });
 
         modelBuilder.Entity<Cover>(entity =>
@@ -180,161 +231,25 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.Id)
                 .HasColumnType("int(11)")
                 .HasColumnName("id");
-            entity.Property(e => e.CreateAt)
-                .HasColumnType("datetime")
-                .HasColumnName("createAt");
-            entity.Property(e => e.Description)
-                .HasMaxLength(45)
-                .HasColumnName("description");
-            entity.Property(e => e.Designation)
-                .HasMaxLength(45)
-                .HasColumnName("designation");
-            entity.Property(e => e.UpdateAt)
-                .HasColumnType("datetime")
-                .HasColumnName("updateAt");
-        });
-
-        modelBuilder.Entity<Ingredient>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PRIMARY");
-
-            entity.ToTable("ingredient");
-
-            entity.HasIndex(e => e.ProductId, "fk_Ingredient_Product1_idx");
-
-            entity.HasIndex(e => e.ProvisionId, "fk_Ingredient_Provision1_idx");
-
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("id");
-            entity.Property(e => e.CreateAt)
-                .HasColumnType("datetime")
-                .HasColumnName("createAt");
-            entity.Property(e => e.ProductId)
-                .HasColumnType("int(11)")
-                .HasColumnName("Product_id");
-            entity.Property(e => e.ProvisionId)
-                .HasColumnType("int(11)")
-                .HasColumnName("Provision_id");
-            entity.Property(e => e.UpdatedAt)
-                .HasColumnType("datetime")
-                .HasColumnName("updatedAt");
-
-            entity.HasOne(d => d.Product).WithMany(p => p.Ingredients)
-                .HasForeignKey(d => d.ProductId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_Ingredient_Product1");
-
-            entity.HasOne(d => d.Provision).WithMany(p => p.Ingredients)
-                .HasForeignKey(d => d.ProvisionId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_Ingredient_Provision1");
-        });
-
-        modelBuilder.Entity<Itemcommande>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PRIMARY");
-
-            entity.ToTable("itemcommande");
-
-            entity.HasIndex(e => e.CommandeId, "fk_ItemCommande_Commande1_idx");
-
-            entity.HasIndex(e => e.ProductId, "fk_ItemCommande_Product1_idx");
-
-            entity.HasIndex(e => e.Id, "id_UNIQUE").IsUnique();
-
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("id");
-            entity.Property(e => e.CommandeId)
-                .HasColumnType("int(11)")
-                .HasColumnName("Commande_id");
-            entity.Property(e => e.CreateAt)
-                .HasColumnType("datetime")
-                .HasColumnName("createAt");
-            entity.Property(e => e.ProductId)
-                .HasColumnType("int(11)")
-                .HasColumnName("Product_id");
-            entity.Property(e => e.UpdateaAt)
-                .HasColumnType("datetime")
-                .HasColumnName("updateaAt");
-
-            entity.HasOne(d => d.Commande).WithMany(p => p.Itemcommandes)
-                .HasForeignKey(d => d.CommandeId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_ItemCommande_Commande1");
-
-            entity.HasOne(d => d.Product).WithMany(p => p.Itemcommandes)
-                .HasForeignKey(d => d.ProductId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_ItemCommande_Product1");
-        });
-
-        modelBuilder.Entity<Menu>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PRIMARY");
-
-            entity.ToTable("menu");
-
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("id");
             entity.Property(e => e.CreatedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("createdAt");
             entity.Property(e => e.Description)
-                .HasMaxLength(45)
+                .HasColumnType("text")
                 .HasColumnName("description");
-            entity.Property(e => e.Theme)
+            entity.Property(e => e.Designation)
                 .HasMaxLength(45)
-                .HasColumnName("theme");
+                .HasColumnName("designation");
             entity.Property(e => e.UpdatedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("updatedAt");
         });
 
-        modelBuilder.Entity<Menuitem>(entity =>
+        modelBuilder.Entity<Employee>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
-            entity.ToTable("menuitem");
-
-            entity.HasIndex(e => e.MenuId, "fk_MenuItem_Menu1_idx");
-
-            entity.HasIndex(e => e.ProductId, "fk_MenuItem_Product1_idx");
-
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("id");
-            entity.Property(e => e.CreateAt)
-                .HasColumnType("datetime")
-                .HasColumnName("createAt");
-            entity.Property(e => e.MenuId)
-                .HasColumnType("int(11)")
-                .HasColumnName("Menu_id");
-            entity.Property(e => e.ProductId)
-                .HasColumnType("int(11)")
-                .HasColumnName("Product_id");
-            entity.Property(e => e.UpdatedAt)
-                .HasColumnType("datetime")
-                .HasColumnName("updatedAt");
-
-            entity.HasOne(d => d.Menu).WithMany(p => p.Menuitems)
-                .HasForeignKey(d => d.MenuId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_MenuItem_Menu1");
-
-            entity.HasOne(d => d.Product).WithMany(p => p.Menuitems)
-                .HasForeignKey(d => d.ProductId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_MenuItem_Product1");
-        });
-
-        modelBuilder.Entity<Operateur>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PRIMARY");
-
-            entity.ToTable("operateur");
+            entity.ToTable("employee");
 
             entity.HasIndex(e => e.Email, "email_UNIQUE").IsUnique();
 
@@ -353,12 +268,223 @@ public partial class AppDbContext : DbContext
                 .HasMaxLength(150)
                 .HasColumnName("name");
             entity.Property(e => e.Password)
-                .HasMaxLength(45)
+                .HasMaxLength(255)
                 .HasColumnName("password");
-            entity.Property(e => e.Role).HasColumnName("role");
+            entity.Property(e => e.Role)
+                .HasColumnType("json")
+                .HasColumnName("role");
             entity.Property(e => e.UpdatedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("updatedAt");
+        });
+
+        modelBuilder.Entity<Inventory>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("inventory");
+
+            entity.HasIndex(e => e.Category, "fk_Provision_Categorie1_idx");
+
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
+            entity.Property(e => e.Category).HasColumnType("int(11)");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("createdAt");
+            entity.Property(e => e.Description)
+                .HasColumnType("text")
+                .HasColumnName("description");
+            entity.Property(e => e.Designation)
+                .HasMaxLength(255)
+                .HasColumnName("designation");
+            entity.Property(e => e.Quantity)
+                .HasColumnType("int(11)")
+                .HasColumnName("quantity");
+            entity.Property(e => e.Type)
+                .HasMaxLength(45)
+                .HasColumnName("type");
+            entity.Property(e => e.Unity)
+                .HasMaxLength(45)
+                .HasColumnName("unity");
+            entity.Property(e => e.UpdatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("updatedAt");
+
+            entity.HasOne(d => d.CategoryNavigation).WithMany(p => p.Inventories)
+                .HasForeignKey(d => d.Category)
+                .HasConstraintName("fk_Provision_Categorie1");
+        });
+
+        modelBuilder.Entity<Justification>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("justification");
+
+            entity.HasIndex(e => e.CartItem, "fk_Justification_CartItem1_idx");
+
+            entity.HasIndex(e => e.Product, "fk_Justification_Product1_idx");
+
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
+            entity.Property(e => e.CartItem).HasColumnType("int(11)");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("createdAt");
+            entity.Property(e => e.Product).HasColumnType("int(11)");
+            entity.Property(e => e.UpdatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("updatedAt");
+
+            entity.HasOne(d => d.CartItemNavigation).WithMany(p => p.Justifications)
+                .HasForeignKey(d => d.CartItem)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_Justification_CartItem1");
+
+            entity.HasOne(d => d.ProductNavigation).WithMany(p => p.Justifications)
+                .HasForeignKey(d => d.Product)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_Justification_Product1");
+        });
+
+        modelBuilder.Entity<Menu>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("menu");
+
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("createdAt");
+            entity.Property(e => e.Description)
+                .HasColumnType("text")
+                .HasColumnName("description");
+            entity.Property(e => e.Theme)
+                .HasMaxLength(45)
+                .HasColumnName("theme");
+            entity.Property(e => e.UpdatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("updatedAt");
+        });
+
+        modelBuilder.Entity<Menuitem>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("menuitem");
+
+            entity.HasIndex(e => e.Menu, "fk_MenuItem_Menu1_idx");
+
+            entity.HasIndex(e => e.Product, "fk_MenuItem_Product1_idx");
+
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
+            entity.Property(e => e.CreateAt)
+                .HasColumnType("datetime")
+                .HasColumnName("createAt");
+            entity.Property(e => e.Menu).HasColumnType("int(11)");
+            entity.Property(e => e.Product).HasColumnType("int(11)");
+            entity.Property(e => e.UpdatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("updatedAt");
+
+            entity.HasOne(d => d.MenuNavigation).WithMany(p => p.Menuitems)
+                .HasForeignKey(d => d.Menu)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_MenuItem_Menu1");
+
+            entity.HasOne(d => d.ProductNavigation).WithMany(p => p.Menuitems)
+                .HasForeignKey(d => d.Product)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_MenuItem_Product1");
+        });
+
+        modelBuilder.Entity<Order>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("order");
+
+            entity.HasIndex(e => e.Client, "fk_Commande_Client1_idx");
+
+            entity.HasIndex(e => e.Zone, "fk_Commande_Zone1_idx");
+
+            entity.HasIndex(e => e.Id, "id_UNIQUE").IsUnique();
+
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
+            entity.Property(e => e.Client)
+                .HasColumnType("int(11)")
+                .HasColumnName("client");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("createdAt");
+            entity.Property(e => e.NumCom)
+                .HasMaxLength(45)
+                .HasColumnName("numCom");
+            entity.Property(e => e.Status).HasMaxLength(45);
+            entity.Property(e => e.Type)
+                .HasMaxLength(45)
+                .HasColumnName("type");
+            entity.Property(e => e.UpdatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("updatedAt");
+            entity.Property(e => e.Zone)
+                .HasColumnType("int(11)")
+                .HasColumnName("zone");
+
+            entity.HasOne(d => d.ClientNavigation).WithMany(p => p.Orders)
+                .HasForeignKey(d => d.Client)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_Commande_Client1");
+
+            entity.HasOne(d => d.ZoneNavigation).WithMany(p => p.Orders)
+                .HasForeignKey(d => d.Zone)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_Commande_Zone1");
+        });
+
+        modelBuilder.Entity<Orderitem>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("orderitem");
+
+            entity.HasIndex(e => e.Order, "fk_ItemCommande_Commande1_idx");
+
+            entity.HasIndex(e => e.Product, "fk_ItemCommande_Product1_idx");
+
+            entity.HasIndex(e => e.Id, "id_UNIQUE").IsUnique();
+
+            entity.Property(e => e.Id)
+                .HasColumnType("int(11)")
+                .HasColumnName("id");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("createdAt");
+            entity.Property(e => e.Order).HasColumnType("int(11)");
+            entity.Property(e => e.Product).HasColumnType("int(11)");
+            entity.Property(e => e.UpdatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("updatedAt");
+
+            entity.HasOne(d => d.OrderNavigation).WithMany(p => p.Orderitems)
+                .HasForeignKey(d => d.Order)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_ItemCommande_Commande1");
+
+            entity.HasOne(d => d.ProductNavigation).WithMany(p => p.Orderitems)
+                .HasForeignKey(d => d.Product)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_ItemCommande_Product1");
         });
 
         modelBuilder.Entity<Product>(entity =>
@@ -367,117 +493,34 @@ public partial class AppDbContext : DbContext
 
             entity.ToTable("product");
 
-            entity.HasIndex(e => e.CategorieId, "fk_Product_Categorie1_idx");
+            entity.HasIndex(e => e.Category, "fk_Product_Categorie1_idx");
 
             entity.HasIndex(e => e.Id, "id_UNIQUE").IsUnique();
 
             entity.Property(e => e.Id)
                 .HasColumnType("int(11)")
                 .HasColumnName("id");
-            entity.Property(e => e.CategorieId)
-                .HasColumnType("int(11)")
-                .HasColumnName("Categorie_id");
+            entity.Property(e => e.Category).HasColumnType("int(11)");
             entity.Property(e => e.CreatedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("createdAt");
             entity.Property(e => e.Description)
-                .HasMaxLength(45)
+                .HasColumnType("text")
                 .HasColumnName("description");
             entity.Property(e => e.Designation)
                 .HasMaxLength(45)
                 .HasColumnName("designation");
+            entity.Property(e => e.Image)
+                .HasColumnType("text")
+                .HasColumnName("image");
+            entity.Property(e => e.UnityPrice).HasColumnName("unity_price");
             entity.Property(e => e.UpdatedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("updatedAt");
 
-            entity.HasOne(d => d.Categorie).WithMany(p => p.Products)
-                .HasForeignKey(d => d.CategorieId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+            entity.HasOne(d => d.CategoryNavigation).WithMany(p => p.Products)
+                .HasForeignKey(d => d.Category)
                 .HasConstraintName("fk_Product_Categorie1");
-        });
-
-        modelBuilder.Entity<Provision>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PRIMARY");
-
-            entity.ToTable("provision");
-
-            entity.HasIndex(e => e.CategorieId, "fk_Provision_Categorie1_idx");
-
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("id");
-            entity.Property(e => e.CategorieId)
-                .HasColumnType("int(11)")
-                .HasColumnName("Categorie_id");
-            entity.Property(e => e.CreateAt)
-                .HasColumnType("datetime")
-                .HasColumnName("createAt");
-            entity.Property(e => e.Designation)
-                .HasMaxLength(45)
-                .HasColumnName("designation");
-            entity.Property(e => e.Quantite)
-                .HasColumnType("int(11)")
-                .HasColumnName("quantite");
-            entity.Property(e => e.Type)
-                .HasMaxLength(45)
-                .HasColumnName("type");
-            entity.Property(e => e.Unite)
-                .HasMaxLength(45)
-                .HasColumnName("unite");
-            entity.Property(e => e.UpdatedAt)
-                .HasColumnType("datetime")
-                .HasColumnName("updatedAt");
-
-            entity.HasOne(d => d.Categorie).WithMany(p => p.Provisions)
-                .HasForeignKey(d => d.CategorieId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_Provision_Categorie1");
-        });
-
-        modelBuilder.Entity<Reservation>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PRIMARY");
-
-            entity.ToTable("reservation");
-
-            entity.HasIndex(e => e.ClientId, "fk_Reservation_Client1_idx");
-
-            entity.HasIndex(e => e.TableId, "fk_Reservation_Table1_idx");
-
-            entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
-                .HasColumnName("id");
-            entity.Property(e => e.ClientId)
-                .HasColumnType("int(11)")
-                .HasColumnName("Client_id");
-            entity.Property(e => e.CreatedAt)
-                .HasColumnType("datetime")
-                .HasColumnName("createdAt");
-            entity.Property(e => e.Detail)
-                .HasMaxLength(45)
-                .HasColumnName("detail");
-            entity.Property(e => e.FinishedAd).HasColumnName("finished_ad");
-            entity.Property(e => e.StartAt).HasColumnName("start_at");
-            entity.Property(e => e.State)
-                .HasMaxLength(45)
-                .HasColumnName("state");
-            entity.Property(e => e.TableId)
-                .HasColumnType("int(11)")
-                .HasColumnName("Table_id");
-            entity.Property(e => e.UpdatedAt)
-                .HasColumnType("datetime")
-                .HasColumnName("updatedAt");
-
-            entity.HasOne(d => d.Client).WithMany(p => p.Reservations)
-                .HasForeignKey(d => d.ClientId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_Reservation_Client1");
-
-            entity.HasOne(d => d.Table).WithMany(p => p.Reservations)
-                .HasForeignKey(d => d.TableId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_Reservation_Table1");
         });
 
         modelBuilder.Entity<Table>(entity =>
@@ -489,12 +532,18 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.Id)
                 .HasColumnType("int(11)")
                 .HasColumnName("id");
-            entity.Property(e => e.Capacite)
+            entity.Property(e => e.Capacity)
                 .HasColumnType("int(11)")
-                .HasColumnName("capacite");
+                .HasColumnName("capacity");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("createdAt");
             entity.Property(e => e.Position)
                 .HasMaxLength(45)
                 .HasColumnName("position");
+            entity.Property(e => e.UpdateAt)
+                .HasColumnType("datetime")
+                .HasColumnName("updateAt");
         });
 
         modelBuilder.Entity<Zone>(entity =>
@@ -503,21 +552,21 @@ public partial class AppDbContext : DbContext
 
             entity.ToTable("zone");
 
-            entity.HasIndex(e => e.CoverId, "fk_Zone_cover1_idx");
+            entity.HasIndex(e => e.Cover, "fk_Zone_cover1_idx");
 
             entity.HasIndex(e => e.Id, "id_UNIQUE").IsUnique();
 
             entity.Property(e => e.Id)
                 .HasColumnType("int(11)")
                 .HasColumnName("id");
-            entity.Property(e => e.CoverId)
+            entity.Property(e => e.Cover)
                 .HasColumnType("int(11)")
-                .HasColumnName("cover_id");
+                .HasColumnName("cover");
             entity.Property(e => e.CreatedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("createdAt");
             entity.Property(e => e.Description)
-                .HasMaxLength(45)
+                .HasMaxLength(255)
                 .HasColumnName("description");
             entity.Property(e => e.Designation)
                 .HasMaxLength(45)
@@ -526,8 +575,8 @@ public partial class AppDbContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("updatedAt");
 
-            entity.HasOne(d => d.Cover).WithMany(p => p.Zones)
-                .HasForeignKey(d => d.CoverId)
+            entity.HasOne(d => d.CoverNavigation).WithMany(p => p.Zones)
+                .HasForeignKey(d => d.Cover)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_Zone_cover1");
         });
