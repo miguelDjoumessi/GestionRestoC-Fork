@@ -31,5 +31,15 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
         {
 
         }
+
+        public virtual void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public virtual void guna2Button1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

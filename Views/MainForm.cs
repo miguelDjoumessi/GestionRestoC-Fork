@@ -34,5 +34,11 @@ namespace PROJET_C__GESTIONRESTO.Views
         {
 
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }

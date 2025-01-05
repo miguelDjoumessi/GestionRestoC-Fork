@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using PROJET_C__GESTIONRESTO.Models;
+using PROJET_C__GESTIONRESTO.Orm;
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,9 +20,130 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             this.connectionString = configuration.GetValue<string>("ConnectionString:MySqlConnection");
         }
 
-        //public int SaveOrder(Order menuItem)
-        //{
+        public int SaveOrder(Order order)
+        {
+            int lines = 0;
 
-        //}
+            using (var context = new AppDbContext(connectionString))
+            {
+                try
+                {
+                    context.Orders.Add(order);
+                    lines = context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                return lines;
+            }
+        }
+
+        public int UpdateOrder(int oldOrderId, Order newOrder)
+        {
+            int lines = 0;
+
+            using (var context = new AppDbContext(connectionString))
+            {
+                try
+                {
+                    var oldOrder = context.Orders.FirstOrDefault(o => o.Id == oldOrderId);
+                    newOrder.Id = oldOrder.Id;
+                    context.Orders.Update(newOrder);
+                    lines = context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                return lines;
+            }
+        }
+        public int DeleteOrrder(int orderId)
+        {
+            int lines = 0;
+
+            using (var context = new AppDbContext(connectionString))
+            {
+                try
+                {
+                    var order = context.Orders.FirstOrDefault(o => o.Id == orderId);
+                    foreach (var item in order.Orderitems)
+                    {
+                        context.Orderitems.Remove(item);
+                    }
+                    context.Orders.Remove(order);
+                    lines = context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                return lines;
+            }
+        }
+
+        public List<Order> FilterItems(string searchValue)
+        {
+            List<Order> listOrder = new List<Order>();
+
+            using(var context = new AppDbContext(connectionString))
+            {
+                try
+                {
+                    listOrder = context.Orders
+                            .Where(o =>
+                                    o.Status.Equals(searchValue) || o.NumCom.Contains(searchValue) || o.CreatedAt.ToString().Equals(searchValue)
+                                    || context.Zones.Any(z => z.Id == o.Zone && z.Designation == searchValue) || context.Clients.Any(clt => clt.Id == o.Client && clt.Name == searchValue || clt.Prenom == searchValue)
+                            )
+                            .ToList();
+                }catch(Exception ex) {  
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                return listOrder;
+            }
+        }
+
+        public List<Product> GetProductForOrder(Order order)
+        {
+            List<Product> products = new List<Product>();
+
+            using(var context =new AppDbContext(connectionString))
+            {
+                try
+                {
+                    foreach (var item in order.Orderitems)
+                    {
+                        Product product = context.Products.FirstOrDefault(p => p.Id == item.Product);
+                        products.Add(product);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                return products;
+            }
+        }
+        public int CountOrderByCover(Cover cover)
+        {
+            int count = 0;
+
+            using(var context =new AppDbContext(connectionString))
+            {
+                foreach (var item in cover.Zones)
+                {
+                    count += item.Orders.Count(); 
+                }
+
+                return count;
+            }
+        }
+
     }
 }

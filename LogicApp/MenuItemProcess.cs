@@ -3,6 +3,7 @@ using PROJET_C__GESTIONRESTO.Models;
 using PROJET_C__GESTIONRESTO.Orm;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Text;
@@ -41,7 +42,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
 
                 if (product != null)
                 {
-                    menuitem.Product = product;
+                    menuitem.Product = product.Id;
                     context.Update(menuitem);
                     lines = context.SaveChanges();
                 }

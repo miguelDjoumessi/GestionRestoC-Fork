@@ -14,7 +14,7 @@ namespace PROJET_C__GESTIONRESTO.Services
         private const string Host = "localhost";
         public SendMailService() { }
 
-        public void send(Operateur to, string subject, string bodyMessage, bool isBodyHtml)
+        public void send(Employee to, string subject, string bodyMessage, bool isBodyHtml)
         {
             string fromMail = "Resto@noname.com";
             string fromPassword = "";

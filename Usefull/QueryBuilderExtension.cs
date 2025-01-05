@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic.Core;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,22 +10,20 @@ namespace PROJET_C__GESTIONRESTO.Usefull
 {
     static class QueryBuilderExtension
     {
-        public static async Task<PaginationContext<object>> GetPaginedItems(
-            this IQueryable<object> query, // var permetre de construire une requete personnaliser pour le Dbset<>
+        public static PaginationContext<T> GetPaginedItems<T>(
+            this IQueryable<T> query, // var permetre de construire une requete personnaliser pour le Dbset<>
             int pageIndex,
             int itemPerPage = 15,
             CancellationToken cancellationToken = default 
         )
         {
-            int totalItems = await query.CountAsync(cancellationToken);
-
+            int totalItems =  query.Count();
             var items = query
                 .Skip((pageIndex - 1) * itemPerPage)
                 .Take(itemPerPage)
-                .ToListAsync()
-                .Result;
+                .ToList();
 
-            return new PaginationContext<object>(items, pageIndex, totalItems);
+            return new PaginationContext<T>(items, pageIndex, totalItems);
         }
     }
 }

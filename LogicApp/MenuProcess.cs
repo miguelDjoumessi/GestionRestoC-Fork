@@ -80,7 +80,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             using (var context = new AppDbContext(connectionString))
             {
                 var items = context.Products
-                    .Where(p => context.Menuitems.Any(mi => mi.ProductId == p.Id && mi.MenuId == menuid))
+                    .Where(p => context.Menuitems.Any(mi => mi.Product == p.Id && mi.Menu == menuid))
                     .ToList();
 
                 if (items.Count > 0)

@@ -54,12 +54,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2GradientButton8 = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -76,9 +76,9 @@
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
             CenterPanel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
+            guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2Panel3.SuspendLayout();
@@ -479,19 +479,20 @@
             guna2Panel3.TabIndex = 2;
             guna2Panel3.Paint += guna2Panel3_Paint;
             // 
-            // guna2ControlBox1
+            // guna2ControlBox3
             // 
-            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox1.Animated = true;
-            guna2ControlBox1.CustomizableEdges = customizableEdges5;
-            guna2ControlBox1.FillColor = Color.FromArgb(174, 34, 73);
-            guna2ControlBox1.HoverState.FillColor = Color.Black;
-            guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(933, 0);
-            guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2ControlBox1.Size = new Size(50, 41);
-            guna2ControlBox1.TabIndex = 0;
+            guna2ControlBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox3.Animated = true;
+            guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            guna2ControlBox3.CustomizableEdges = customizableEdges1;
+            guna2ControlBox3.FillColor = Color.FromArgb(174, 34, 73);
+            guna2ControlBox3.HoverState.FillColor = Color.Black;
+            guna2ControlBox3.IconColor = Color.White;
+            guna2ControlBox3.Location = new Point(877, 0);
+            guna2ControlBox3.Name = "guna2ControlBox3";
+            guna2ControlBox3.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2ControlBox3.Size = new Size(50, 41);
+            guna2ControlBox3.TabIndex = 2;
             // 
             // guna2ControlBox2
             // 
@@ -508,24 +509,23 @@
             guna2ControlBox2.Size = new Size(50, 41);
             guna2ControlBox2.TabIndex = 1;
             // 
-            // guna2ControlBox3
+            // guna2ControlBox1
             // 
-            guna2ControlBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox3.Animated = true;
-            guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            guna2ControlBox3.CustomizableEdges = customizableEdges1;
-            guna2ControlBox3.FillColor = Color.FromArgb(174, 34, 73);
-            guna2ControlBox3.HoverState.FillColor = Color.Black;
-            guna2ControlBox3.IconColor = Color.White;
-            guna2ControlBox3.Location = new Point(877, 0);
-            guna2ControlBox3.Name = "guna2ControlBox3";
-            guna2ControlBox3.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2ControlBox3.Size = new Size(50, 41);
-            guna2ControlBox3.TabIndex = 2;
+            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox1.Animated = true;
+            guna2ControlBox1.CustomizableEdges = customizableEdges5;
+            guna2ControlBox1.FillColor = Color.FromArgb(174, 34, 73);
+            guna2ControlBox1.HoverState.FillColor = Color.Black;
+            guna2ControlBox1.IconColor = Color.White;
+            guna2ControlBox1.Location = new Point(933, 0);
+            guna2ControlBox1.Name = "guna2ControlBox1";
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2ControlBox1.Size = new Size(50, 41);
+            guna2ControlBox1.TabIndex = 0;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(11F, 21F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 63, 81);
             ClientSize = new Size(1200, 791);
@@ -537,7 +537,8 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MainForm";
+            Text = ".";
+            Load += MainForm_Load;
             guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             guna2Panel3.ResumeLayout(false);

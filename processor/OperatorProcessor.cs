@@ -25,11 +25,11 @@ namespace PROJET_C__GESTIONRESTO.processor
         public string resetPassword(string email)
         {
             bool isExist = false;
-            Operateur user = null;
+            Employee user = null;
             var mailContext = EmailContext.resetPasswordMessage;
             using (var contextDb = new AppDbContext(connectionString))
             {
-                user = contextDb.Operateurs.FirstOrDefault(o => o.Email == email);
+                user = contextDb.Employees.FirstOrDefault(o => o.Email == email);
                 if (user != null) { 
                     isExist = true;
                 }

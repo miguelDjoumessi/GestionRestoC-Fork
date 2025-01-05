@@ -59,18 +59,13 @@ namespace PROJET_C__GESTIONRESTO.Views
                 MessageBox.Show("les deux champs sont obligatoire");
                 return;
             }
-
-            using (var context = new AppDbContext(connectionString))
+            if (MainClass.IsValidUser(name, password))
             {
-                Operateur? operateur = context.Operateurs.FirstOrDefault(o => o.Email == name && o.Password == password);
-
-                if (operateur == null)
-                {
-                    MessageBox.Show("Ses information sont incorrect", "Security Violation", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
                 MessageBox.Show("Connexion reussie");
+            }
+            else
+            {
+                MessageBox.Show("Ses information sont incorrect", "Security Violation", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

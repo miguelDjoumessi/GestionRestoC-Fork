@@ -9,11 +9,16 @@ public partial class Category
 
     public string? Intitule { get; set; }
 
-    public DateTime CreatedAt { get; set; }
+    public DateTime? CreatedAt { get; set; }
 
     public DateTime UpdatedAt { get; set; }
 
     public virtual ICollection<Inventory> Inventories { get; set; } = new List<Inventory>();
 
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+
+    public Category() { 
+        this.CreatedAt = DateTime.Now;
+        this.UpdatedAt = DateTime.Now;
+    }
 }

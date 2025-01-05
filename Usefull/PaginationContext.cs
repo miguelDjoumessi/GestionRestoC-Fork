@@ -9,7 +9,7 @@ namespace PROJET_C__GESTIONRESTO.Usefull
 {
     class PaginationContext<T>
     {
-        public List<T> items = new List<T>();
+        public List<T> items { get; set; } = new List<T>();
         public int currentPage { get; set; } = 1;
         public int itemPerPage { get; set; } = 15;
 

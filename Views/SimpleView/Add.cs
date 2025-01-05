@@ -16,5 +16,15 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
         {
             InitializeComponent();
         }
+
+        protected virtual void btnSave_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected virtual void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -77,7 +77,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             using (var context = new AppDbContext(connectionString))
             {
                 var items = context.Products
-                    .Where(p => context.Menuitems.Any(m => m.ProductId != p.Id))
+                    .Where(p => context.Menuitems.Any(m => m.Product != p.Id))
                     .ToList();
 
                 if (items != null)
@@ -90,7 +90,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             return result;
         }
 
-        public List<object> FilterProduct<T>(T searchValue)
+        public List<object> FilterProduct(string searchValue)
         {
             List<object>? filteredItems = new List<object>();
 
@@ -100,18 +100,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                 {
                     var items = context.Products
                             .Where("designation.Contains(@0) or description.Contains(@0)", searchValue)
-                            .ToList();
-
-                    if (items.Any())
-                    {
-                        filteredItems.Add(items);
-                    }
-                }
-
-                if (searchValue.GetType() == typeof(float))
-                {
-                    var items = context.Products
-                            .Where(p => p.Id.Equals(searchValue))
+                            .Where(p => p.UnityPrice.ToString() ==  searchValue)
                             .ToList();
 
                     if (items.Any())

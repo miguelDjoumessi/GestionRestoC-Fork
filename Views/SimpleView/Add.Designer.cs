@@ -57,9 +57,10 @@
             guna2Panel1.Dock = DockStyle.Top;
             guna2Panel1.FillColor = Color.FromArgb(41, 39, 40);
             guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Margin = new Padding(2);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel1.Size = new Size(625, 111);
+            guna2Panel1.Size = new Size(500, 89);
             guna2Panel1.TabIndex = 2;
             // 
             // label1
@@ -68,9 +69,10 @@
             label1.BackColor = Color.FromArgb(41, 39, 40);
             label1.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(147, 48);
+            label1.Location = new Point(118, 38);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(99, 34);
+            label1.Size = new Size(84, 28);
             label1.TabIndex = 1;
             label1.Text = "label1";
             // 
@@ -79,10 +81,11 @@
             guna2PictureBox1.BackColor = Color.Transparent;
             guna2PictureBox1.CustomizableEdges = customizableEdges1;
             guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(12, 12);
+            guna2PictureBox1.Location = new Point(10, 10);
+            guna2PictureBox1.Margin = new Padding(2);
             guna2PictureBox1.Name = "guna2PictureBox1";
             guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2PictureBox1.Size = new Size(95, 87);
+            guna2PictureBox1.Size = new Size(76, 70);
             guna2PictureBox1.TabIndex = 0;
             guna2PictureBox1.TabStop = false;
             guna2PictureBox1.UseTransparentBackground = true;
@@ -94,10 +97,11 @@
             guna2Panel2.CustomizableEdges = customizableEdges9;
             guna2Panel2.Dock = DockStyle.Bottom;
             guna2Panel2.FillColor = Color.Silver;
-            guna2Panel2.Location = new Point(0, 373);
+            guna2Panel2.Location = new Point(0, 298);
+            guna2Panel2.Margin = new Padding(2);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel2.Size = new Size(625, 77);
+            guna2Panel2.Size = new Size(500, 62);
             guna2Panel2.TabIndex = 3;
             // 
             // btnClose
@@ -105,54 +109,59 @@
             btnClose.Animated = true;
             btnClose.AutoRoundedCorners = true;
             btnClose.BackColor = Color.Transparent;
-            btnClose.BorderRadius = 26;
+            btnClose.BorderRadius = 21;
             customizableEdges5.TopRight = false;
             btnClose.CustomizableEdges = customizableEdges5;
             btnClose.DisabledState.BorderColor = Color.DarkGray;
             btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnClose.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnClose.FillColor = Color.FromArgb(41, 39, 40);
-            btnClose.Font = new Font("Segoe UI", 9F);
+            btnClose.FillColor = Color.Orange;
+            btnClose.Font = new Font("Segoe Script", 10.2F, FontStyle.Bold);
             btnClose.ForeColor = Color.White;
-            btnClose.Location = new Point(237, 11);
+            btnClose.Location = new Point(171, 7);
+            btnClose.Margin = new Padding(2);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnClose.Size = new Size(177, 55);
+            btnClose.Size = new Size(142, 44);
             btnClose.TabIndex = 1;
-            btnClose.Text = "CLOSE";
+            btnClose.Text = "Exit";
+            btnClose.Click += btnClose_Click;
             // 
             // btnSave
             // 
             btnSave.Animated = true;
             btnSave.AutoRoundedCorners = true;
             btnSave.BackColor = Color.Transparent;
-            btnSave.BorderRadius = 26;
+            btnSave.BorderRadius = 21;
             customizableEdges7.TopRight = false;
             btnSave.CustomizableEdges = customizableEdges7;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnSave.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnSave.FillColor = Color.FromArgb(174, 34, 73);
-            btnSave.Font = new Font("Segoe UI", 9F);
+            btnSave.FillColor = Color.FromArgb(33, 194, 13);
+            btnSave.Font = new Font("Segoe Script", 10.2F, FontStyle.Bold);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(12, 10);
+            btnSave.Location = new Point(10, 8);
+            btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnSave.Size = new Size(177, 55);
+            btnSave.Size = new Size(142, 44);
             btnSave.TabIndex = 0;
-            btnSave.Text = "SAVE";
+            btnSave.Text = "Save";
+            btnSave.Click += btnSave_Click;
             // 
             // Add
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(625, 450);
+            ClientSize = new Size(500, 360);
             Controls.Add(guna2Panel1);
             Controls.Add(guna2Panel2);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "Add";
             Text = "Add";
             guna2Panel1.ResumeLayout(false);

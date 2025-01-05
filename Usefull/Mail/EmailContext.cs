@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace PROJET_C__GESTIONRESTO.Usefull.Mail
 {
-    class EmailContext
+    static class EmailContext
     {
         public static String[] reset_password = ["Reset Password"];
         
-        public static string resetPasswordMessage(Operateur user, string validateCode)
+        public static string resetPasswordMessage(Employee user, string validateCode)
         {
             string body = "<body>" + 
                    "<div>" + 
