@@ -40,8 +40,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             var listCategories = CategoryProcess.GetCategories(page, word);
             ListBox lb = new ListBox();
             lb.Items.Add(cId);
-            lb.Items.Add(cName);
-            MessageBox.Show("" + listCategories[0].Id);
+            lb.Items.Add(cIntitule);
 
             MainClass.LoadData(dgvCategory, lb, listCategories);
         }

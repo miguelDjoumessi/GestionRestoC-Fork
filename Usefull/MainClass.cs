@@ -53,14 +53,39 @@ namespace PROJET_C__GESTIONRESTO.Usefull
         public static void LoadData<T>(DataGridView gv, ListBox lb, List<T> datas)
         {
             gv.Rows.Clear();
+            int i = 0;
 
-            for (int i = 0; i < lb.Items.Count; i++)
+            List<string> colonneSelected = new List<string>();
+            foreach (DataGridViewColumn col in lb.Items)
             {
-                string colName = ((DataGridViewColumn)lb.Items[i]).ToString();
-                gv.Columns[colName].DataPropertyName = datas[i].ToString();
+                colonneSelected.Add(col.Name);
+                i++;
             }
+            var properties = typeof(T).GetProperties();
+            i = 0;
 
-            gv.DataSource = datas;
+            foreach ( var data in datas )
+            {
+                var row = new DataGridViewRow();
+                row.CreateCells(gv);
+                foreach (var property in properties)
+                {
+                    for (int j = 0; j < colonneSelected.Count; j++)
+                    {
+                        if (colonneSelected[j].Contains(property.Name))
+                        {
+                            var value = property.GetValue(data);
+                            //var cell = new DataGridViewTextBoxCell
+                            //{
+                            //    Tag = colonneSelected[j],
+                            //};
+                            //cell.Value = value;
+                            row.Cells[j].Value = value;
+                        }
+                    }
+                }
+                gv.Rows.Add(row);
+            }
         }
 
     }

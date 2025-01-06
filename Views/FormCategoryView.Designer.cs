@@ -34,18 +34,19 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dgvCategory = new Guna.UI2.WinForms.Guna2DataGridView();
             Id = new DataGridViewTextBoxColumn();
-            cId = new DataGridViewTextBoxColumn();
-            cName = new DataGridViewTextBoxColumn();
+            cIntitule = new DataGridViewTextBoxColumn();
             cEdit = new DataGridViewImageColumn();
             cDelete = new DataGridViewImageColumn();
+            cId = new DataGridViewTextBoxColumn();
             lblCounter = new Label();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -100,8 +101,13 @@
             guna2Button1.Location = new Point(849, 110);
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges3;
             // 
+            // guna2Separator1
+            // 
+            guna2Separator1.FillColor = Color.Gray;
+            // 
             // dgvCategory
             // 
+            dgvCategory.AllowUserToAddRows = false;
             dgvCategory.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvCategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -116,27 +122,27 @@
             dgvCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvCategory.ColumnHeadersHeight = 40;
             dgvCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvCategory.Columns.AddRange(new DataGridViewColumn[] { Id, cId, cName, cEdit, cDelete });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvCategory.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvCategory.Columns.AddRange(new DataGridViewColumn[] { Id, cIntitule, cEdit, cDelete, cId });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvCategory.DefaultCellStyle = dataGridViewCellStyle4;
             dgvCategory.GridColor = Color.FromArgb(231, 229, 255);
             dgvCategory.Location = new Point(49, 251);
             dgvCategory.Name = "dgvCategory";
             dgvCategory.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Orange;
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvCategory.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Orange;
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvCategory.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvCategory.RowHeadersVisible = false;
             dgvCategory.RowHeadersWidth = 51;
             dgvCategory.Size = new Size(880, 384);
@@ -173,21 +179,16 @@
             Id.ReadOnly = true;
             Id.Width = 110;
             // 
-            // cId
+            // cIntitule
             // 
-            cId.HeaderText = "";
-            cId.MinimumWidth = 6;
-            cId.Name = "cId";
-            cId.ReadOnly = true;
-            cId.Visible = false;
-            // 
-            // cName
-            // 
-            cName.FillWeight = 79.37956F;
-            cName.HeaderText = "Name";
-            cName.MinimumWidth = 6;
-            cName.Name = "cName";
-            cName.ReadOnly = true;
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(10, 10, 10);
+            dataGridViewCellStyle3.NullValue = "(empty)";
+            cIntitule.DefaultCellStyle = dataGridViewCellStyle3;
+            cIntitule.FillWeight = 79.37956F;
+            cIntitule.HeaderText = "Name";
+            cIntitule.MinimumWidth = 6;
+            cIntitule.Name = "cIntitule";
+            cIntitule.ReadOnly = true;
             // 
             // cEdit
             // 
@@ -216,6 +217,14 @@
             cDelete.Resizable = DataGridViewTriState.True;
             cDelete.SortMode = DataGridViewColumnSortMode.Automatic;
             cDelete.Width = 50;
+            // 
+            // cId
+            // 
+            cId.HeaderText = "";
+            cId.MinimumWidth = 6;
+            cId.Name = "cId";
+            cId.ReadOnly = true;
+            cId.Visible = false;
             // 
             // lblCounter
             // 
@@ -270,6 +279,7 @@
             Name = "FormCategoryView";
             Text = "FormCategoryView";
             Load += FormCategoryView_Load;
+            Controls.SetChildIndex(guna2Separator1, 0);
             Controls.SetChildIndex(txtSearch, 0);
             Controls.SetChildIndex(btnAdd, 0);
             Controls.SetChildIndex(label2, 0);
@@ -288,13 +298,13 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2DataGridView dgvCategory;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn cId;
-        private DataGridViewTextBoxColumn cName;
-        private DataGridViewImageColumn cEdit;
-        private DataGridViewImageColumn cDelete;
         private Label lblCounter;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn cIntitule;
+        private DataGridViewImageColumn cEdit;
+        private DataGridViewImageColumn cDelete;
+        private DataGridViewTextBoxColumn cId;
     }
 }

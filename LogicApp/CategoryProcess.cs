@@ -27,7 +27,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             {
                 if(name != null)
                 {
-                   var list = context.Categories.Where(c => c.Intitule == name)
+                   var list = context.Categories.Where(c => c.Intitule.Contains(name))
                             .GetPaginedItems(page);
                     categories = list.items;
                 }
