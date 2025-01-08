@@ -62,6 +62,7 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel1.Size = new Size(500, 89);
             guna2Panel1.TabIndex = 2;
+            guna2Panel1.MouseDown += guna2Panel1_MouseDown;
             // 
             // label1
             // 
@@ -163,6 +164,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
             Name = "Add";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Add";
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();

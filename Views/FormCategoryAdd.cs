@@ -16,62 +16,50 @@ namespace PROJET_C__GESTIONRESTO.Views
 {
     public partial class FormCategoryAdd : Add
     {
-        public FormCategoryAdd()
+        private int? categoryId = 0;
+        public FormCategoryAdd(int? id = 0)
         {
             InitializeComponent();
+            txtName.Focus();
+            this.categoryId = id;
         }
 
         public int id = 0;
 
         protected override void btnSave_Click(object sender, EventArgs e)
         {
-            if(id == 0)
+            if (txtName.Text == null)
             {
-                if (txtName.Text != null)
+                MessageBox.Show("Veuillez remplir le champs et reessayer", "Avertissement", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtName.Focus();
+                return;
+            }
+            if (categoryId == 0)
+            {
+                Category category = new()
                 {
-                    Category category = new Category();
-                    category.Intitule = txtName.Text;
+                    Intitule = txtName.Text
+                };
 
-                    if(CategoryProcess.SaveCategory(category) > 0)
-                    {
-                        Guna2MessageDialog guna2MessageDialog = new Guna2MessageDialog();
-                        guna2MessageDialog.Icon = MessageDialogIcon.Information;
-                        guna2MessageDialog.Caption = "Success";
-                        guna2MessageDialog.Buttons = MessageDialogButtons.OK;
-                        guna2MessageDialog.Text = "Category saving with success";
-
-                        guna2MessageDialog.Show();
-                    }
-                    MessageBox.Show("une erreur c'est produitent. Veuillez reessayer");
+                if (CategoryProcess.SaveCategory(category) > 0)
+                {
+                    MessageBox.Show("Categorie enregistrer avec succés", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                MessageBox.Show("Veuillez entrez un mot de taille >3 dans le champs");
-
+                else
+                    MessageBox.Show("Une erreur s'est produit lors de la sauvegarde du produit", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if(txtName.Text != null)
+                Category newCategory = new Category();
+                newCategory.Intitule = txtName.Text;
+
+                if (CategoryProcess.UpdateCategory(categoryId, newCategory) > 0)
                 {
-                    Category newCategory = new Category();
-                    newCategory.CreatedAt = null;
-
-                    if(CategoryProcess.UpdateCategory(id, newCategory) > 0){
-                        Guna2MessageDialog guna2MessageDialog = new Guna2MessageDialog();
-                        guna2MessageDialog.Icon = MessageDialogIcon.Information;
-                        guna2MessageDialog.Caption = "Success";
-                        guna2MessageDialog.Buttons = MessageDialogButtons.OK;
-                        guna2MessageDialog.Text = "Category update with success";
-
-                        guna2MessageDialog.Show();
-
-                    }
-                    MessageBox.Show("une erreur c'est produitent. Veuillez reessayer");
+                    MessageBox.Show("Categorie enregistrer avec succés", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                MessageBox.Show("Veuillez entrez un mot de taille >3 dans le champs");
+                else
+                    MessageBox.Show("une erreur c'est produitent. Veuillez reessayer", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
             }
-            id = 0;
-            txtName.Focus();
         }
 
         protected override void btnClose_Click(object sender, EventArgs e)

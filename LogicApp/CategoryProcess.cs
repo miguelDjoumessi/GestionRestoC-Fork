@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using PROJET_C__GESTIONRESTO.Models;
 using PROJET_C__GESTIONRESTO.Orm;
 using PROJET_C__GESTIONRESTO.Usefull;
@@ -19,23 +20,22 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             
         }
 
-        public static List<Category> GetCategories(int page, string? name = null)
+        public static PaginationContext<Category> GetCategories(int page, string? filterWord = null)
         {
             var categories = new List<Category>();
-            PaginationContext<object> paginationResult = null;
+            PaginationContext<Category> paginationResult = null;
             using (var context = new AppDbContext(connectionString))
             {
-                if(name != null)
+                if(filterWord != null)
                 {
-                   var list = context.Categories.Where(c => c.Intitule.Contains(name))
+                   paginationResult = context.Categories.Where(c => c.Intitule.Contains(filterWord))
                             .GetPaginedItems(page);
-                    categories = list.items;
                 }
                 else
                 {
                     try
                     {
-                        categories = context.Categories.GetPaginedItems(page).items;
+                        paginationResult = context.Categories.GetPaginedItems(page);
                     }
                     catch (Exception ex)
                     {
@@ -43,7 +43,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                     }
                 }
 
-                return categories;
+                return paginationResult;
             }
         }
         public static int SaveCategory(Category category)
@@ -58,20 +58,33 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             }
         }
 
-        public static int UpdateCategory(int categoryId, Category newCategory)
+        public static int UpdateCategory(int? categoryId, Category newCategory)
         {
             int line = 0;
             using (var context = new AppDbContext(connectionString))
             {
-                Category old = context.Categories.Where(c =>c.Id == categoryId).FirstOrDefault();
+                var old = context.Categories.Where(c =>c.Id == categoryId).FirstOrDefault();
 
                 if(old != null)
                 {
-                    newCategory.Id = old.Id;
-                    newCategory.CreatedAt = old.CreatedAt;
-                    context.Update(newCategory);
+                    old.Intitule = newCategory.Intitule;
+                    old.UpdatedAt = newCategory.UpdatedAt;
+                    context.Categories.Update(old);
                     line = context.SaveChanges();
                 }
+
+                return line;
+            }
+        }
+
+        public static int DeleteCategory(int? categoryId)
+        {
+            int line = 0;
+            using( var context = new AppDbContext(connectionString))
+            {
+                var cat = context.Categories.FirstOrDefault(c => c.Id == categoryId);
+                context.Remove(cat);
+                line = context.SaveChanges();
 
                 return line;
             }

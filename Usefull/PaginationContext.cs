@@ -14,7 +14,7 @@ namespace PROJET_C__GESTIONRESTO.Usefull
         public int itemPerPage { get; set; } = 15;
 
         public int totalItems {  get; set; }
-        public int TotalPages => (int) Math.Ceiling((double) (totalItems / itemPerPage));
+        public int TotalPages => (int) Math.Ceiling((double) ((double)totalItems / (double)itemPerPage));
         
         public PaginationContext(List<T> items, int currentPage, int totalItems, int itemPerPage = 15)
         {

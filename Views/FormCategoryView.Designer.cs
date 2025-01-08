@@ -50,6 +50,8 @@
             lblCounter = new Label();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            lblSeparator = new Label();
+            lblPages = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvCategory).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
@@ -76,6 +78,7 @@
             btnAdd.Location = new Point(38, 89);
             btnAdd.PressedState.ImageSize = new Size(55, 55);
             btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnAdd.Click += btnAdd_Click_1;
             // 
             // label2
             // 
@@ -145,6 +148,7 @@
             dgvCategory.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvCategory.RowHeadersVisible = false;
             dgvCategory.RowHeadersWidth = 51;
+            dgvCategory.ScrollBars = ScrollBars.Vertical;
             dgvCategory.Size = new Size(880, 384);
             dgvCategory.TabIndex = 6;
             dgvCategory.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
@@ -168,6 +172,7 @@
             dgvCategory.ThemeStyle.RowsStyle.Height = 29;
             dgvCategory.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvCategory.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvCategory.CellClick += dgvCategory_CellClick;
             // 
             // Id
             // 
@@ -231,7 +236,7 @@
             lblCounter.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblCounter.AutoSize = true;
             lblCounter.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCounter.Location = new Point(848, 209);
+            lblCounter.Location = new Point(809, 207);
             lblCounter.Name = "lblCounter";
             lblCounter.Size = new Size(25, 27);
             lblCounter.TabIndex = 8;
@@ -251,6 +256,7 @@
             guna2PictureBox1.Size = new Size(54, 41);
             guna2PictureBox1.TabIndex = 9;
             guna2PictureBox1.TabStop = false;
+            guna2PictureBox1.Click += guna2PictureBox1_Click;
             // 
             // guna2PictureBox2
             // 
@@ -260,18 +266,43 @@
             guna2PictureBox2.CustomizableEdges = customizableEdges6;
             guna2PictureBox2.FillColor = Color.Empty;
             guna2PictureBox2.ImageRotate = 0F;
-            guna2PictureBox2.Location = new Point(794, 201);
+            guna2PictureBox2.Location = new Point(749, 201);
             guna2PictureBox2.Name = "guna2PictureBox2";
             guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges7;
             guna2PictureBox2.Size = new Size(48, 41);
             guna2PictureBox2.TabIndex = 10;
             guna2PictureBox2.TabStop = false;
+            guna2PictureBox2.Click += guna2PictureBox2_Click;
+            // 
+            // lblSeparator
+            // 
+            lblSeparator.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblSeparator.AutoSize = true;
+            lblSeparator.Font = new Font("Century Gothic", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSeparator.Location = new Point(830, 207);
+            lblSeparator.Name = "lblSeparator";
+            lblSeparator.Size = new Size(23, 27);
+            lblSeparator.TabIndex = 11;
+            lblSeparator.Text = "/";
+            // 
+            // lblPages
+            // 
+            lblPages.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblPages.AutoSize = true;
+            lblPages.Font = new Font("Century Gothic", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPages.Location = new Point(849, 208);
+            lblPages.Name = "lblPages";
+            lblPages.Size = new Size(25, 27);
+            lblPages.TabIndex = 12;
+            lblPages.Text = "1";
             // 
             // FormCategoryView
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(983, 670);
+            Controls.Add(lblPages);
+            Controls.Add(lblSeparator);
             Controls.Add(guna2PictureBox2);
             Controls.Add(guna2PictureBox1);
             Controls.Add(lblCounter);
@@ -288,6 +319,8 @@
             Controls.SetChildIndex(lblCounter, 0);
             Controls.SetChildIndex(guna2PictureBox1, 0);
             Controls.SetChildIndex(guna2PictureBox2, 0);
+            Controls.SetChildIndex(lblSeparator, 0);
+            Controls.SetChildIndex(lblPages, 0);
             ((System.ComponentModel.ISupportInitialize)dgvCategory).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
@@ -306,5 +339,7 @@
         private DataGridViewImageColumn cEdit;
         private DataGridViewImageColumn cDelete;
         private DataGridViewTextBoxColumn cId;
+        private Label lblSeparator;
+        private Label lblPages;
     }
 }
