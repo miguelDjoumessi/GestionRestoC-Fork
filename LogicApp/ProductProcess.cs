@@ -15,15 +15,13 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
 {
     class ProductProcess
     {
-        public readonly string? connectionString;
+        public static string? connectionString;
 
         public ProductProcess()
         {
-            var configuration = ConfigurationHelper.GetConfiguration();
-            this.connectionString = configuration.GetValue<string>("ConnectionString:MySqlConnection");
         }
 
-        public int CreateProduct(Product product)
+        public int SaveProduct(Product product)
         {
             int lines = 0;
             using (var context = new AppDbContext(connectionString))
@@ -70,24 +68,31 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             }
         }
 
-        public List<Product> GetDistinctProduct()
+        public static PaginationContext<Product> GetProduct(int page, string? filter = null)
         {
-            List<Product> result = null;
-
+            var products = new List<Product>();
+            PaginationContext<Product> paginationResult = null;
             using (var context = new AppDbContext(connectionString))
             {
-                var items = context.Products
-                    .Where(p => context.Menuitems.Any(m => m.Product != p.Id))
-                    .ToList();
-
-                if (items != null)
+                if (filter != null)
                 {
-                    result = items;
+                    paginationResult = context.Products.Where(p => p.Designation.Contains(filter) || context.Categories.Any(c => c.Id == p.Category && c.Intitule.Contains(filter)))
+                             .GetPaginedItems(page);
+                }
+                else
+                {
+                    try
+                    {
+                        paginationResult = context.Products.GetPaginedItems(page);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
 
+                return paginationResult;
             }
-
-            return result;
         }
 
         public List<object> FilterProduct(string searchValue)

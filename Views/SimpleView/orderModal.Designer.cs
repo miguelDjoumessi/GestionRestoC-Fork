@@ -49,20 +49,14 @@
             label1 = new Label();
             panel2 = new Panel();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            guna2DataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
-            pId = new DataGridViewTextBoxColumn();
-            pName = new DataGridViewTextBoxColumn();
-            pPrice = new DataGridViewTextBoxColumn();
-            pCat = new DataGridViewTextBoxColumn();
-            pCatId = new DataGridViewTextBoxColumn();
-            pAction = new DataGridViewImageColumn();
-            guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            dgvListProduct = new Guna.UI2.WinForms.Guna2DataGridView();
+            dgvSelectedProduct = new Guna.UI2.WinForms.Guna2DataGridView();
             pSId = new DataGridViewTextBoxColumn();
-            pDesignation = new DataGridViewTextBoxColumn();
+            pSIntitule = new DataGridViewTextBoxColumn();
             pSPrice = new DataGridViewTextBoxColumn();
             pSQty = new DataGridViewTextBoxColumn();
-            pSCat = new DataGridViewTextBoxColumn();
-            pSDel = new DataGridViewTextBoxColumn();
+            pSCategory = new DataGridViewTextBoxColumn();
+            pSDelete = new DataGridViewImageColumn();
             pSCatId = new DataGridViewTextBoxColumn();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -83,10 +77,16 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
+            p_Id = new DataGridViewTextBoxColumn();
+            p_Designation = new DataGridViewTextBoxColumn();
+            p_UnityPrice = new DataGridViewTextBoxColumn();
+            p_Intitule = new DataGridViewTextBoxColumn();
+            p_Add = new DataGridViewImageColumn();
+            pCatId = new DataGridViewTextBoxColumn();
             pnHeader.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvListProduct).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSelectedProduct).BeginInit();
             guna2Panel1.SuspendLayout();
             gBType.SuspendLayout();
             gBClient.SuspendLayout();
@@ -98,7 +98,7 @@
             pnHeader.Dock = DockStyle.Top;
             pnHeader.Location = new Point(0, 0);
             pnHeader.Name = "pnHeader";
-            pnHeader.Size = new Size(1373, 45);
+            pnHeader.Size = new Size(1370, 45);
             pnHeader.TabIndex = 2;
             pnHeader.MouseDown += pnHeader_MouseDown;
             // 
@@ -118,8 +118,8 @@
             panel2.AutoScrollMinSize = new Size(3, 0);
             panel2.BackColor = Color.White;
             panel2.Controls.Add(guna2Separator1);
-            panel2.Controls.Add(guna2DataGridView2);
-            panel2.Controls.Add(guna2DataGridView1);
+            panel2.Controls.Add(dgvListProduct);
+            panel2.Controls.Add(dgvSelectedProduct);
             panel2.Controls.Add(guna2Button3);
             panel2.Controls.Add(guna2HtmlLabel1);
             panel2.Controls.Add(guna2TextBox1);
@@ -127,7 +127,7 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 45);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1373, 814);
+            panel2.Size = new Size(1370, 849);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
             // 
@@ -138,23 +138,24 @@
             guna2Separator1.Size = new Size(850, 21);
             guna2Separator1.TabIndex = 9;
             // 
-            // guna2DataGridView2
+            // dgvListProduct
             // 
-            guna2DataGridView2.AllowUserToDeleteRows = false;
+            dgvListProduct.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
-            guna2DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvListProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvListProduct.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(10, 10, 10);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.Padding = new Padding(5, 5, 0, 5);
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(241, 193, 38);
             dataGridViewCellStyle2.SelectionForeColor = Color.WhiteSmoke;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            guna2DataGridView2.ColumnHeadersHeight = 33;
-            guna2DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView2.Columns.AddRange(new DataGridViewColumn[] { pId, pName, pPrice, pCat, pCatId, pAction });
+            dgvListProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvListProduct.ColumnHeadersHeight = 33;
+            dgvListProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvListProduct.Columns.AddRange(new DataGridViewColumn[] { p_Id, p_Designation, p_UnityPrice, p_Intitule, p_Add, pCatId });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Lato", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -162,149 +163,97 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(61, 228, 179);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
-            guna2DataGridView2.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView2.Location = new Point(17, 105);
-            guna2DataGridView2.Name = "guna2DataGridView2";
-            guna2DataGridView2.ReadOnly = true;
-            guna2DataGridView2.RowHeadersVisible = false;
-            guna2DataGridView2.RowHeadersWidth = 51;
-            guna2DataGridView2.ScrollBars = ScrollBars.Vertical;
-            guna2DataGridView2.Size = new Size(850, 346);
-            guna2DataGridView2.TabIndex = 8;
-            guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
-            guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            guna2DataGridView2.ThemeStyle.BackColor = Color.White;
-            guna2DataGridView2.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView2.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            guna2DataGridView2.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            guna2DataGridView2.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView2.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView2.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView2.ThemeStyle.HeaderStyle.Height = 33;
-            guna2DataGridView2.ThemeStyle.ReadOnly = true;
-            guna2DataGridView2.ThemeStyle.RowsStyle.BackColor = Color.White;
-            guna2DataGridView2.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            guna2DataGridView2.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView2.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView2.ThemeStyle.RowsStyle.Height = 29;
-            guna2DataGridView2.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView2.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvListProduct.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvListProduct.GridColor = Color.FromArgb(231, 229, 255);
+            dgvListProduct.Location = new Point(17, 105);
+            dgvListProduct.Name = "dgvListProduct";
+            dgvListProduct.ReadOnly = true;
+            dgvListProduct.RowHeadersVisible = false;
+            dgvListProduct.RowHeadersWidth = 51;
+            dgvListProduct.ScrollBars = ScrollBars.Vertical;
+            dgvListProduct.Size = new Size(850, 346);
+            dgvListProduct.TabIndex = 8;
+            dgvListProduct.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgvListProduct.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvListProduct.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvListProduct.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvListProduct.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvListProduct.ThemeStyle.BackColor = Color.White;
+            dgvListProduct.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgvListProduct.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgvListProduct.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvListProduct.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgvListProduct.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvListProduct.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvListProduct.ThemeStyle.HeaderStyle.Height = 33;
+            dgvListProduct.ThemeStyle.ReadOnly = true;
+            dgvListProduct.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgvListProduct.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvListProduct.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgvListProduct.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgvListProduct.ThemeStyle.RowsStyle.Height = 29;
+            dgvListProduct.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgvListProduct.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvListProduct.CellClick += guna2DataGridView2_CellClick;
             // 
-            // pId
+            // dgvSelectedProduct
             // 
-            pId.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            pId.FillWeight = 187.165771F;
-            pId.HeaderText = "Sr#";
-            pId.MinimumWidth = 60;
-            pId.Name = "pId";
-            pId.ReadOnly = true;
-            pId.Width = 70;
-            // 
-            // pName
-            // 
-            pName.FillWeight = 24.0641727F;
-            pName.HeaderText = "designation";
-            pName.MinimumWidth = 6;
-            pName.Name = "pName";
-            pName.ReadOnly = true;
-            // 
-            // pPrice
-            // 
-            pPrice.FillWeight = 24.0641727F;
-            pPrice.HeaderText = "Price";
-            pPrice.MinimumWidth = 6;
-            pPrice.Name = "pPrice";
-            pPrice.ReadOnly = true;
-            // 
-            // pCat
-            // 
-            pCat.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            pCat.FillWeight = 240.641739F;
-            pCat.HeaderText = "Category";
-            pCat.MinimumWidth = 40;
-            pCat.Name = "pCat";
-            pCat.ReadOnly = true;
-            pCat.Width = 180;
-            // 
-            // pCatId
-            // 
-            pCatId.HeaderText = "";
-            pCatId.MinimumWidth = 6;
-            pCatId.Name = "pCatId";
-            pCatId.ReadOnly = true;
-            pCatId.Visible = false;
-            // 
-            // pAction
-            // 
-            pAction.FillWeight = 24.0641727F;
-            pAction.HeaderText = "";
-            pAction.Image = Properties.Resources.plus;
-            pAction.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            pAction.MinimumWidth = 6;
-            pAction.Name = "pAction";
-            pAction.ReadOnly = true;
-            pAction.Resizable = DataGridViewTriState.True;
-            pAction.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // guna2DataGridView1
-            // 
+            dgvSelectedProduct.AllowUserToDeleteRows = false;
             dataGridViewCellStyle4.BackColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvSelectedProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvSelectedProduct.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(40, 19, 2);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(255, 192, 128);
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(10, 10, 10);
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(255, 128, 128);
             dataGridViewCellStyle5.Padding = new Padding(5, 5, 0, 5);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(233, 48, 48);
-            dataGridViewCellStyle5.SelectionForeColor = Color.WhiteSmoke;
+            dataGridViewCellStyle5.SelectionBackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle5.SelectionForeColor = Color.Black;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            guna2DataGridView1.ColumnHeadersHeight = 33;
-            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.Columns.AddRange(new DataGridViewColumn[] { pSId, pDesignation, pSPrice, pSQty, pSCat, pSDel, pSCatId });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(216, 213, 207);
+            dgvSelectedProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgvSelectedProduct.ColumnHeadersHeight = 36;
+            dgvSelectedProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvSelectedProduct.Columns.AddRange(new DataGridViewColumn[] { pSId, pSIntitule, pSPrice, pSQty, pSCategory, pSDelete, pSCatId });
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
             dataGridViewCellStyle6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(226, 14, 30);
-            dataGridViewCellStyle6.SelectionForeColor = Color.WhiteSmoke;
+            dataGridViewCellStyle6.Padding = new Padding(5, 5, 0, 5);
+            dataGridViewCellStyle6.SelectionBackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(20, 20, 20);
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
-            guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(15, 481);
-            guna2DataGridView1.Name = "guna2DataGridView1";
-            guna2DataGridView1.ReadOnly = true;
-            guna2DataGridView1.RowHeadersVisible = false;
-            guna2DataGridView1.RowHeadersWidth = 51;
-            guna2DataGridView1.ScrollBars = ScrollBars.Vertical;
-            guna2DataGridView1.ShowCellToolTips = false;
-            guna2DataGridView1.Size = new Size(856, 321);
-            guna2DataGridView1.TabIndex = 7;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 33;
-            guna2DataGridView1.ThemeStyle.ReadOnly = true;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.ThemeStyle.RowsStyle.Height = 29;
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvSelectedProduct.DefaultCellStyle = dataGridViewCellStyle6;
+            dgvSelectedProduct.GridColor = Color.FromArgb(231, 229, 255);
+            dgvSelectedProduct.Location = new Point(15, 481);
+            dgvSelectedProduct.Name = "dgvSelectedProduct";
+            dgvSelectedProduct.ReadOnly = true;
+            dgvSelectedProduct.RowHeadersVisible = false;
+            dgvSelectedProduct.RowHeadersWidth = 51;
+            dgvSelectedProduct.ScrollBars = ScrollBars.Horizontal;
+            dgvSelectedProduct.ShowCellToolTips = false;
+            dgvSelectedProduct.Size = new Size(856, 356);
+            dgvSelectedProduct.TabIndex = 7;
+            dgvSelectedProduct.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgvSelectedProduct.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvSelectedProduct.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvSelectedProduct.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvSelectedProduct.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvSelectedProduct.ThemeStyle.BackColor = Color.White;
+            dgvSelectedProduct.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgvSelectedProduct.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgvSelectedProduct.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvSelectedProduct.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvSelectedProduct.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvSelectedProduct.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvSelectedProduct.ThemeStyle.HeaderStyle.Height = 36;
+            dgvSelectedProduct.ThemeStyle.ReadOnly = true;
+            dgvSelectedProduct.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgvSelectedProduct.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvSelectedProduct.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgvSelectedProduct.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgvSelectedProduct.ThemeStyle.RowsStyle.Height = 29;
+            dgvSelectedProduct.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgvSelectedProduct.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // pSId
             // 
@@ -315,12 +264,12 @@
             pSId.ReadOnly = true;
             pSId.Width = 60;
             // 
-            // pDesignation
+            // pSIntitule
             // 
-            pDesignation.HeaderText = "Designation";
-            pDesignation.MinimumWidth = 100;
-            pDesignation.Name = "pDesignation";
-            pDesignation.ReadOnly = true;
+            pSIntitule.HeaderText = "Designation";
+            pSIntitule.MinimumWidth = 100;
+            pSIntitule.Name = "pSIntitule";
+            pSIntitule.ReadOnly = true;
             // 
             // pSPrice
             // 
@@ -336,19 +285,24 @@
             pSQty.Name = "pSQty";
             pSQty.ReadOnly = true;
             // 
-            // pSCat
+            // pSCategory
             // 
-            pSCat.HeaderText = "Category";
-            pSCat.MinimumWidth = 6;
-            pSCat.Name = "pSCat";
-            pSCat.ReadOnly = true;
+            pSCategory.HeaderText = "Category";
+            pSCategory.MinimumWidth = 6;
+            pSCategory.Name = "pSCategory";
+            pSCategory.ReadOnly = true;
             // 
-            // pSDel
+            // pSDelete
             // 
-            pSDel.HeaderText = "";
-            pSDel.MinimumWidth = 6;
-            pSDel.Name = "pSDel";
-            pSDel.ReadOnly = true;
+            pSDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            pSDelete.HeaderText = "";
+            pSDelete.Image = (Image)resources.GetObject("pSDelete.Image");
+            pSDelete.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            pSDelete.MinimumWidth = 6;
+            pSDelete.Name = "pSDelete";
+            pSDelete.ReadOnly = true;
+            pSDelete.Resizable = DataGridViewTriState.True;
+            pSDelete.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // pSCatId
             // 
@@ -381,7 +335,7 @@
             guna2Button3.ForeColor = Color.White;
             guna2Button3.HoverState.FillColor = Color.Black;
             guna2Button3.ImageSize = new Size(30, 30);
-            guna2Button3.Location = new Point(803, 26);
+            guna2Button3.Location = new Point(800, 26);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.PressedColor = SystemColors.AppWorkspace;
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -415,7 +369,7 @@
             guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox1.Font = new Font("Segoe UI", 9F);
             guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(567, 26);
+            guna2TextBox1.Location = new Point(564, 26);
             guna2TextBox1.Margin = new Padding(3, 4, 3, 4);
             guna2TextBox1.Name = "guna2TextBox1";
             guna2TextBox1.PasswordChar = '\0';
@@ -433,10 +387,10 @@
             guna2Panel1.Controls.Add(gBClient);
             guna2Panel1.CustomizableEdges = customizableEdges9;
             guna2Panel1.Dock = DockStyle.Right;
-            guna2Panel1.Location = new Point(889, 0);
+            guna2Panel1.Location = new Point(886, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel1.Size = new Size(484, 814);
+            guna2Panel1.Size = new Size(484, 849);
             guna2Panel1.TabIndex = 2;
             // 
             // guna2Button2
@@ -615,25 +569,83 @@
             label2.TabIndex = 0;
             label2.Text = "Nom *";
             // 
+            // p_Id
+            // 
+            p_Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            p_Id.FillWeight = 187.165771F;
+            p_Id.HeaderText = "Sr#";
+            p_Id.MinimumWidth = 60;
+            p_Id.Name = "p_Id";
+            p_Id.ReadOnly = true;
+            p_Id.Width = 70;
+            // 
+            // p_Designation
+            // 
+            p_Designation.FillWeight = 24.0641727F;
+            p_Designation.HeaderText = "designation";
+            p_Designation.MinimumWidth = 6;
+            p_Designation.Name = "p_Designation";
+            p_Designation.ReadOnly = true;
+            // 
+            // p_UnityPrice
+            // 
+            p_UnityPrice.FillWeight = 24.0641727F;
+            p_UnityPrice.HeaderText = "Price";
+            p_UnityPrice.MinimumWidth = 6;
+            p_UnityPrice.Name = "p_UnityPrice";
+            p_UnityPrice.ReadOnly = true;
+            // 
+            // p_Intitule
+            // 
+            p_Intitule.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            p_Intitule.FillWeight = 240.641739F;
+            p_Intitule.HeaderText = "Category";
+            p_Intitule.MinimumWidth = 40;
+            p_Intitule.Name = "p_Intitule";
+            p_Intitule.ReadOnly = true;
+            p_Intitule.Width = 128;
+            // 
+            // p_Add
+            // 
+            p_Add.FillWeight = 24.0641727F;
+            p_Add.HeaderText = "";
+            p_Add.Image = Properties.Resources.plus;
+            p_Add.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            p_Add.MinimumWidth = 6;
+            p_Add.Name = "p_Add";
+            p_Add.ReadOnly = true;
+            p_Add.Resizable = DataGridViewTriState.True;
+            p_Add.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // pCatId
+            // 
+            pCatId.HeaderText = "";
+            pCatId.MinimumWidth = 6;
+            pCatId.Name = "pCatId";
+            pCatId.ReadOnly = true;
+            pCatId.Visible = false;
+            // 
             // orderModal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1373, 859);
+            ClientSize = new Size(1370, 894);
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(pnHeader);
             FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            MaximumSize = new Size(1388, 950);
             MinimumSize = new Size(1300, 800);
             Name = "orderModal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "orderModal";
+            Load += orderModal_Load;
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvListProduct).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSelectedProduct).EndInit();
             guna2Panel1.ResumeLayout(false);
             gBType.ResumeLayout(false);
             gBType.PerformLayout();
@@ -667,20 +679,20 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        public Guna.UI2.WinForms.Guna2DataGridView dgvListProduct;
+        public Guna.UI2.WinForms.Guna2DataGridView dgvSelectedProduct;
         private DataGridViewTextBoxColumn pSId;
-        private DataGridViewTextBoxColumn pDesignation;
+        private DataGridViewTextBoxColumn pSIntitule;
         private DataGridViewTextBoxColumn pSPrice;
         private DataGridViewTextBoxColumn pSQty;
-        private DataGridViewTextBoxColumn pSCat;
-        private DataGridViewTextBoxColumn pSDel;
+        private DataGridViewTextBoxColumn pSCategory;
+        private DataGridViewImageColumn pSDelete;
         private DataGridViewTextBoxColumn pSCatId;
-        public Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView2;
-        public Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private DataGridViewTextBoxColumn pId;
-        private DataGridViewTextBoxColumn pName;
-        private DataGridViewTextBoxColumn pPrice;
-        private DataGridViewTextBoxColumn pCat;
+        private DataGridViewTextBoxColumn p_Id;
+        private DataGridViewTextBoxColumn p_Designation;
+        private DataGridViewTextBoxColumn p_UnityPrice;
+        private DataGridViewTextBoxColumn p_Intitule;
+        private DataGridViewImageColumn p_Add;
         private DataGridViewTextBoxColumn pCatId;
-        private DataGridViewImageColumn pAction;
     }
 }

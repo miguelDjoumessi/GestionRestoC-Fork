@@ -48,8 +48,8 @@ namespace PROJET_C__GESTIONRESTO.Views
             var listCategories = paginationResult.items;
             this.totalPages = paginationResult.TotalPages;
             ListBox lb = new ListBox();
-            lb.Items.Add(cId);
-            lb.Items.Add(cIntitule);
+            lb.Items.Add(c_Id);
+            lb.Items.Add(c_Intitule);
 
             MainClass.LoadData(dgvCategory, lb, listCategories);
         }
@@ -101,7 +101,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             {
                 currentPage++;
                 lblCounter.Text = currentPage.ToString();
-                GetData();
+                GetData(txtSearch.Text);
             }
             else
             {
@@ -115,7 +115,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             {
                 currentPage--;
                 lblCounter.Text = currentPage.ToString();
-                GetData();
+                GetData(txtSearch.Text);
             }
             else
             {

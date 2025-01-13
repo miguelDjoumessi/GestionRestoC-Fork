@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PROJET_C#_GESTIONRESTO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5df7512f414031261c55182861e3976c32d88df7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0cb8acf509ada15a7c564f104044a519692020a")]
 [assembly: System.Reflection.AssemblyProductAttribute("PROJET_C#_GESTIONRESTO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PROJET_C#_GESTIONRESTO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

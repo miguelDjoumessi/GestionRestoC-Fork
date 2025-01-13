@@ -1,20 +1,27 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Configuration;
 using PROJET_C__GESTIONRESTO.Models;
 using PROJET_C__GESTIONRESTO.Orm;
 using System;
 using System.Collections.Generic;
+using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
+using static Guna.UI2.WinForms.Suite.Descriptions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PROJET_C__GESTIONRESTO.Usefull
 {
     class MainClass
     {
         private static string? connectionString;
-        public MainClass() 
-        { 
+        public MainClass()
+        {
             var configuration = ConfigurationHelper.GetConfiguration();
             connectionString = configuration.GetValue<string>("ConnectionString:MySqlConnection");
 
@@ -26,7 +33,8 @@ namespace PROJET_C__GESTIONRESTO.Usefull
         }
         public static string user;
 
-        public static string USER {
+        public static string USER
+        {
             get { return user; }
             private set { user = value; }
         }
@@ -52,41 +60,167 @@ namespace PROJET_C__GESTIONRESTO.Usefull
         // Method for crud operation
         public static void LoadData<T>(DataGridView gv, ListBox lb, List<T> datas)
         {
-            gv.Rows.Clear();
-            int i = 0;
+            if (datas == null || !datas.Any())
+            {
+                MessageBox.Show("La liste des données est vide.");
+                return;
+            }
 
-            List<string> colonneSelected = new List<string>();
+            if (lb.Items.Count == 0)
+            {
+                MessageBox.Show("Veuillez sélectionner au moins une colonne à afficher dans le ListBox.");
+                return;
+            }
+
+            gv.Rows.Clear();
+
+            List<string> SelectedColumns = new List<string>();
+
             foreach (DataGridViewColumn col in lb.Items)
             {
-                colonneSelected.Add(col.Name);
-                i++;
+                SelectedColumns.Add(col.Name);
             }
-            var properties = typeof(T).GetProperties();
-            i = 0;
 
-            foreach ( var data in datas )
+            var properties = typeof(T).GetProperties();
+
+            foreach (var data in datas)
             {
-                var row = new DataGridViewRow();
-                row.CreateCells(gv);
-                foreach (var property in properties)
+                var row = new List<object>();
+
+                foreach (var column in SelectedColumns)
                 {
-                    for (int j = 0; j < colonneSelected.Count; j++)
+
+                    var nameProp = column.Split('_')[1];
+                    var props = typeof(T).GetProperty(nameProp, BindingFlags.Public | BindingFlags.Instance);
+
+                    if (props != null)
                     {
-                        if (colonneSelected[j].Contains(property.Name))
+                        var value = props.GetValue(data);
+                        row.Add(value ?? "");
+                    }
+                    else
+                    {
+
+                        var type = data.GetType();
+                        foreach (var property in type.GetProperties())
                         {
-                            var value = property.GetValue(data);
-                            //var cell = new DataGridViewTextBoxCell
-                            //{
-                            //    Tag = colonneSelected[j],
-                            //};
-                            //cell.Value = value;
-                            row.Cells[j].Value = value;
+                            // Vérifier si la propriété est une classe et non une primitive ou une collection
+                            if (property.PropertyType.IsClass && property.PropertyType != typeof(string))
+                            {
+                            
+                                var intent = Activator.CreateInstance(property.PropertyType);
+
+                                using (var context = new AppDbContext(connectionString))
+                                {
+                                    try
+                                    {
+                                        var dbSet = context.GetType()
+                                                    .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                                                    .FirstOrDefault(p => p.PropertyType.IsGenericType &&
+                                                                         p.PropertyType.GetGenericArguments()[0] == property.PropertyType)
+                                                    ?.GetValue(context);
+
+                                        if (dbSet != null)
+                                        {
+                                            var id = properties.FirstOrDefault(p => property.Name.Contains(p.Name))?.GetValue(data);
+
+                                            if (id != null)
+                                            {
+                                                // Charger l'objet depuis la base de données
+                                                var dbEntry = ((IQueryable<object>)dbSet)
+                                                    .AsNoTracking()
+                                                    .FirstOrDefault(e => (int)EF.Property<int>(e, "Id") == (int)id);
+
+                                                if (dbEntry != null)
+                                                {
+                                                    var result = GetValueOfProperty(dbEntry, nameProp);
+                                                    row.Add(result ?? "(not found)");
+                                                }
+                                                else
+                                                {
+                                                    row.Add("(not found)");
+                                                }
+                                            }
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Une erreur est survenu lors de l'affichage de la colonne categorie: " + ex.Message);
+                                    }
+                                }
+                            }
                         }
                     }
+
                 }
-                gv.Rows.Add(row);
+                gv.Rows.Add(row.ToArray());
             }
         }
 
+        public static bool IsPropertyAnInstanceOfClass<T>(T obj, string propertyName)
+        {
+            MessageBox.Show(propertyName);
+
+            if (obj == null || string.IsNullOrEmpty(propertyName))
+                throw new ArgumentNullException("L'objet et le nom de la propriété doivent être spécifiés.");
+
+            // Récupérer les informations sur la propriété
+            var propertyInfo = obj.GetType().GetProperty(propertyName);
+
+            if (propertyInfo == null)
+                throw new ArgumentException($"La propriété '{propertyName}' n'existe pas sur le type '{obj.GetType().Name}'.");
+
+            // Vérifier si le type de la propriété est une classe
+            return propertyInfo.PropertyType.IsClass && propertyInfo.PropertyType != typeof(string);
+        }
+
+        public static object? GetValueOfProperty<T>(T instance, string propertyName)
+        {
+            if (instance == null || string.IsNullOrEmpty(propertyName))
+                throw new ArgumentNullException("L'objet et le nom de la propriété doivent être spécifiés.");
+
+            var property = instance.GetType().GetProperty(propertyName);
+
+            if (property == null)
+                throw new ArgumentNullException("the property is not exist");
+
+            var value = property.GetValue(instance);
+
+            return value;
+
+        }
     }
 }
+
+
+//foreach (var property in properties)
+//{
+//    for (int j = 0; j < SelectedColumns.Count; j++)
+//    {
+//        if (SelectedColumns[j].Contains(property.Name))
+//        {
+//            var value = property.GetValue(data);
+//            //var cell = new DataGridViewTextBoxCell
+//            //{
+//            //    Tag = SelectedColumns[j],
+//            //};
+//            //cell.Value = value;
+//            row.Cells[j].Value = value;
+//        }
+//    }
+//}
+
+//var nameProp = column.Split('_')[1];
+
+//// Utiliser la réflexion pour récupérer les valeurs des propriétés correspondant aux colonnes sélectionnées.
+//var property = typeof(T).GetProperty(nameProp, BindingFlags.Public | BindingFlags.Instance);
+
+//if (property != null)
+//{
+//    var value = property.GetValue(data);
+//    if (IsPropertyAnInstanceOfClass(value, property.Name))
+//    {
+
+//    }
+//    row.Add(value ?? "");
+//}

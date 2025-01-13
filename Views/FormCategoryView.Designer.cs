@@ -36,22 +36,22 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dgvCategory = new Guna.UI2.WinForms.Guna2DataGridView();
-            Id = new DataGridViewTextBoxColumn();
-            cIntitule = new DataGridViewTextBoxColumn();
-            cEdit = new DataGridViewImageColumn();
-            cDelete = new DataGridViewImageColumn();
-            cId = new DataGridViewTextBoxColumn();
             lblCounter = new Label();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             lblSeparator = new Label();
             lblPages = new Label();
+            c_Id = new DataGridViewTextBoxColumn();
+            c_Intitule = new DataGridViewTextBoxColumn();
+            cEdit = new DataGridViewImageColumn();
+            cDelete = new DataGridViewImageColumn();
+            cId = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvCategory).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
@@ -125,7 +125,7 @@
             dgvCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvCategory.ColumnHeadersHeight = 40;
             dgvCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvCategory.Columns.AddRange(new DataGridViewColumn[] { Id, cIntitule, cEdit, cDelete, cId });
+            dgvCategory.Columns.AddRange(new DataGridViewColumn[] { c_Id, c_Intitule, cEdit, cDelete, cId });
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.White;
             dataGridViewCellStyle4.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -173,63 +173,6 @@
             dgvCategory.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvCategory.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dgvCategory.CellClick += dgvCategory_CellClick;
-            // 
-            // Id
-            // 
-            Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Id.FillWeight = 80F;
-            Id.HeaderText = "Sr#";
-            Id.MinimumWidth = 100;
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Width = 110;
-            // 
-            // cIntitule
-            // 
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(10, 10, 10);
-            dataGridViewCellStyle3.NullValue = "(empty)";
-            cIntitule.DefaultCellStyle = dataGridViewCellStyle3;
-            cIntitule.FillWeight = 79.37956F;
-            cIntitule.HeaderText = "Name";
-            cIntitule.MinimumWidth = 6;
-            cIntitule.Name = "cIntitule";
-            cIntitule.ReadOnly = true;
-            // 
-            // cEdit
-            // 
-            cEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            cEdit.FillWeight = 50F;
-            cEdit.HeaderText = "";
-            cEdit.Image = (Image)resources.GetObject("cEdit.Image");
-            cEdit.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            cEdit.MinimumWidth = 50;
-            cEdit.Name = "cEdit";
-            cEdit.ReadOnly = true;
-            cEdit.Resizable = DataGridViewTriState.True;
-            cEdit.SortMode = DataGridViewColumnSortMode.Automatic;
-            cEdit.Width = 50;
-            // 
-            // cDelete
-            // 
-            cDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            cDelete.FillWeight = 91.2408752F;
-            cDelete.HeaderText = "";
-            cDelete.Image = (Image)resources.GetObject("cDelete.Image");
-            cDelete.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            cDelete.MinimumWidth = 50;
-            cDelete.Name = "cDelete";
-            cDelete.ReadOnly = true;
-            cDelete.Resizable = DataGridViewTriState.True;
-            cDelete.SortMode = DataGridViewColumnSortMode.Automatic;
-            cDelete.Width = 50;
-            // 
-            // cId
-            // 
-            cId.HeaderText = "";
-            cId.MinimumWidth = 6;
-            cId.Name = "cId";
-            cId.ReadOnly = true;
-            cId.Visible = false;
             // 
             // lblCounter
             // 
@@ -296,6 +239,63 @@
             lblPages.TabIndex = 12;
             lblPages.Text = "1";
             // 
+            // c_Id
+            // 
+            c_Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            c_Id.FillWeight = 80F;
+            c_Id.HeaderText = "Sr#";
+            c_Id.MinimumWidth = 100;
+            c_Id.Name = "c_Id";
+            c_Id.ReadOnly = true;
+            c_Id.Width = 110;
+            // 
+            // c_Intitule
+            // 
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(10, 10, 10);
+            dataGridViewCellStyle3.NullValue = "(empty)";
+            c_Intitule.DefaultCellStyle = dataGridViewCellStyle3;
+            c_Intitule.FillWeight = 79.37956F;
+            c_Intitule.HeaderText = "Name";
+            c_Intitule.MinimumWidth = 6;
+            c_Intitule.Name = "c_Intitule";
+            c_Intitule.ReadOnly = true;
+            // 
+            // cEdit
+            // 
+            cEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            cEdit.FillWeight = 50F;
+            cEdit.HeaderText = "";
+            cEdit.Image = (Image)resources.GetObject("cEdit.Image");
+            cEdit.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            cEdit.MinimumWidth = 50;
+            cEdit.Name = "cEdit";
+            cEdit.ReadOnly = true;
+            cEdit.Resizable = DataGridViewTriState.True;
+            cEdit.SortMode = DataGridViewColumnSortMode.Automatic;
+            cEdit.Width = 50;
+            // 
+            // cDelete
+            // 
+            cDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            cDelete.FillWeight = 91.2408752F;
+            cDelete.HeaderText = "";
+            cDelete.Image = (Image)resources.GetObject("cDelete.Image");
+            cDelete.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            cDelete.MinimumWidth = 50;
+            cDelete.Name = "cDelete";
+            cDelete.ReadOnly = true;
+            cDelete.Resizable = DataGridViewTriState.True;
+            cDelete.SortMode = DataGridViewColumnSortMode.Automatic;
+            cDelete.Width = 50;
+            // 
+            // cId
+            // 
+            cId.HeaderText = "";
+            cId.MinimumWidth = 6;
+            cId.Name = "cId";
+            cId.ReadOnly = true;
+            cId.Visible = false;
+            // 
             // FormCategoryView
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -334,12 +334,12 @@
         private Label lblCounter;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn cIntitule;
+        private Label lblSeparator;
+        private Label lblPages;
+        private DataGridViewTextBoxColumn c_Id;
+        private DataGridViewTextBoxColumn c_Intitule;
         private DataGridViewImageColumn cEdit;
         private DataGridViewImageColumn cDelete;
         private DataGridViewTextBoxColumn cId;
-        private Label lblSeparator;
-        private Label lblPages;
     }
 }
