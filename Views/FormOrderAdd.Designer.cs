@@ -1,6 +1,6 @@
 ﻿namespace PROJET_C__GESTIONRESTO.Views
 {
-    partial class FormCategoryAdd
+    partial class FormOrderAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCategoryAdd));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -37,7 +36,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label2 = new Label();
-            txtName = new Guna.UI2.WinForms.Guna2TextBox();
+            txtQty = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2Panel2.SuspendLayout();
@@ -46,28 +45,28 @@
             // guna2Panel1
             // 
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            guna2Panel1.Size = new Size(528, 116);
+            guna2Panel1.Size = new Size(525, 89);
             // 
             // label1
             // 
-            label1.Location = new Point(132, 46);
-            label1.Size = new Size(177, 28);
-            label1.Text = "new Category";
+            label1.Location = new Point(108, 38);
+            label1.Size = new Size(117, 28);
+            label1.Text = "Package";
             // 
             // guna2PictureBox1
             // 
-            guna2PictureBox1.BackgroundImage = (Image)resources.GetObject("guna2PictureBox1.BackgroundImage");
+            guna2PictureBox1.BackgroundImage = Properties.Resources.box;
             guna2PictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            guna2PictureBox1.FillColor = Color.Empty;
+            guna2PictureBox1.FillColor = Color.Transparent;
             guna2PictureBox1.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Normal;
-            guna2PictureBox1.Location = new Point(11, 11);
             guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2PictureBox1.Size = new Size(104, 94);
             // 
             // guna2Panel2
             // 
+            guna2Panel2.Location = new Point(0, 274);
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            guna2Panel2.Size = new Size(528, 62);
+            guna2Panel2.Size = new Size(525, 62);
+            guna2Panel2.Paint += guna2Panel2_Paint;
             // 
             // btnClose
             // 
@@ -86,52 +85,53 @@
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnSave.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            btnSave.Click += btnSave_Click_1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            label2.Location = new Point(87, 162);
+            label2.Font = new Font("Poppins SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(64, 125);
             label2.Name = "label2";
-            label2.Size = new Size(57, 23);
+            label2.Size = new Size(102, 30);
             label2.TabIndex = 4;
-            label2.Text = "Name";
+            label2.Text = "Quantity *";
             // 
-            // txtName
+            // txtQty
             // 
-            txtName.CustomizableEdges = customizableEdges6;
-            txtName.DefaultText = "";
-            txtName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtName.Font = new Font("MS Reference Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtName.ForeColor = Color.Black;
-            txtName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtName.Location = new Point(87, 200);
-            txtName.Margin = new Padding(6);
-            txtName.Name = "txtName";
-            txtName.PasswordChar = '\0';
-            txtName.PlaceholderText = "ex: fruit";
-            txtName.SelectedText = "";
-            txtName.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            txtName.Size = new Size(361, 45);
-            txtName.TabIndex = 6;
+            txtQty.CustomizableEdges = customizableEdges6;
+            txtQty.DefaultText = "";
+            txtQty.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtQty.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtQty.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtQty.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtQty.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtQty.Font = new Font("MS Reference Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtQty.ForeColor = Color.Black;
+            txtQty.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtQty.Location = new Point(65, 161);
+            txtQty.Margin = new Padding(6);
+            txtQty.Name = "txtQty";
+            txtQty.PasswordChar = '\0';
+            txtQty.PlaceholderText = "enter the quantity";
+            txtQty.SelectedText = "";
+            txtQty.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            txtQty.Size = new Size(375, 41);
+            txtQty.TabIndex = 7;
             // 
-            // FormCategoryAdd
+            // FormOrderAdd
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(528, 360);
-            Controls.Add(txtName);
+            ClientSize = new Size(525, 336);
+            Controls.Add(txtQty);
             Controls.Add(label2);
-            Name = "FormCategoryAdd";
-            Text = "FormCategoryAdd";
+            Name = "FormOrderAdd";
+            Text = "FormOrderAdd";
             Controls.SetChildIndex(guna2Panel2, 0);
             Controls.SetChildIndex(guna2Panel1, 0);
             Controls.SetChildIndex(label2, 0);
-            Controls.SetChildIndex(txtName, 0);
+            Controls.SetChildIndex(txtQty, 0);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
@@ -143,6 +143,6 @@
         #endregion
 
         private Label label2;
-        public Guna.UI2.WinForms.Guna2TextBox txtName;
+        public Guna.UI2.WinForms.Guna2TextBox txtQty;
     }
 }

@@ -39,17 +39,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             orderModal form = new orderModal();
             form.pnHeader.Tag = pnContainer.Tag;
             form.ShowDialog();
-            if(form.ShowDialog() == DialogResult.OK)
-            {
-                foreach (Control control in form.Controls)
-                {
-                    Order newOrder = new Order();
-                    if(control is RadioButton radioButton && radioButton.Checked)
-                    {
-                        newOrder.Type = control.Text;
-                    }
-                }
-            }
+            //if(form.DialogResult.OK)
         }
     }
 }

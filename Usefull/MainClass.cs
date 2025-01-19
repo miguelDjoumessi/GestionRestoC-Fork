@@ -106,47 +106,22 @@ namespace PROJET_C__GESTIONRESTO.Usefull
                         {
                             // Vérifier si la propriété est une classe et non une primitive ou une collection
                             if (property.PropertyType.IsClass && property.PropertyType != typeof(string))
-                            {
-                            
-                                var intent = Activator.CreateInstance(property.PropertyType);
-
-                                using (var context = new AppDbContext(connectionString))
+                            {   
+                                try
                                 {
-                                    try
-                                    {
-                                        var dbSet = context.GetType()
-                                                    .GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                                                    .FirstOrDefault(p => p.PropertyType.IsGenericType &&
-                                                                         p.PropertyType.GetGenericArguments()[0] == property.PropertyType)
-                                                    ?.GetValue(context);
+                                    var dataProperty = property.GetValue(data);
+                                    var prop = dataProperty.GetType().GetProperty(nameProp);
 
-                                        if (dbSet != null)
-                                        {
-                                            var id = properties.FirstOrDefault(p => property.Name.Contains(p.Name))?.GetValue(data);
+                                    if (prop == null)
+                                        continue;
 
-                                            if (id != null)
-                                            {
-                                                // Charger l'objet depuis la base de données
-                                                var dbEntry = ((IQueryable<object>)dbSet)
-                                                    .AsNoTracking()
-                                                    .FirstOrDefault(e => (int)EF.Property<int>(e, "Id") == (int)id);
-
-                                                if (dbEntry != null)
-                                                {
-                                                    var result = GetValueOfProperty(dbEntry, nameProp);
-                                                    row.Add(result ?? "(not found)");
-                                                }
-                                                else
-                                                {
-                                                    row.Add("(not found)");
-                                                }
-                                            }
-                                        }
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        MessageBox.Show("Une erreur est survenu lors de l'affichage de la colonne categorie: " + ex.Message);
-                                    }
+                                    var propValue = prop.GetValue(dataProperty);
+                                    row.Add((string)propValue);
+                                    break;
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("Une erreur est survenu lors de l'affichage de la colonne categorie: " + ex.Message);
                                 }
                             }
                         }

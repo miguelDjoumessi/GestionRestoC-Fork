@@ -22,6 +22,8 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
         string connectionString;
         int page = 1;
         int totalPage = 0;
+        public List<PROJET_C__GESTIONRESTO.Models.Product> list1;
+        public List<PROJET_C__GESTIONRESTO.Models.Orderitem> SelectedProducts = new List<PROJET_C__GESTIONRESTO.Models.Orderitem>();
 
         public orderModal()
         {
@@ -59,7 +61,7 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
             }
 
             Order newOrder = new Order();
-            foreach (Control radioButton in gBType.Controls)
+            foreach (Control radioButton in GBType.Controls)
             {
                 if (radioButton is RadioButton rb && rb.Checked)
                 {
@@ -103,69 +105,79 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
 
         private void guna2DataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvListProduct.CurrentCell.OwningColumn.Name == "pAdd")
+            if (dgvListProduct.CurrentCell.OwningColumn.Name == "p_Add")
             {
+                int id = (int)dgvListProduct.CurrentRow.Cells[0].Value;
+                var product = list1.FirstOrDefault(p => p.Id == id);
+                FormOrderAdd modal = new();
+                modal.ShowDialog();
+                Orderitem oi = new Orderitem();
+                if(modal.DialogResult == DialogResult.OK) 
+                    oi.Quantity = modal.quantity;
+                oi.ProductNavigation = product;
+                SelectedProducts.Add(oi);       
 
+                LoadDgv2();
+                LoadDgv1();
             }
         }
 
         public void LoadDgv1(string? wordSearch = null)
         {
             var paginationResult = ProductProcess.GetProduct(page, wordSearch);
-            var listProduct = paginationResult.items;
+            list1 = paginationResult.items;
             totalPage = paginationResult.TotalPages;
             ListBox lb = new ListBox();
             lb.Items.Clear();
-            lb.Items.Add(p_Id.Name);
-            lb.Items.Add(p_Designation.Name);
-            lb.Items.Add(p_UnityPrice.Name);
-            lb.Items.Add(p_Intitule.Name);
-            dgvListProduct.Rows.Clear();
+            lb.Items.Add(p_Id);
+            lb.Items.Add(p_Designation);
+            lb.Items.Add(p_UnityPrice);
+            lb.Items.Add(p_Intitule);
 
-            List<string> selectedColumns = new List<string>();
-            foreach (string col in lb.Items)
+            if (SelectedProducts.Count > 0)
             {
-                selectedColumns.Add(col);
-            }
-
-            foreach (var product in listProduct)
-            {
-                var row = new List<object>();
-                foreach (var item in selectedColumns)
+                foreach (var product in SelectedProducts)
                 {
-
-                    var colName = item.Split('_')[1];
-                    var value = GetValueOfProperty(product, colName);
-
-                    if (value != null)
-                    {
-                        row.Add(value);
-                    }
-                    else
-                    {
-                        var type = product.GetType();
-                        foreach (var property in type.GetProperties())
-                        {
-
-                            if (property.PropertyType == typeof(Category))
-                            {
-                                MessageBox.Show($"j'y suis: {colName} = ");
-                                using (var context = new AppDbContext(ProductProcess.connectionString))
-                                {
-                                    var category = context.Categories.FirstOrDefault(c => c.Id == product.Category);
-                                    var name = GetValueOfProperty(category, colName);
-
-                                    row.Add(name);
-                                }
-                            }
-                        }
-                    }
+                    list1 = list1.FindAll(p => p.Id != product.Id);
                 }
-                dgvListProduct.Rows.Add(row.ToArray());
             }
 
-            //MainClass.LoadData(dgvListProduct, lb, listProduct);
+            MainClass.LoadData(dgvListProduct, lb, list1);
         }
+
+        public void LoadDgv2(string? wordSearch = null)
+        {
+            ListBox lb = new ListBox();
+            lb.Items.Clear();
+            lb.Items.Add(p_Id);
+            lb.Items.Add(p_Designation);
+            lb.Items.Add(p_UnityPrice);
+            lb.Items.Add(p_Intitule);
+            lb.Items.Add(ps_Qty);
+
+            if(SelectedProducts.Count > 0) 
+                MainClass.LoadData(dgvSelectedProduct, lb, SelectedProducts);
+        }
+
+        private void dgvSelectedProduct_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvSelectedProduct.CurrentCell.OwningColumn.Name == "ps_Delete")
+            {
+                int id = (int)dgvSelectedProduct.CurrentRow.Cells[0].Value;
+                SelectedProducts = SelectedProducts.FindAll(p => p.Id != id);
+                dgvSelectedProduct.CurrentRow.Visible = false;
+
+                LoadDgv1();
+            }
+        }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        // Methods no event
 
         public object? GetValueOfProperty<T>(T intent, string propertyName)
         {

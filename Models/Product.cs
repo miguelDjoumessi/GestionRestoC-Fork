@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PROJET_C__GESTIONRESTO.Models;
 
@@ -21,6 +22,8 @@ public partial class Product
 
     public int? Category { get; set; }
 
+    //[ForeignKey("Category")]
+    //[InverseProperty("Products")]
     public virtual Category? CategoryNavigation { get; set; }
 
     public virtual ICollection<Justification> Justifications { get; set; } = new List<Justification>();

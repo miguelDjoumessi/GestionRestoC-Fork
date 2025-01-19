@@ -469,7 +469,10 @@ public partial class AppDbContext : DbContext
                 .HasColumnName("id");
             entity.Property(e => e.CreatedAt)
                 .HasColumnType("datetime")
-                .HasColumnName("createdAt");
+                .HasColumnName("createdAt"); 
+            entity.Property(e => e.Quantity)
+                .HasColumnType("int(11)")
+                .HasColumnName("quantity");
             entity.Property(e => e.Order).HasColumnType("int(11)");
             entity.Property(e => e.Product).HasColumnType("int(11)");
             entity.Property(e => e.UpdatedAt)
@@ -518,7 +521,7 @@ public partial class AppDbContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("updatedAt");
 
-            entity.HasOne(d => d.CategoryNavigation).WithMany(p => p.Products)
+            entity.HasOne(d => d.CategoryNavigation).WithMany(c => c.Products)
                 .HasForeignKey(d => d.Category)
                 .HasConstraintName("fk_Product_Categorie1");
         });

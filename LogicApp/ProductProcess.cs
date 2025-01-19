@@ -77,13 +77,14 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                 if (filter != null)
                 {
                     paginationResult = context.Products.Where(p => p.Designation.Contains(filter) || context.Categories.Any(c => c.Id == p.Category && c.Intitule.Contains(filter)))
-                             .GetPaginedItems(page);
+                        .Include(p => p.CategoryNavigation)
+                        .GetPaginedItems(page);
                 }
                 else
                 {
                     try
                     {
-                        paginationResult = context.Products.GetPaginedItems(page);
+                        paginationResult = context.Products.Include(p => p.CategoryNavigation).GetPaginedItems(page);
                     }
                     catch (Exception ex)
                     {

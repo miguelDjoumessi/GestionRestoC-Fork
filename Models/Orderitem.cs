@@ -15,6 +15,8 @@ public partial class Orderitem
 
     public int Product { get; set; }
 
+    public int Quantity { get; set; }
+
     public virtual Order OrderNavigation { get; set; } = null!;
 
     public virtual Product ProductNavigation { get; set; } = null!;
