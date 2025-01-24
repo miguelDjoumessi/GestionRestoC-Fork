@@ -516,7 +516,9 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.Image)
                 .HasColumnType("text")
                 .HasColumnName("image");
-            entity.Property(e => e.UnityPrice).HasColumnName("unity_price");
+            entity.Property(e => e.UnityPrice)
+                 .HasColumnName("unity_price")
+                 .HasColumnType("float");
             entity.Property(e => e.UpdatedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("updatedAt");

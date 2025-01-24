@@ -20,8 +20,8 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
     public partial class orderModal : Form
     {
         string connectionString;
-        int page = 1;
-        int totalPage = 0;
+        int currentPage = 1;
+        int totalPage = 1;
         public List<PROJET_C__GESTIONRESTO.Models.Product> list1;
         public List<PROJET_C__GESTIONRESTO.Models.Product> SelectedProducts = new List<PROJET_C__GESTIONRESTO.Models.Product>();
 
@@ -36,6 +36,9 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
         private void orderModal_Load(object sender, EventArgs e)
         {
             LoadDgv1();
+            lblCurrentPage.Text = currentPage.ToString();
+            lblTotalPage.Text = totalPage.ToString();
+            cbTable.Items.Add("1-bonabo");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -68,31 +71,6 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
                     newOrder.Type = radioButton.Text;
                 }
             }
-        }
-
-        private void CheckTextBIfNotEmpty()
-        {
-            foreach (Control control in gBClient.Controls)
-            {
-                if (control is TextBox txt && string.IsNullOrEmpty(txt.Text))
-                {
-                    MessageBox.Show("Veuillez verifier que tout les champs sont correctement remplis avant de valider", "Avertissement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    throw new Exception("the field cannot be empty");
-                }
-            }
-        }
-        private Client CheckIfClientExist(string name, string surname, string phone)
-        {
-            using (var context = new AppDbContext(connectionString))
-            {
-                var client = context.Clients.FirstOrDefault(clt => clt.Name == name && clt.Prenom == surname && clt.Tel == phone);
-                return client;
-            }
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -133,7 +111,66 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
 
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
         {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                lblCurrentPage.Text = currentPage.ToString();
+                LoadDgv1(txtSearch.Text);
+            }
+            else
+            {
+                MessageBox.Show("limit atteint", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
+        private void guna2CirclePictureBox2_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPage)
+            {
+                currentPage++;
+                lblCurrentPage.Text = currentPage.ToString();
+                LoadDgv1(txtSearch.Text);
+            }
+            else
+            {
+                MessageBox.Show("limit atteint", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void RadbtnHere_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RadbtnHere.Checked)
+                cbTable.Enabled = true;
+            else
+            {
+                cbTable.Text = string.Empty;
+                cbTable.Enabled = false;
+            }
+        }
+
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            LoadDgv1(txtSearch.Text);
+        }
+
+        private void RadbtnDeliver_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RadBtnDeliver.Checked)
+                gbZone.Enabled = true;
+            else
+                gbZone.Enabled = false;
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Order order = new();
+
+            if (RadbtnHere.Checked)
+            {
+                // une commande est destiné aussi a une table
+                // ajouter propriete table a la classe Order et dans la bd
+            }
         }
 
 
@@ -155,7 +192,7 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
 
         public void LoadDgv1(string? wordSearch = null)
         {
-            var paginationResult = ProductProcess.GetProduct(page, wordSearch);
+            var paginationResult = ProductProcess.GetProduct(currentPage, wordSearch);
             list1 = paginationResult.items;
             totalPage = paginationResult.TotalPages;
             ListBox lb = new ListBox();
@@ -190,6 +227,26 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
                 MainClass.LoadData(dgvSelectedProduct, lb, SelectedProducts);
         }
 
+        private void CheckTextBIfNotEmpty()
+        {
+            foreach (Control control in gBClient.Controls)
+            {
+                if (control is TextBox txt && string.IsNullOrEmpty(txt.Text))
+                {
+                    MessageBox.Show("Veuillez verifier que tout les champs sont correctement remplis avant de valider", "Avertissement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    throw new Exception("the field cannot be empty");
+                }
+            }
+        }
+        private Client CheckIfClientExist(string name, string surname, string phone)
+        {
+            using (var context = new AppDbContext(connectionString))
+            {
+                var client = context.Clients.FirstOrDefault(clt => clt.Name == name && clt.Prenom == surname && clt.Tel == phone);
+                return client;
+            }
+        }
+
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         public extern static void ReleaseCapture();
 
@@ -201,6 +258,5 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
     }
 }

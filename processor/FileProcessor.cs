@@ -14,7 +14,7 @@ namespace PROJET_C__GESTIONRESTO.processor
             string destinationDirectory = "";
             using (ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Imge Files (*.jpg)|*.jpg|(*.png)|*.png"; // Filtre pour types de fichiers
+                ofd.Filter = "Image Files (*.jpg)|*.jpg|(*.png)|*.png"; // Filtre pour types de fichiers
                 ofd.Multiselect = false;
 
                 if (ofd.ShowDialog() == DialogResult.OK)

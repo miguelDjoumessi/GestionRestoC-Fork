@@ -24,7 +24,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             InitializeComponent();
             var configuration = ConfigurationHelper.GetConfiguration();
             CategoryProcess.connectionString = configuration.GetValue<string>("ConnectionString:MySqlConnection");
-            
+
         }
 
         private void FormCategoryView_Load(object sender, EventArgs e)
@@ -80,7 +80,6 @@ namespace PROJET_C__GESTIONRESTO.Views
                 FormCategoryAdd modal = new FormCategoryAdd(categoryId);
                 modal.txtName.Text = (string)dgvCategory.CurrentRow.Cells[1].Value;
                 modal.ShowDialog();
-
 
                 GetData();
             }
