@@ -40,7 +40,6 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(orderModal));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -55,6 +54,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(orderModal));
             pnHeader = new Panel();
             guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -74,13 +74,6 @@
             p_Add = new DataGridViewImageColumn();
             pCatId = new DataGridViewTextBoxColumn();
             dgvSelectedProduct = new Guna.UI2.WinForms.Guna2DataGridView();
-            ps_Id = new DataGridViewTextBoxColumn();
-            ps_Intitule = new DataGridViewTextBoxColumn();
-            ps_Price = new DataGridViewTextBoxColumn();
-            ps_Category = new DataGridViewTextBoxColumn();
-            ps_Qty = new DataGridViewTextBoxColumn();
-            ps_Delete = new DataGridViewImageColumn();
-            pSCatId = new DataGridViewTextBoxColumn();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -105,6 +98,13 @@
             RadBtnDeliver = new RadioButton();
             RadBtnOut = new RadioButton();
             RadbtnHere = new RadioButton();
+            ps_Id = new DataGridViewTextBoxColumn();
+            ps_Designation = new DataGridViewTextBoxColumn();
+            ps_UnityPrice = new DataGridViewTextBoxColumn();
+            ps_Intitule = new DataGridViewTextBoxColumn();
+            ps_Quantity = new DataGridViewTextBoxColumn();
+            ps_Delete = new DataGridViewImageColumn();
+            pSCatId = new DataGridViewTextBoxColumn();
             pnHeader.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).BeginInit();
@@ -388,7 +388,7 @@
             dgvSelectedProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvSelectedProduct.ColumnHeadersHeight = 40;
             dgvSelectedProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvSelectedProduct.Columns.AddRange(new DataGridViewColumn[] { ps_Id, ps_Intitule, ps_Price, ps_Category, ps_Qty, ps_Delete, pSCatId });
+            dgvSelectedProduct.Columns.AddRange(new DataGridViewColumn[] { ps_Id, ps_Designation, ps_UnityPrice, ps_Intitule, ps_Quantity, ps_Delete, pSCatId });
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.White;
             dataGridViewCellStyle6.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -431,63 +431,6 @@
             dgvSelectedProduct.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvSelectedProduct.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dgvSelectedProduct.CellClick += dgvSelectedProduct_CellClick;
-            // 
-            // ps_Id
-            // 
-            ps_Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ps_Id.HeaderText = "Sr#";
-            ps_Id.MinimumWidth = 50;
-            ps_Id.Name = "ps_Id";
-            ps_Id.ReadOnly = true;
-            ps_Id.Width = 60;
-            // 
-            // ps_Intitule
-            // 
-            ps_Intitule.HeaderText = "Designation";
-            ps_Intitule.MinimumWidth = 100;
-            ps_Intitule.Name = "ps_Intitule";
-            ps_Intitule.ReadOnly = true;
-            // 
-            // ps_Price
-            // 
-            ps_Price.HeaderText = "Price";
-            ps_Price.MinimumWidth = 6;
-            ps_Price.Name = "ps_Price";
-            ps_Price.ReadOnly = true;
-            // 
-            // ps_Category
-            // 
-            ps_Category.HeaderText = "Category";
-            ps_Category.MinimumWidth = 6;
-            ps_Category.Name = "ps_Category";
-            ps_Category.ReadOnly = true;
-            // 
-            // ps_Qty
-            // 
-            ps_Qty.HeaderText = "Quantity";
-            ps_Qty.MinimumWidth = 6;
-            ps_Qty.Name = "ps_Qty";
-            ps_Qty.ReadOnly = true;
-            // 
-            // ps_Delete
-            // 
-            ps_Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ps_Delete.HeaderText = "";
-            ps_Delete.Image = (Image)resources.GetObject("ps_Delete.Image");
-            ps_Delete.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            ps_Delete.MinimumWidth = 6;
-            ps_Delete.Name = "ps_Delete";
-            ps_Delete.ReadOnly = true;
-            ps_Delete.Resizable = DataGridViewTriState.True;
-            ps_Delete.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // pSCatId
-            // 
-            pSCatId.HeaderText = "";
-            pSCatId.MinimumWidth = 6;
-            pSCatId.Name = "pSCatId";
-            pSCatId.ReadOnly = true;
-            pSCatId.Visible = false;
             // 
             // guna2Button3
             // 
@@ -809,6 +752,63 @@
             RadbtnHere.Text = "eat here";
             RadbtnHere.UseVisualStyleBackColor = true;
             // 
+            // ps_Id
+            // 
+            ps_Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ps_Id.HeaderText = "Sr#";
+            ps_Id.MinimumWidth = 50;
+            ps_Id.Name = "ps_Id";
+            ps_Id.ReadOnly = true;
+            ps_Id.Width = 60;
+            // 
+            // ps_Designation
+            // 
+            ps_Designation.HeaderText = "Designation";
+            ps_Designation.MinimumWidth = 100;
+            ps_Designation.Name = "ps_Designation";
+            ps_Designation.ReadOnly = true;
+            // 
+            // ps_UnityPrice
+            // 
+            ps_UnityPrice.HeaderText = "Price";
+            ps_UnityPrice.MinimumWidth = 6;
+            ps_UnityPrice.Name = "ps_UnityPrice";
+            ps_UnityPrice.ReadOnly = true;
+            // 
+            // ps_Intitule
+            // 
+            ps_Intitule.HeaderText = "Category";
+            ps_Intitule.MinimumWidth = 6;
+            ps_Intitule.Name = "ps_Intitule";
+            ps_Intitule.ReadOnly = true;
+            // 
+            // ps_Quantity
+            // 
+            ps_Quantity.HeaderText = "Quantity";
+            ps_Quantity.MinimumWidth = 6;
+            ps_Quantity.Name = "ps_Quantity";
+            ps_Quantity.ReadOnly = true;
+            // 
+            // ps_Delete
+            // 
+            ps_Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ps_Delete.HeaderText = "";
+            ps_Delete.Image = (Image)resources.GetObject("ps_Delete.Image");
+            ps_Delete.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            ps_Delete.MinimumWidth = 6;
+            ps_Delete.Name = "ps_Delete";
+            ps_Delete.ReadOnly = true;
+            ps_Delete.Resizable = DataGridViewTriState.True;
+            ps_Delete.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // pSCatId
+            // 
+            pSCatId.HeaderText = "";
+            pSCatId.MinimumWidth = 6;
+            pSCatId.Name = "pSCatId";
+            pSCatId.ReadOnly = true;
+            pSCatId.Visible = false;
+            // 
             // orderModal
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
@@ -890,10 +890,10 @@
         private Label label7;
         private Label label6;
         private DataGridViewTextBoxColumn ps_Id;
+        private DataGridViewTextBoxColumn ps_Designation;
+        private DataGridViewTextBoxColumn ps_UnityPrice;
         private DataGridViewTextBoxColumn ps_Intitule;
-        private DataGridViewTextBoxColumn ps_Price;
-        private DataGridViewTextBoxColumn ps_Category;
-        private DataGridViewTextBoxColumn ps_Qty;
+        private DataGridViewTextBoxColumn ps_Quantity;
         private DataGridViewImageColumn ps_Delete;
         private DataGridViewTextBoxColumn pSCatId;
     }

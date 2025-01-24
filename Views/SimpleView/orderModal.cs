@@ -23,7 +23,7 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
         int page = 1;
         int totalPage = 0;
         public List<PROJET_C__GESTIONRESTO.Models.Product> list1;
-        public List<PROJET_C__GESTIONRESTO.Models.Orderitem> SelectedProducts = new List<PROJET_C__GESTIONRESTO.Models.Orderitem>();
+        public List<PROJET_C__GESTIONRESTO.Models.Product> SelectedProducts = new List<PROJET_C__GESTIONRESTO.Models.Product>();
 
         public orderModal()
         {
@@ -111,52 +111,12 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
                 var product = list1.FirstOrDefault(p => p.Id == id);
                 FormOrderAdd modal = new();
                 modal.ShowDialog();
-                Orderitem oi = new Orderitem();
-                if(modal.DialogResult == DialogResult.OK) 
-                    oi.Quantity = modal.quantity;
-                oi.ProductNavigation = product;
-                SelectedProducts.Add(oi);       
+                product.Quantity = modal.quantity;
+                SelectedProducts.Add(product);
 
                 LoadDgv2();
                 LoadDgv1();
             }
-        }
-
-        public void LoadDgv1(string? wordSearch = null)
-        {
-            var paginationResult = ProductProcess.GetProduct(page, wordSearch);
-            list1 = paginationResult.items;
-            totalPage = paginationResult.TotalPages;
-            ListBox lb = new ListBox();
-            lb.Items.Clear();
-            lb.Items.Add(p_Id);
-            lb.Items.Add(p_Designation);
-            lb.Items.Add(p_UnityPrice);
-            lb.Items.Add(p_Intitule);
-
-            if (SelectedProducts.Count > 0)
-            {
-                foreach (var product in SelectedProducts)
-                {
-                    list1 = list1.FindAll(p => p.Id != product.Id);
-                }
-            }
-
-            MainClass.LoadData(dgvListProduct, lb, list1);
-        }
-
-        public void LoadDgv2(string? wordSearch = null)
-        {
-            ListBox lb = new ListBox();
-            lb.Items.Clear();
-            lb.Items.Add(p_Id);
-            lb.Items.Add(p_Designation);
-            lb.Items.Add(p_UnityPrice);
-            lb.Items.Add(p_Intitule);
-            lb.Items.Add(ps_Qty);
-
-            if(SelectedProducts.Count > 0) 
-                MainClass.LoadData(dgvSelectedProduct, lb, SelectedProducts);
         }
 
         private void dgvSelectedProduct_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -191,6 +151,43 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
             }
 
             return null;
+        }
+
+        public void LoadDgv1(string? wordSearch = null)
+        {
+            var paginationResult = ProductProcess.GetProduct(page, wordSearch);
+            list1 = paginationResult.items;
+            totalPage = paginationResult.TotalPages;
+            ListBox lb = new ListBox();
+            lb.Items.Clear();
+            lb.Items.Add(p_Id);
+            lb.Items.Add(p_Designation);
+            lb.Items.Add(p_UnityPrice);
+            lb.Items.Add(p_Intitule);
+
+            if (SelectedProducts.Count > 0)
+            {
+                foreach (var product in SelectedProducts)
+                {
+                    list1 = list1.FindAll(p => p.Id != product.Id);
+                }
+            }
+
+            MainClass.LoadData(dgvListProduct, lb, list1);
+        }
+
+        public void LoadDgv2(string? wordSearch = null)
+        {
+            ListBox lb = new ListBox();
+            lb.Items.Clear();
+            lb.Items.Add(ps_Id);
+            lb.Items.Add(ps_Designation);
+            lb.Items.Add(ps_UnityPrice);
+            lb.Items.Add(ps_Intitule);
+            lb.Items.Add(ps_Quantity);
+
+            if (SelectedProducts.Count > 0)
+                MainClass.LoadData(dgvSelectedProduct, lb, SelectedProducts);
         }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]

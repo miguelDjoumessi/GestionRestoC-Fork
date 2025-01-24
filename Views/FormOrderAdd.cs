@@ -29,8 +29,12 @@ namespace PROJET_C__GESTIONRESTO.Views
             if (txtQty.Text == "")
                 MessageBox.Show("Vous devez entrez un nombre entier avant de continuer", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-            if(Int32.TryParse(txtQty.Text, out quantity))
-                MessageBox.Show("votre valeur: "  + quantity, "succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (Int32.TryParse(txtQty.Text, out quantity))
+            {
+                this.Close();
+            }
+            else
+                MessageBox.Show("veuillez entrer un nombre");
 
         }
     }

@@ -14,6 +14,9 @@ public partial class Product
 
     public float? UnityPrice { get; set; }
 
+    [NotMapped]
+    public int? Quantity { get; set; } = 0;
+
     public string? Image { get; set; }
 
     public DateTime CreatedAt { get; set; }
