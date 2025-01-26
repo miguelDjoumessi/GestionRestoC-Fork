@@ -31,14 +31,17 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
             this.Text = string.Empty;
             var config = ConfigurationHelper.GetConfiguration();
             ProductProcess.connectionString = config.GetValue<string>("ConnectionString:MySqlConnection");
+            OrderProcess.connectionString = config.GetValue<string>("ConnectionString:MySqlConnection");
+            TableProcess.connectionString = config.GetValue<string>("ConnectionString:MySqlConnection");
+            OrderItemProcess.connectionString = config.GetValue<string>("ConnectionString:MySqlConnection");
         }
 
         private void orderModal_Load(object sender, EventArgs e)
         {
             LoadDgv1();
+            LoadTableItem();
             lblCurrentPage.Text = currentPage.ToString();
             lblTotalPage.Text = totalPage.ToString();
-            cbTable.Items.Add("1-bonabo");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -166,15 +169,43 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
         {
             Order order = new();
 
-            if (RadbtnHere.Checked)
+            if (RadbtnHere.Checked == true)
             {
-                // une commande est destiné aussi a une table
-                // ajouter propriete table a la classe Order et dans la bd
+                if (SelectedProducts.Count <= 0 || cbTable.Text == "")
+                {
+                    MessageBox.Show("Veuillez choisir un element du menu ou specifier la table avant de commander", "Avertissement", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                foreach (var product in SelectedProducts)
+                {
+                    Orderitem orderitem = new()
+                    {
+                        Product = product.Id
+                    };
+                    //OrderItemProcess.SaveOrderItem(orderitem);
+                    order.Orderitems.Add(orderitem);
+                }
+                //var table = TableProcess.GetTable(1, cbTable.SelectedItem.ToString()).items;
+                //order.Table = table[0].Id;
+
+                OrderProcess.SaveOrder(order);
             }
         }
 
 
         // Methods no event
+
+        public void LoadTableItem()
+        {
+            var paginator = TableProcess.GetTable(1);
+            List<Table> tables = paginator.items;
+            
+            foreach (var table in tables)
+            {
+                cbTable.Items.Add(table.Position);
+            }
+        }
 
         public object? GetValueOfProperty<T>(T intent, string propertyName)
         {
@@ -258,5 +289,6 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
     }
 }

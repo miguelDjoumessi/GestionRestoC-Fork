@@ -21,9 +21,13 @@ public partial class Order
 
     public int Zone { get; set; }
 
+    public int Table { get; set; }
+
     public virtual Client ClientNavigation { get; set; } = null!;
 
     public virtual ICollection<Orderitem> Orderitems { get; set; } = new List<Orderitem>();
 
     public virtual Zone ZoneNavigation { get; set; } = null!;
+
+    public virtual Table TableNavigation { get; set; } = null!;
 }

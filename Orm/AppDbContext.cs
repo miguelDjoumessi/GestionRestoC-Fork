@@ -416,6 +416,8 @@ public partial class AppDbContext : DbContext
 
             entity.HasIndex(e => e.Zone, "fk_Commande_Zone1_idx");
 
+            entity.HasIndex(e => e.Table, "fk_Commande_Table1_idx");
+
             entity.HasIndex(e => e.Id, "id_UNIQUE").IsUnique();
 
             entity.Property(e => e.Id)
@@ -440,6 +442,9 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.Zone)
                 .HasColumnType("int(11)")
                 .HasColumnName("zone");
+            entity.Property(e => e.Table)
+                .HasColumnType("int(11)")
+                .HasColumnName("table_id");
 
             entity.HasOne(d => d.ClientNavigation).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.Client)
@@ -450,6 +455,11 @@ public partial class AppDbContext : DbContext
                 .HasForeignKey(d => d.Zone)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_Commande_Zone1");
+
+            entity.HasOne(o => o.TableNavigation).WithMany(t => t.Orders)
+                .HasForeignKey(d => d.Table)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_Commande_Table1");
         });
 
         modelBuilder.Entity<Orderitem>(entity =>

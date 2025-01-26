@@ -16,4 +16,6 @@ public partial class Table
     public DateTime UpdateAt { get; set; }
 
     public virtual ICollection<Attribution> Attributions { get; set; } = new List<Attribution>();
+
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }

@@ -7,20 +7,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace PROJET_C__GESTIONRESTO.LogicApp
 {
     class OrderProcess
     {
-        public readonly string? connectionString;
+        public static string? connectionString;
 
         public OrderProcess()
         {
-            var configuration = ConfigurationHelper.GetConfiguration();
-            this.connectionString = configuration.GetValue<string>("ConnectionString:MySqlConnection");
         }
 
-        public int SaveOrder(Order order)
+        public static int SaveOrder(Order order)
         {
             int lines = 0;
 
@@ -29,6 +29,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                 try
                 {
                     context.Orders.Add(order);
+                    MessageBox.Show("good");
                     lines = context.SaveChanges();
                 }
                 catch (Exception ex)
@@ -40,7 +41,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             }
         }
 
-        public int UpdateOrder(int oldOrderId, Order newOrder)
+        public static int UpdateOrder(int oldOrderId, Order newOrder)
         {
             int lines = 0;
 
@@ -61,7 +62,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                 return lines;
             }
         }
-        public int DeleteOrrder(int orderId)
+        public static int DeleteOrrder(int orderId)
         {
             int lines = 0;
 
@@ -86,7 +87,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             }
         }
 
-        public List<Order> FilterItems(string searchValue)
+        public static List<Order> FilterItems(string searchValue)
         {
             List<Order> listOrder = new List<Order>();
 
@@ -108,7 +109,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             }
         }
 
-        public List<Product> GetProductForOrder(Order order)
+        public static List<Product> GetProductForOrder(Order order)
         {
             List<Product> products = new List<Product>();
 
@@ -130,7 +131,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                 return products;
             }
         }
-        public int CountOrderByCover(Cover cover)
+        public static int CountOrderByCover(Cover cover)
         {
             int count = 0;
 

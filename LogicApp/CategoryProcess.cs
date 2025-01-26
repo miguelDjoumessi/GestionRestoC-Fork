@@ -17,7 +17,6 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
 
         public CategoryProcess()
         {
-            
         }
 
         public static PaginationContext<Category> GetCategories(int page, string? filterWord = null)

@@ -53,10 +53,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Panel();
             guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -94,6 +94,7 @@
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             gBClient = new GroupBox();
+            cbTable = new Guna.UI2.WinForms.Guna2ComboBox();
             txtPhone = new TextBox();
             txtSurname = new TextBox();
             txtName = new TextBox();
@@ -106,7 +107,6 @@
             RadBtnOut = new RadioButton();
             RadbtnHere = new RadioButton();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            cbTable = new Guna.UI2.WinForms.Guna2ComboBox();
             pnHeader.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).BeginInit();
@@ -676,6 +676,24 @@
             gBClient.TabStop = false;
             gBClient.Text = "Client";
             // 
+            // cbTable
+            // 
+            cbTable.BackColor = Color.Transparent;
+            cbTable.BorderRadius = 5;
+            cbTable.CustomizableEdges = customizableEdges15;
+            cbTable.DrawMode = DrawMode.OwnerDrawFixed;
+            cbTable.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbTable.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbTable.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbTable.Font = new Font("Segoe UI", 10F);
+            cbTable.ForeColor = Color.FromArgb(68, 88, 112);
+            cbTable.ItemHeight = 30;
+            cbTable.Location = new Point(121, 190);
+            cbTable.Name = "cbTable";
+            cbTable.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            cbTable.Size = new Size(312, 36);
+            cbTable.TabIndex = 2;
+            // 
             // txtPhone
             // 
             txtPhone.Location = new Point(121, 146);
@@ -810,24 +828,6 @@
             guna2Button1.TabIndex = 1;
             guna2Button1.Text = "Save";
             guna2Button1.Click += guna2Button1_Click;
-            // 
-            // cbTable
-            // 
-            cbTable.BackColor = Color.Transparent;
-            cbTable.BorderRadius = 5;
-            cbTable.CustomizableEdges = customizableEdges15;
-            cbTable.DrawMode = DrawMode.OwnerDrawFixed;
-            cbTable.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbTable.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbTable.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbTable.Font = new Font("Segoe UI", 10F);
-            cbTable.ForeColor = Color.FromArgb(68, 88, 112);
-            cbTable.ItemHeight = 30;
-            cbTable.Location = new Point(121, 190);
-            cbTable.Name = "cbTable";
-            cbTable.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            cbTable.Size = new Size(312, 36);
-            cbTable.TabIndex = 2;
             // 
             // orderModal
             // 
