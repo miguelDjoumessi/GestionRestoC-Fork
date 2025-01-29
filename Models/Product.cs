@@ -1,10 +1,11 @@
-﻿using System;
+﻿using PROJET_C__GESTIONRESTO.Usefull.Interface;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PROJET_C__GESTIONRESTO.Models;
 
-public partial class Product
+public partial class Product : IHasTimestamp
 {
     public int Id { get; set; }
 

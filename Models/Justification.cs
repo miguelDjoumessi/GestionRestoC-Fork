@@ -1,9 +1,10 @@
-﻿using System;
+﻿using PROJET_C__GESTIONRESTO.Usefull.Interface;
+using System;
 using System.Collections.Generic;
 
 namespace PROJET_C__GESTIONRESTO.Models;
 
-public partial class Justification
+public partial class Justification : IHasTimestamp
 {
     public int Id { get; set; }
 

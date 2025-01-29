@@ -1,9 +1,10 @@
-﻿using System;
+﻿using PROJET_C__GESTIONRESTO.Usefull.Interface;
+using System;
 using System.Collections.Generic;
 
 namespace PROJET_C__GESTIONRESTO.Models;
 
-public partial class Attribution
+public partial class Attribution: IHasTimestamp
 {
     public int Id { get; set; }
 

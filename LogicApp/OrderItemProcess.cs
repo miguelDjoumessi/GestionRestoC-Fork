@@ -26,7 +26,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: " + ex.InnerException, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 return lines;

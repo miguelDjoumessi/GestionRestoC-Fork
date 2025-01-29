@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
 using PROJET_C__GESTIONRESTO.Models;
+using PROJET_C__GESTIONRESTO.Usefull.Interface;
 
 namespace PROJET_C__GESTIONRESTO.Orm;
 
@@ -17,6 +18,29 @@ public partial class AppDbContext : DbContext
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
+    }
+
+    public override int SaveChanges()
+    {
+        var entries = ChangeTracker.Entries()
+            .Where(e => e.Entity is IHasTimestamp &&
+                (e.State == EntityState.Added || e.State == EntityState.Modified)
+            );
+        foreach (var entry in entries)
+        {
+            var entity = (IHasTimestamp)entry.Entity;
+            if (entry.State == EntityState.Added)
+            {
+                entity.CreatedAt = DateTime.UtcNow;
+                entity.UpdatedAt = entity.CreatedAt;
+            }
+            else if (entry.State == EntityState.Modified)
+            {
+                entity.UpdatedAt = DateTime.UtcNow;
+            }
+        }
+
+        return base.SaveChanges();
     }
 
     public virtual DbSet<Attribution> Attributions { get; set; }
@@ -258,7 +282,7 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.Id)
                 .HasColumnType("int(11)")
                 .HasColumnName("id");
-            entity.Property(e => e.CreateadAt)
+            entity.Property(e => e.CreatedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("createadAt");
             entity.Property(e => e.Email)
@@ -386,7 +410,7 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.Id)
                 .HasColumnType("int(11)")
                 .HasColumnName("id");
-            entity.Property(e => e.CreateAt)
+            entity.Property(e => e.CreatedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("createAt");
             entity.Property(e => e.Menu).HasColumnType("int(11)");
@@ -556,7 +580,7 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.Position)
                 .HasMaxLength(45)
                 .HasColumnName("position");
-            entity.Property(e => e.UpdateAt)
+            entity.Property(e => e.UpdatedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("updateAt");
         });

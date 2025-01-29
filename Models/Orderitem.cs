@@ -1,10 +1,16 @@
-﻿using System;
+﻿using PROJET_C__GESTIONRESTO.Usefull.Interface;
+using System;
 using System.Collections.Generic;
 
 namespace PROJET_C__GESTIONRESTO.Models;
 
-public partial class Orderitem
+public partial class Orderitem : IHasTimestamp
 {
+    public Orderitem() 
+    {
+        CreatedAt = DateTime.Now;
+        UpdatedAt = DateTime.Now;
+    }
     public int Id { get; set; }
 
     public DateTime CreatedAt { get; set; }

@@ -29,6 +29,7 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
         {
             InitializeComponent();
             this.Text = string.Empty;
+            RadbtnHere.Checked = true;
             var config = ConfigurationHelper.GetConfiguration();
             ProductProcess.connectionString = config.GetValue<string>("ConnectionString:MySqlConnection");
             OrderProcess.connectionString = config.GetValue<string>("ConnectionString:MySqlConnection");
@@ -167,29 +168,35 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Order order = new();
+            Order order = new()
+            {
+                Type = "eat here",
+                NumCom = "C0002536"
+            };
 
             if (RadbtnHere.Checked == true)
             {
-                if (SelectedProducts.Count <= 0 || cbTable.Text == "")
+                if (SelectedProducts.Count <= 0 || string.IsNullOrEmpty(cbTable.Text))
                 {
                     MessageBox.Show("Veuillez choisir un element du menu ou specifier la table avant de commander", "Avertissement", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
+                var table = TableProcess.GetTable(1, cbTable.SelectedItem.ToString()).items;
+                order.Table = table[0].Id;
+                OrderProcess.SaveOrder(order);
 
                 foreach (var product in SelectedProducts)
                 {
                     Orderitem orderitem = new()
                     {
-                        Product = product.Id
+                        Product = product.Id,
+                        Order = order.Id,
+                        Quantity = (int) product.Quantity
                     };
-                    //OrderItemProcess.SaveOrderItem(orderitem);
-                    order.Orderitems.Add(orderitem);
+                    OrderItemProcess.SaveOrderItem(orderitem);
                 }
-                //var table = TableProcess.GetTable(1, cbTable.SelectedItem.ToString()).items;
-                //order.Table = table[0].Id;
+                
 
-                OrderProcess.SaveOrder(order);
             }
         }
 

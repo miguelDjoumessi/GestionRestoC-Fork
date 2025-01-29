@@ -527,7 +527,7 @@
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe Print", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = SystemColors.ControlDarkDark;
-            guna2HtmlLabel1.Location = new Point(17, 23);
+            guna2HtmlLabel1.Location = new Point(29, 23);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(148, 40);
             guna2HtmlLabel1.TabIndex = 5;

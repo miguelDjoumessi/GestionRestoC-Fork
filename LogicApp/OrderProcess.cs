@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace PROJET_C__GESTIONRESTO.LogicApp
 {
@@ -29,12 +30,11 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                 try
                 {
                     context.Orders.Add(order);
-                    MessageBox.Show("good");
                     lines = context.SaveChanges();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: " + ex.InnerException, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 return lines;

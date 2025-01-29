@@ -1,9 +1,10 @@
-﻿using System;
+﻿using PROJET_C__GESTIONRESTO.Usefull.Interface;
+using System;
 using System.Collections.Generic;
 
 namespace PROJET_C__GESTIONRESTO.Models;
 
-public partial class Cartitem
+public partial class Cartitem: IHasTimestamp
 {
     public int Id { get; set; }
 
@@ -11,9 +12,9 @@ public partial class Cartitem
 
     public string? Unity { get; set; }
 
-    public DateTime? CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; }
 
-    public DateTime? UpdatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
 
     public int Cart { get; set; }
 
