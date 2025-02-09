@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static TheArtOfDevHtmlRenderer.Adapters.RGraphicsPath;
 
 namespace PROJET_C__GESTIONRESTO.Views.SimpleView
 {
@@ -35,6 +36,9 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
             OrderProcess.connectionString = config.GetValue<string>("ConnectionString:MySqlConnection");
             TableProcess.connectionString = config.GetValue<string>("ConnectionString:MySqlConnection");
             OrderItemProcess.connectionString = config.GetValue<string>("ConnectionString:MySqlConnection");
+            ZoneProcess.connectionString = config.GetValue<string>("ConnectionString:MySqlConnection");
+            ClientProcess.connecctionString = config.GetValue<string>("ConnectionString:MySqlConnection");
+            CoverProcess.connectionString = config.GetValue<string>("ConnectionString:MySqlConnection");
         }
 
         private void orderModal_Load(object sender, EventArgs e)
@@ -43,6 +47,8 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
             LoadTableItem();
             lblCurrentPage.Text = currentPage.ToString();
             lblTotalPage.Text = totalPage.ToString();
+            LoadSectorItem();
+            LoadQuaterItem(cbSecteur.Items[0].ToString());
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -174,33 +180,64 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
                 NumCom = "C0002536"
             };
 
-            if (RadbtnHere.Checked == true)
+            if (SelectedProducts.Count <= 0)
             {
-                if (SelectedProducts.Count <= 0 || string.IsNullOrEmpty(cbTable.Text))
+                MessageBox.Show("Veuillez choisir un element du menu avant de commander", "Avertissement", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (RadbtnHere.Checked)
+            {
+                if (string.IsNullOrEmpty(cbTable.Text))
                 {
-                    MessageBox.Show("Veuillez choisir un element du menu ou specifier la table avant de commander", "Avertissement", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Veuillez selectionner un table", "Avertissement", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
+
                 var table = TableProcess.GetTable(1, cbTable.SelectedItem.ToString()).items;
                 order.Table = table[0].Id;
+                order.Type = RadbtnHere.Text;
                 OrderProcess.SaveOrder(order);
 
-                foreach (var product in SelectedProducts)
+                JoinOrderItemToOrder(SelectedProducts, order);
+            }
+            else if(RadBtnOut.Checked)
+            {
+                order.Type = RadBtnOut.Text;
+                OrderProcess.SaveOrder(order);
+                JoinOrderItemToOrder(SelectedProducts, order);
+            }
+            else if(RadBtnDeliver.Checked)
+            {
+                foreach(var control in gBClient.Controls)
                 {
-                    Orderitem orderitem = new()
+                    if (control is TextBox tb && string.IsNullOrEmpty(tb.Text))
                     {
-                        Product = product.Id,
-                        Order = order.Id,
-                        Quantity = (int) product.Quantity
-                    };
-                    OrderItemProcess.SaveOrderItem(orderitem);
+                        MessageBox.Show("Veuillez entrer tout les information sur le client", "Avertissement", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
                 }
-                
-
+                if(cbSecteur.SelectedItem == null || cbQuatier.SelectedItem == null)
+                {
+                    MessageBox.Show("Il semblerait que vous n'avait fournir toute les information sur la zone de livraison", "Avertissement", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                order.Type = RadBtnDeliver.Text;
+                Client client = new()
+                {
+                    Name = txtName.Text,
+                    Prenom = txtSurname.Text,
+                    Tel = txtPhone.Text
+                };
+                client = ClientProcess.SaveClient(client);
+                Zone zone = ZoneProcess.FindOneByOrNull(cbQuatier.Text);
+                order.Client = client.Id;
+                order.Zone = zone.Id;
+                OrderProcess.SaveOrder(order);
             }
         }
 
-
+        
         // Methods no event
 
         public void LoadTableItem()
@@ -211,6 +248,39 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
             foreach (var table in tables)
             {
                 cbTable.Items.Add(table.Position);
+            }
+        }
+
+        public void LoadSectorItem()
+        {
+            List<Cover> covers = CoverProcess.Find();
+
+            foreach (var cover in covers)
+            {
+                cbSecteur.Items.Add(cover.Designation);
+            }
+        }
+        public void LoadQuaterItem(string? cover = null)
+        {
+            List<Zone> zones = ZoneProcess.FindZone(cover); ;
+
+            foreach (var zone in zones)
+            {
+                cbQuatier.Items.Add(zone.Designation);
+            }
+        }
+
+        public void JoinOrderItemToOrder(List<PROJET_C__GESTIONRESTO.Models.Product> products, Order order)
+        {
+            foreach (PROJET_C__GESTIONRESTO.Models.Product product in products)
+            {
+                Orderitem orderitem = new()
+                {
+                    Product = product.Id,
+                    Order = order.Id,
+                    Quantity = (int)product.Quantity
+                };
+                OrderItemProcess.SaveOrderItem(orderitem);
             }
         }
 
