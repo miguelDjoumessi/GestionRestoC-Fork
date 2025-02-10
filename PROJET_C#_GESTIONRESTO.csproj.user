@@ -25,6 +25,18 @@
     <Compile Update="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\MenuViews\AddMenuView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\MenuViews\EditMenuView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\MenuViews\MenuController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\MenuViews\MenuDash.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\OrderInterface.cs">
       <SubType>Form</SubType>
     </Compile>

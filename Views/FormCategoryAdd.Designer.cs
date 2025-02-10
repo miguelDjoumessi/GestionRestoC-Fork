@@ -46,12 +46,13 @@
             // guna2Panel1
             // 
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            guna2Panel1.Size = new Size(528, 116);
+            guna2Panel1.Size = new Size(462, 87);
+            guna2Panel1.Paint += guna2Panel1_Paint;
             // 
             // label1
             // 
-            label1.Location = new Point(132, 46);
-            label1.Size = new Size(177, 28);
+            label1.Location = new Point(116, 34);
+            label1.Size = new Size(141, 23);
             label1.Text = "new Category";
             // 
             // guna2PictureBox1
@@ -60,14 +61,14 @@
             guna2PictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             guna2PictureBox1.FillColor = Color.Empty;
             guna2PictureBox1.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Normal;
-            guna2PictureBox1.Location = new Point(11, 11);
+            guna2PictureBox1.Location = new Point(10, 8);
             guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2PictureBox1.Size = new Size(104, 94);
+            guna2PictureBox1.Size = new Size(91, 70);
             // 
             // guna2Panel2
             // 
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            guna2Panel2.Size = new Size(528, 62);
+            guna2Panel2.Size = new Size(462, 46);
             // 
             // btnClose
             // 
@@ -91,9 +92,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            label2.Location = new Point(87, 162);
+            label2.Location = new Point(76, 122);
             label2.Name = "label2";
-            label2.Size = new Size(57, 23);
+            label2.Size = new Size(49, 19);
             label2.TabIndex = 4;
             label2.Text = "Name";
             // 
@@ -109,21 +110,21 @@
             txtName.Font = new Font("MS Reference Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtName.ForeColor = Color.Black;
             txtName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtName.Location = new Point(87, 200);
-            txtName.Margin = new Padding(6);
+            txtName.Location = new Point(76, 150);
+            txtName.Margin = new Padding(5, 4, 5, 4);
             txtName.Name = "txtName";
             txtName.PasswordChar = '\0';
             txtName.PlaceholderText = "ex: fruit";
             txtName.SelectedText = "";
             txtName.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            txtName.Size = new Size(361, 45);
+            txtName.Size = new Size(316, 34);
             txtName.TabIndex = 6;
             // 
             // FormCategoryAdd
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(528, 360);
+            ClientSize = new Size(462, 270);
             Controls.Add(txtName);
             Controls.Add(label2);
             Name = "FormCategoryAdd";

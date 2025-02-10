@@ -60,8 +60,9 @@
             guna2Panel1.Margin = new Padding(2);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel1.Size = new Size(500, 89);
+            guna2Panel1.Size = new Size(438, 67);
             guna2Panel1.TabIndex = 2;
+            guna2Panel1.Paint += guna2Panel1_Paint;
             guna2Panel1.MouseDown += guna2Panel1_MouseDown;
             // 
             // label1
@@ -70,10 +71,10 @@
             label1.BackColor = Color.FromArgb(41, 39, 40);
             label1.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(118, 38);
+            label1.Location = new Point(103, 28);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(84, 28);
+            label1.Size = new Size(69, 23);
             label1.TabIndex = 1;
             label1.Text = "label1";
             // 
@@ -82,11 +83,11 @@
             guna2PictureBox1.BackColor = Color.Transparent;
             guna2PictureBox1.CustomizableEdges = customizableEdges1;
             guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(10, 10);
+            guna2PictureBox1.Location = new Point(9, 8);
             guna2PictureBox1.Margin = new Padding(2);
             guna2PictureBox1.Name = "guna2PictureBox1";
             guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2PictureBox1.Size = new Size(76, 70);
+            guna2PictureBox1.Size = new Size(66, 52);
             guna2PictureBox1.TabIndex = 0;
             guna2PictureBox1.TabStop = false;
             guna2PictureBox1.UseTransparentBackground = true;
@@ -98,11 +99,11 @@
             guna2Panel2.CustomizableEdges = customizableEdges9;
             guna2Panel2.Dock = DockStyle.Bottom;
             guna2Panel2.FillColor = Color.Silver;
-            guna2Panel2.Location = new Point(0, 298);
+            guna2Panel2.Location = new Point(0, 224);
             guna2Panel2.Margin = new Padding(2);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel2.Size = new Size(500, 62);
+            guna2Panel2.Size = new Size(438, 46);
             guna2Panel2.TabIndex = 3;
             // 
             // btnClose
@@ -110,9 +111,10 @@
             btnClose.Animated = true;
             btnClose.AutoRoundedCorners = true;
             btnClose.BackColor = Color.Transparent;
-            btnClose.BorderRadius = 21;
+            btnClose.BorderRadius = 15;
             customizableEdges5.TopRight = false;
             btnClose.CustomizableEdges = customizableEdges5;
+            btnClose.DialogResult = DialogResult.Cancel;
             btnClose.DisabledState.BorderColor = Color.DarkGray;
             btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -120,11 +122,11 @@
             btnClose.FillColor = Color.Orange;
             btnClose.Font = new Font("Segoe Script", 10.2F, FontStyle.Bold);
             btnClose.ForeColor = Color.White;
-            btnClose.Location = new Point(171, 7);
+            btnClose.Location = new Point(150, 5);
             btnClose.Margin = new Padding(2);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnClose.Size = new Size(142, 44);
+            btnClose.Size = new Size(124, 33);
             btnClose.TabIndex = 1;
             btnClose.Text = "Exit";
             btnClose.Click += btnClose_Click;
@@ -134,9 +136,10 @@
             btnSave.Animated = true;
             btnSave.AutoRoundedCorners = true;
             btnSave.BackColor = Color.Transparent;
-            btnSave.BorderRadius = 21;
+            btnSave.BorderRadius = 15;
             customizableEdges7.TopRight = false;
             btnSave.CustomizableEdges = customizableEdges7;
+            btnSave.DialogResult = DialogResult.OK;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -144,21 +147,21 @@
             btnSave.FillColor = Color.FromArgb(33, 194, 13);
             btnSave.Font = new Font("Segoe Script", 10.2F, FontStyle.Bold);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(10, 8);
+            btnSave.Location = new Point(9, 6);
             btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnSave.Size = new Size(142, 44);
+            btnSave.Size = new Size(124, 33);
             btnSave.TabIndex = 0;
             btnSave.Text = "Save";
             btnSave.Click += btnSave_Click;
             // 
             // Add
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(500, 360);
+            ClientSize = new Size(438, 270);
             Controls.Add(guna2Panel1);
             Controls.Add(guna2Panel2);
             FormBorderStyle = FormBorderStyle.None;

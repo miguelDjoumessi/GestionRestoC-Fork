@@ -7,10 +7,11 @@ using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.LinkLabel;
 
 namespace PROJET_C__GESTIONRESTO.LogicApp
 {
-    class MenuProcess
+    public class MenuProcess
     {
         public readonly string? connectionString;
 
@@ -20,34 +21,81 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             this.connectionString = configuration.GetValue<string>("ConnectionString:MySqlConnection");
         }
 
-        public int CreateProduct(Menu menu)
+        public int SavedMenu(Menu menu)
         {
             int lines = 0;
-            using (var context = new AppDbContext(connectionString))
+            try
             {
-                context.Menus.Add(menu);
-                lines = context.SaveChanges();
+                using (var context = new AppDbContext(connectionString))
+                {
+                    var m = context.Menus.Where(o => o.Theme == menu.Theme).FirstOrDefault();
+                    if (m != null)
+                    {
+                        throw new Exception("Err23000: Ce menu existe deja");
+                    }
+                    context.Menus.Add(menu);
+                    lines = context.SaveChanges();
+                }
+                
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.InnerException?.Message, "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return lines;
+
         }
 
         public int UpdateProduct(int id, Menu newMenu)
         {
+
+            int lines = 0;
             using (var context = new AppDbContext(connectionString))
             {
-                int lines = 0;
-                var menu = context.Menus.FirstOrDefault(x => x.Id == id);
-
-                if (menu != null)
+                try
                 {
-                    newMenu.Id = id;
-                    menu = newMenu;
-                    context.Menus.Update(newMenu);
-                    lines = context.SaveChanges();
+                    var menu = context.Menus.FirstOrDefault(x => x.Id == id);
+
+                    if (menu != null)
+                    {
+                        menu.Theme = newMenu.Theme;
+                        menu.Description = newMenu.Description;
+                        context.Menus.Update(menu);
+                        lines = context.SaveChanges();
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.InnerException?.Message, "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
 
                 return lines;
+            }
+        }
+
+        public  void SelectedMenu(int menuId)
+        {   
+            using(var context = new AppDbContext(connectionString))
+            {
+                try
+                {
+                    var menu = context.Menus.Where(m => m.IsHoliday == true).FirstOrDefault();
+                    if (menu != null)
+                    {
+                        menu.IsHoliday = false;
+                        context.Menus.Update(menu);
+                        context.SaveChanges();
+                    }
+                    menu = context.Menus.Where(m => m.Id == menuId).FirstOrDefault();
+                    menu.IsHoliday = true;
+                    context.Menus.Update(menu);
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error:" + ex.InnerException?.Message);
+                }
             }
         }
 

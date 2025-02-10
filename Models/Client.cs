@@ -12,8 +12,6 @@ public partial class Client : IHasTimestamp
 
     public string? Prenom { get; set; }
 
-    public DateTime? DateNaiss { get; set; }
-
     public string? Tel { get; set; }
 
     public DateTime CreatedAt { get; set; }

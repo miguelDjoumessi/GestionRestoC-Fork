@@ -172,13 +172,15 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
                 gbZone.Enabled = false;
         }
 
+        private void cbSecteur_SelectedValueChanged(object sender, EventArgs e)
+        {
+            cbQuatier.Items.Clear();
+            LoadQuaterItem(cbSecteur.SelectedItem.ToString());
+        }
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Order order = new()
-            {
-                Type = "eat here",
-                NumCom = "C0002536"
-            };
+            Order order = new();
 
             if (SelectedProducts.Count <= 0)
             {
@@ -197,19 +199,21 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
                 var table = TableProcess.GetTable(1, cbTable.SelectedItem.ToString()).items;
                 order.Table = table[0].Id;
                 order.Type = RadbtnHere.Text;
+                order.Status = "paid";
                 OrderProcess.SaveOrder(order);
 
                 JoinOrderItemToOrder(SelectedProducts, order);
             }
-            else if(RadBtnOut.Checked)
+            else if (RadBtnOut.Checked)
             {
                 order.Type = RadBtnOut.Text;
+                order.Status = "paid";
                 OrderProcess.SaveOrder(order);
                 JoinOrderItemToOrder(SelectedProducts, order);
             }
-            else if(RadBtnDeliver.Checked)
+            else if (RadBtnDeliver.Checked)
             {
-                foreach(var control in gBClient.Controls)
+                foreach (var control in gBClient.Controls)
                 {
                     if (control is TextBox tb && string.IsNullOrEmpty(tb.Text))
                     {
@@ -217,7 +221,7 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
                         return;
                     }
                 }
-                if(cbSecteur.SelectedItem == null || cbQuatier.SelectedItem == null)
+                if (cbSecteur.SelectedItem == null || cbQuatier.SelectedItem == null)
                 {
                     MessageBox.Show("Il semblerait que vous n'avait fournir toute les information sur la zone de livraison", "Avertissement", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
@@ -233,18 +237,21 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
                 Zone zone = ZoneProcess.FindOneByOrNull(cbQuatier.Text);
                 order.Client = client.Id;
                 order.Zone = zone.Id;
+                order.Status = "pending";
                 OrderProcess.SaveOrder(order);
             }
+            MessageBox.Show("Your order have saved with successfuly", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
 
-        
+
         // Methods no event
 
         public void LoadTableItem()
         {
             var paginator = TableProcess.GetTable(1);
             List<Table> tables = paginator.items;
-            
+
             foreach (var table in tables)
             {
                 cbTable.Items.Add(table.Position);
@@ -366,6 +373,5 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
     }
 }

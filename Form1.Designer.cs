@@ -30,7 +30,6 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -113,10 +112,11 @@
             pnSlidebar.CustomizableEdges = customizableEdges23;
             pnSlidebar.Dock = DockStyle.Left;
             pnSlidebar.FillColor = Color.FromArgb(10, 10, 10);
-            pnSlidebar.Location = new Point(0, 40);
+            pnSlidebar.Location = new Point(0, 30);
+            pnSlidebar.Margin = new Padding(3, 2, 3, 2);
             pnSlidebar.Name = "pnSlidebar";
             pnSlidebar.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            pnSlidebar.Size = new Size(282, 860);
+            pnSlidebar.Size = new Size(247, 645);
             pnSlidebar.TabIndex = 0;
             // 
             // guna2Button8
@@ -124,9 +124,6 @@
             guna2Button8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             guna2Button8.BackColor = Color.Transparent;
             guna2Button8.Cursor = Cursors.Hand;
-            guna2Button8.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage");
-            guna2Button8.CustomImages.HoveredImage = (Image)resources.GetObject("resource.HoveredImage");
-            guna2Button8.CustomImages.Image = (Image)resources.GetObject("resource.Image");
             guna2Button8.CustomImages.ImageAlign = HorizontalAlignment.Left;
             guna2Button8.CustomImages.ImageOffset = new Point(0, -1);
             guna2Button8.CustomImages.ImageSize = new Size(30, 30);
@@ -141,10 +138,11 @@
             guna2Button8.HoverState.FillColor = Color.Transparent;
             guna2Button8.HoverState.Font = new Font("Montserrat", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2Button8.HoverState.ForeColor = Color.White;
-            guna2Button8.Location = new Point(15, 792);
+            guna2Button8.Location = new Point(13, 594);
+            guna2Button8.Margin = new Padding(3, 2, 3, 2);
             guna2Button8.Name = "guna2Button8";
             guna2Button8.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button8.Size = new Size(154, 56);
+            guna2Button8.Size = new Size(135, 42);
             guna2Button8.TabIndex = 1;
             guna2Button8.Text = "logout";
             guna2Button8.TextAlign = HorizontalAlignment.Left;
@@ -154,9 +152,6 @@
             // 
             btnSetting.BackColor = Color.Transparent;
             btnSetting.Cursor = Cursors.Hand;
-            btnSetting.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage1");
-            btnSetting.CustomImages.HoveredImage = (Image)resources.GetObject("resource.HoveredImage1");
-            btnSetting.CustomImages.Image = (Image)resources.GetObject("resource.Image1");
             btnSetting.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnSetting.CustomImages.ImageOffset = new Point(0, -2);
             btnSetting.CustomImages.ImageSize = new Size(30, 30);
@@ -170,10 +165,11 @@
             btnSetting.ForeColor = Color.DarkGray;
             btnSetting.HoverState.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnSetting.HoverState.ForeColor = Color.White;
-            btnSetting.Location = new Point(58, 561);
+            btnSetting.Location = new Point(51, 421);
+            btnSetting.Margin = new Padding(3, 2, 3, 2);
             btnSetting.Name = "btnSetting";
             btnSetting.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnSetting.Size = new Size(154, 56);
+            btnSetting.Size = new Size(135, 42);
             btnSetting.TabIndex = 1;
             btnSetting.Text = "Settings";
             btnSetting.TextAlign = HorizontalAlignment.Left;
@@ -184,9 +180,6 @@
             // 
             btnStats.BackColor = Color.Transparent;
             btnStats.Cursor = Cursors.Hand;
-            btnStats.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage2");
-            btnStats.CustomImages.HoveredImage = (Image)resources.GetObject("resource.HoveredImage2");
-            btnStats.CustomImages.Image = (Image)resources.GetObject("resource.Image2");
             btnStats.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnStats.CustomImages.ImageOffset = new Point(0, -2);
             btnStats.CustomImages.ImageSize = new Size(30, 30);
@@ -200,10 +193,11 @@
             btnStats.ForeColor = Color.DarkGray;
             btnStats.HoverState.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnStats.HoverState.ForeColor = Color.White;
-            btnStats.Location = new Point(58, 499);
+            btnStats.Location = new Point(51, 374);
+            btnStats.Margin = new Padding(3, 2, 3, 2);
             btnStats.Name = "btnStats";
             btnStats.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnStats.Size = new Size(154, 56);
+            btnStats.Size = new Size(135, 42);
             btnStats.TabIndex = 1;
             btnStats.Text = "Repports";
             btnStats.TextAlign = HorizontalAlignment.Left;
@@ -214,9 +208,6 @@
             // 
             btnReservation.BackColor = Color.Transparent;
             btnReservation.Cursor = Cursors.Hand;
-            btnReservation.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage3");
-            btnReservation.CustomImages.HoveredImage = (Image)resources.GetObject("resource.HoveredImage3");
-            btnReservation.CustomImages.Image = (Image)resources.GetObject("resource.Image3");
             btnReservation.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnReservation.CustomImages.ImageOffset = new Point(0, -2);
             btnReservation.CustomImages.ImageSize = new Size(30, 30);
@@ -230,10 +221,11 @@
             btnReservation.ForeColor = Color.DarkGray;
             btnReservation.HoverState.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnReservation.HoverState.ForeColor = Color.White;
-            btnReservation.Location = new Point(58, 434);
+            btnReservation.Location = new Point(51, 326);
+            btnReservation.Margin = new Padding(3, 2, 3, 2);
             btnReservation.Name = "btnReservation";
             btnReservation.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnReservation.Size = new Size(164, 56);
+            btnReservation.Size = new Size(144, 42);
             btnReservation.TabIndex = 1;
             btnReservation.Text = "Reservation";
             btnReservation.TextAlign = HorizontalAlignment.Left;
@@ -244,9 +236,6 @@
             // 
             btnStock.BackColor = Color.Transparent;
             btnStock.Cursor = Cursors.Hand;
-            btnStock.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage4");
-            btnStock.CustomImages.HoveredImage = (Image)resources.GetObject("resource.HoveredImage4");
-            btnStock.CustomImages.Image = (Image)resources.GetObject("resource.Image4");
             btnStock.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnStock.CustomImages.ImageOffset = new Point(0, -2);
             btnStock.CustomImages.ImageSize = new Size(30, 30);
@@ -260,10 +249,11 @@
             btnStock.ForeColor = Color.DarkGray;
             btnStock.HoverState.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnStock.HoverState.ForeColor = Color.White;
-            btnStock.Location = new Point(58, 372);
+            btnStock.Location = new Point(51, 279);
+            btnStock.Margin = new Padding(3, 2, 3, 2);
             btnStock.Name = "btnStock";
             btnStock.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnStock.Size = new Size(154, 56);
+            btnStock.Size = new Size(135, 42);
             btnStock.TabIndex = 1;
             btnStock.Text = "Stock";
             btnStock.TextAlign = HorizontalAlignment.Left;
@@ -274,9 +264,6 @@
             // 
             btnOrder.BackColor = Color.Transparent;
             btnOrder.Cursor = Cursors.Hand;
-            btnOrder.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage5");
-            btnOrder.CustomImages.HoveredImage = (Image)resources.GetObject("resource.HoveredImage5");
-            btnOrder.CustomImages.Image = (Image)resources.GetObject("resource.Image5");
             btnOrder.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnOrder.CustomImages.ImageOffset = new Point(0, -2);
             btnOrder.CustomImages.ImageSize = new Size(30, 30);
@@ -290,10 +277,11 @@
             btnOrder.ForeColor = Color.DarkGray;
             btnOrder.HoverState.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnOrder.HoverState.ForeColor = Color.White;
-            btnOrder.Location = new Point(58, 310);
+            btnOrder.Location = new Point(51, 232);
+            btnOrder.Margin = new Padding(3, 2, 3, 2);
             btnOrder.Name = "btnOrder";
             btnOrder.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btnOrder.Size = new Size(154, 56);
+            btnOrder.Size = new Size(135, 42);
             btnOrder.TabIndex = 1;
             btnOrder.Text = "Orders";
             btnOrder.TextAlign = HorizontalAlignment.Left;
@@ -304,9 +292,6 @@
             // 
             btnMenu.BackColor = Color.Transparent;
             btnMenu.Cursor = Cursors.Hand;
-            btnMenu.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage6");
-            btnMenu.CustomImages.HoveredImage = (Image)resources.GetObject("resource.HoveredImage6");
-            btnMenu.CustomImages.Image = (Image)resources.GetObject("resource.Image6");
             btnMenu.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnMenu.CustomImages.ImageOffset = new Point(0, -2);
             btnMenu.CustomImages.ImageSize = new Size(30, 30);
@@ -320,10 +305,11 @@
             btnMenu.ForeColor = Color.DarkGray;
             btnMenu.HoverState.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnMenu.HoverState.ForeColor = Color.White;
-            btnMenu.Location = new Point(58, 248);
+            btnMenu.Location = new Point(51, 186);
+            btnMenu.Margin = new Padding(3, 2, 3, 2);
             btnMenu.Name = "btnMenu";
             btnMenu.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            btnMenu.Size = new Size(154, 56);
+            btnMenu.Size = new Size(135, 42);
             btnMenu.TabIndex = 1;
             btnMenu.Text = "Menus";
             btnMenu.TextAlign = HorizontalAlignment.Left;
@@ -334,9 +320,6 @@
             // 
             btnArticle.BackColor = Color.Transparent;
             btnArticle.Cursor = Cursors.Hand;
-            btnArticle.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage7");
-            btnArticle.CustomImages.HoveredImage = (Image)resources.GetObject("resource.HoveredImage7");
-            btnArticle.CustomImages.Image = (Image)resources.GetObject("resource.Image7");
             btnArticle.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnArticle.CustomImages.ImageOffset = new Point(0, -2);
             btnArticle.CustomImages.ImageSize = new Size(30, 30);
@@ -350,10 +333,11 @@
             btnArticle.ForeColor = Color.DarkGray;
             btnArticle.HoverState.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnArticle.HoverState.ForeColor = Color.White;
-            btnArticle.Location = new Point(58, 186);
+            btnArticle.Location = new Point(51, 140);
+            btnArticle.Margin = new Padding(3, 2, 3, 2);
             btnArticle.Name = "btnArticle";
             btnArticle.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            btnArticle.Size = new Size(154, 56);
+            btnArticle.Size = new Size(135, 42);
             btnArticle.TabIndex = 1;
             btnArticle.Text = "Articles";
             btnArticle.TextAlign = HorizontalAlignment.Left;
@@ -364,9 +348,6 @@
             // 
             btnHome.BackColor = Color.Transparent;
             btnHome.Cursor = Cursors.Hand;
-            btnHome.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage8");
-            btnHome.CustomImages.HoveredImage = (Image)resources.GetObject("resource.HoveredImage8");
-            btnHome.CustomImages.Image = (Image)resources.GetObject("resource.Image8");
             btnHome.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnHome.CustomImages.ImageOffset = new Point(0, -2);
             btnHome.CustomImages.ImageSize = new Size(30, 30);
@@ -380,10 +361,11 @@
             btnHome.ForeColor = Color.DarkGray;
             btnHome.HoverState.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnHome.HoverState.ForeColor = Color.White;
-            btnHome.Location = new Point(58, 124);
+            btnHome.Location = new Point(51, 93);
+            btnHome.Margin = new Padding(3, 2, 3, 2);
             btnHome.Name = "btnHome";
             btnHome.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            btnHome.Size = new Size(154, 56);
+            btnHome.Size = new Size(135, 42);
             btnHome.TabIndex = 1;
             btnHome.Text = "Home";
             btnHome.TextAlign = HorizontalAlignment.Left;
@@ -396,10 +378,11 @@
             guna2Panel2.Controls.Add(guna2HtmlLabel1);
             guna2Panel2.Controls.Add(picBoxLogo);
             guna2Panel2.CustomizableEdges = customizableEdges21;
-            guna2Panel2.Location = new Point(12, 20);
+            guna2Panel2.Location = new Point(10, 15);
+            guna2Panel2.Margin = new Padding(3, 2, 3, 2);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2Panel2.Size = new Size(249, 88);
+            guna2Panel2.Size = new Size(218, 66);
             guna2Panel2.TabIndex = 1;
             // 
             // guna2HtmlLabel1
@@ -407,21 +390,22 @@
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             guna2HtmlLabel1.ForeColor = Color.FromArgb(246, 240, 240);
-            guna2HtmlLabel1.Location = new Point(87, 28);
+            guna2HtmlLabel1.Location = new Point(82, 22);
+            guna2HtmlLabel1.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(136, 30);
+            guna2HtmlLabel1.Size = new Size(111, 23);
             guna2HtmlLabel1.TabIndex = 1;
             guna2HtmlLabel1.Text = "Control Center";
             // 
             // picBoxLogo
             // 
             picBoxLogo.CustomizableEdges = customizableEdges19;
-            picBoxLogo.Image = (Image)resources.GetObject("picBoxLogo.Image");
             picBoxLogo.ImageRotate = 0F;
-            picBoxLogo.Location = new Point(3, 3);
+            picBoxLogo.Location = new Point(3, 2);
+            picBoxLogo.Margin = new Padding(3, 2, 3, 2);
             picBoxLogo.Name = "picBoxLogo";
             picBoxLogo.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            picBoxLogo.Size = new Size(78, 80);
+            picBoxLogo.Size = new Size(68, 60);
             picBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picBoxLogo.TabIndex = 0;
             picBoxLogo.TabStop = false;
@@ -437,10 +421,11 @@
             guna2ControlBox1.HoverState.FillColor = Color.Red;
             guna2ControlBox1.HoverState.IconColor = Color.White;
             guna2ControlBox1.IconColor = Color.Black;
-            guna2ControlBox1.Location = new Point(1055, 1);
+            guna2ControlBox1.Location = new Point(923, 1);
+            guna2ControlBox1.Margin = new Padding(3, 2, 3, 2);
             guna2ControlBox1.Name = "guna2ControlBox1";
             guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            guna2ControlBox1.Size = new Size(56, 36);
+            guna2ControlBox1.Size = new Size(49, 27);
             guna2ControlBox1.TabIndex = 1;
             guna2ControlBox1.Click += guna2ControlBox1_Click;
             // 
@@ -452,10 +437,11 @@
             guna2ControlBox2.CustomizableEdges = customizableEdges27;
             guna2ControlBox2.FillColor = Color.Transparent;
             guna2ControlBox2.IconColor = Color.Black;
-            guna2ControlBox2.Location = new Point(998, 1);
+            guna2ControlBox2.Location = new Point(873, 1);
+            guna2ControlBox2.Margin = new Padding(3, 2, 3, 2);
             guna2ControlBox2.Name = "guna2ControlBox2";
             guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            guna2ControlBox2.Size = new Size(56, 36);
+            guna2ControlBox2.Size = new Size(49, 27);
             guna2ControlBox2.TabIndex = 1;
             // 
             // guna2ControlBox3
@@ -466,10 +452,11 @@
             guna2ControlBox3.CustomizableEdges = customizableEdges29;
             guna2ControlBox3.FillColor = Color.Transparent;
             guna2ControlBox3.IconColor = Color.Black;
-            guna2ControlBox3.Location = new Point(939, 1);
+            guna2ControlBox3.Location = new Point(822, 1);
+            guna2ControlBox3.Margin = new Padding(3, 2, 3, 2);
             guna2ControlBox3.Name = "guna2ControlBox3";
             guna2ControlBox3.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            guna2ControlBox3.Size = new Size(56, 36);
+            guna2ControlBox3.Size = new Size(49, 27);
             guna2ControlBox3.TabIndex = 1;
             // 
             // pnHeader
@@ -481,13 +468,14 @@
             pnHeader.Dock = DockStyle.Top;
             pnHeader.FillColor = Color.FromArgb(40, 40, 40, 10);
             pnHeader.Location = new Point(0, 0);
+            pnHeader.Margin = new Padding(3, 2, 3, 2);
             pnHeader.Name = "pnHeader";
             customizableEdges32.TopLeft = false;
             customizableEdges32.TopRight = false;
             pnHeader.ShadowDecoration.CustomizableEdges = customizableEdges32;
             pnHeader.ShadowDecoration.Enabled = true;
             pnHeader.ShadowDecoration.Shadow = new Padding(10, 5, 5, 25);
-            pnHeader.Size = new Size(1114, 40);
+            pnHeader.Size = new Size(975, 30);
             pnHeader.TabIndex = 3;
             pnHeader.MouseDown += guna2Panel1_MouseDown;
             // 
@@ -495,30 +483,31 @@
             // 
             pnContainer.CustomizableEdges = customizableEdges33;
             pnContainer.Dock = DockStyle.Fill;
-            pnContainer.Location = new Point(282, 40);
+            pnContainer.Location = new Point(247, 30);
+            pnContainer.Margin = new Padding(3, 2, 3, 2);
             pnContainer.Name = "pnContainer";
             pnContainer.ShadowDecoration.Color = Color.Gray;
             customizableEdges34.TopLeft = false;
             customizableEdges34.TopRight = false;
             pnContainer.ShadowDecoration.CustomizableEdges = customizableEdges34;
             pnContainer.ShadowDecoration.Enabled = true;
-            pnContainer.Size = new Size(832, 860);
+            pnContainer.Size = new Size(728, 645);
             pnContainer.TabIndex = 4;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1114, 900);
+            ClientSize = new Size(975, 675);
             Controls.Add(pnContainer);
             Controls.Add(pnSlidebar);
             Controls.Add(pnHeader);
             FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "center";
-            Load += Form1_Load;
             pnSlidebar.ResumeLayout(false);
             guna2Panel2.ResumeLayout(false);
             guna2Panel2.PerformLayout();

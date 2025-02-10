@@ -58,13 +58,18 @@ namespace PROJET_C__GESTIONRESTO.Views
                     MessageBox.Show("Categorie enregistrer avec succés", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("une erreur c'est produitent. Veuillez reessayer", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                    MessageBox.Show("une erreur c'est produitent. Veuillez reessayer", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         protected override void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.EntityFrameworkCore.Internal;
+using System.Runtime.CompilerServices;
 
 namespace PROJET_C__GESTIONRESTO.LogicApp
 {
@@ -21,6 +22,22 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
         {
         }
 
+        public static string? RandomOrderNumber(AppDbContext context) 
+        {
+            string numorder = "" + DateTime.Now.Year;
+
+            for(int i=0; i < 8; i++)
+            {
+                numorder += new Random().Next(10);
+            }
+
+            var result = context.Orders.Where(o => o.NumCom == numorder).FirstOrDefault();
+            if (result != null)
+                numorder = RandomOrderNumber(context);
+                
+            return numorder;
+        }
+
         public static int SaveOrder(Order order)
         {
             int lines = 0;
@@ -29,6 +46,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             {
                 try
                 {
+                    order.NumCom = RandomOrderNumber(context);
                     context.Orders.Add(order);
                     lines = context.SaveChanges();
                 }
@@ -113,7 +131,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
         {
             List<Product> products = new List<Product>();
 
-            using(var context =new AppDbContext(connectionString))
+            using (var context = new AppDbContext(connectionString))
             {
                 try
                 {
@@ -131,6 +149,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                 return products;
             }
         }
+
         public static int CountOrderByCover(Cover cover)
         {
             int count = 0;

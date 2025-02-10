@@ -28,23 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderInterface));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnContainer = new Guna.UI2.WinForms.Guna2Panel();
+            btnAddOrder = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            btnSearch = new Guna.UI2.WinForms.Guna2ImageButton();
-            btnAddOrder = new Guna.UI2.WinForms.Guna2CircleButton();
             pnContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             SuspendLayout();
@@ -58,16 +55,42 @@
             pnContainer.Controls.Add(guna2Separator1);
             pnContainer.Controls.Add(guna2HtmlLabel1);
             pnContainer.Controls.Add(guna2TextBox1);
-            pnContainer.Controls.Add(btnSearch);
-            pnContainer.CustomizableEdges = customizableEdges5;
+            pnContainer.CustomizableEdges = customizableEdges4;
             pnContainer.Dock = DockStyle.Fill;
             pnContainer.Font = new Font("Segoe UI", 10F);
             pnContainer.ForeColor = SystemColors.ActiveCaptionText;
             pnContainer.Location = new Point(0, 0);
+            pnContainer.Margin = new Padding(3, 2, 3, 2);
             pnContainer.Name = "pnContainer";
-            pnContainer.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            pnContainer.Size = new Size(1008, 759);
+            pnContainer.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            pnContainer.Size = new Size(882, 569);
             pnContainer.TabIndex = 2;
+            // 
+            // btnAddOrder
+            // 
+            btnAddOrder.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnAddOrder.Cursor = Cursors.Hand;
+            btnAddOrder.DisabledState.BorderColor = Color.DarkGray;
+            btnAddOrder.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAddOrder.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAddOrder.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAddOrder.FillColor = Color.Orange;
+            btnAddOrder.Font = new Font("Work Sans", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddOrder.ForeColor = Color.White;
+            btnAddOrder.HoverState.FillColor = Color.OrangeRed;
+            btnAddOrder.ImageAlign = HorizontalAlignment.Left;
+            btnAddOrder.ImageSize = new Size(0, 0);
+            btnAddOrder.IndicateFocus = true;
+            btnAddOrder.Location = new Point(785, 487);
+            btnAddOrder.Margin = new Padding(3, 2, 3, 2);
+            btnAddOrder.Name = "btnAddOrder";
+            btnAddOrder.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            btnAddOrder.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            btnAddOrder.Size = new Size(64, 61);
+            btnAddOrder.TabIndex = 1;
+            btnAddOrder.Text = "+";
+            btnAddOrder.TextFormatNoPrefix = true;
+            btnAddOrder.Click += btnAddOrder_Click;
             // 
             // guna2DataGridView1
             // 
@@ -98,11 +121,13 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(25, 136);
+            guna2DataGridView1.Location = new Point(22, 92);
+            guna2DataGridView1.Margin = new Padding(3, 2, 3, 2);
             guna2DataGridView1.Name = "guna2DataGridView1";
             guna2DataGridView1.RowHeadersVisible = false;
             guna2DataGridView1.RowHeadersWidth = 40;
-            guna2DataGridView1.Size = new Size(965, 611);
+            guna2DataGridView1.RowTemplate.Height = 29;
+            guna2DataGridView1.Size = new Size(844, 456);
             guna2DataGridView1.TabIndex = 3;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -131,27 +156,27 @@
             // 
             guna2Separator1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Separator1.FillColor = SystemColors.ScrollBar;
-            guna2Separator1.Location = new Point(25, 88);
+            guna2Separator1.Location = new Point(22, 66);
+            guna2Separator1.Margin = new Padding(3, 2, 3, 2);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(965, 23);
+            guna2Separator1.Size = new Size(844, 17);
             guna2Separator1.TabIndex = 4;
             // 
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(25, 34);
+            guna2HtmlLabel1.Location = new Point(22, 26);
+            guna2HtmlLabel1.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(305, 43);
+            guna2HtmlLabel1.Size = new Size(249, 34);
             guna2HtmlLabel1.TabIndex = 3;
             guna2HtmlLabel1.Text = "Liste des Commandes";
             // 
             // guna2TextBox1
             // 
             guna2TextBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2TextBox1.BorderRadius = 20;
-            customizableEdges2.BottomRight = false;
-            customizableEdges2.TopRight = false;
+            guna2TextBox1.BorderRadius = 10;
             guna2TextBox1.CustomizableEdges = customizableEdges2;
             guna2TextBox1.DefaultText = "";
             guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -162,69 +187,24 @@
             guna2TextBox1.Font = new Font("Segoe UI", 9F);
             guna2TextBox1.ForeColor = Color.Black;
             guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(664, 34);
-            guna2TextBox1.Margin = new Padding(3, 4, 3, 4);
+            guna2TextBox1.Location = new Point(701, 35);
             guna2TextBox1.Name = "guna2TextBox1";
             guna2TextBox1.PasswordChar = '\0';
-            guna2TextBox1.PlaceholderText = "search";
+            guna2TextBox1.PlaceholderText = "Search...";
             guna2TextBox1.SelectedText = "";
             guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            guna2TextBox1.Size = new Size(247, 43);
+            guna2TextBox1.Size = new Size(165, 26);
             guna2TextBox1.TabIndex = 3;
-            // 
-            // btnSearch
-            // 
-            btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSearch.BackColor = Color.FromArgb(10, 10, 10);
-            btnSearch.CheckedState.ImageSize = new Size(64, 64);
-            btnSearch.Cursor = Cursors.Hand;
-            btnSearch.HoverState.Image = (Image)resources.GetObject("resource.Image");
-            btnSearch.HoverState.ImageSize = new Size(35, 35);
-            btnSearch.Image = (Image)resources.GetObject("btnSearch.Image");
-            btnSearch.ImageOffset = new Point(0, 0);
-            btnSearch.ImageRotate = 0F;
-            btnSearch.ImageSize = new Size(35, 35);
-            btnSearch.Location = new Point(910, 34);
-            btnSearch.Name = "btnSearch";
-            btnSearch.PressedState.ImageSize = new Size(64, 64);
-            btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnSearch.Size = new Size(66, 43);
-            btnSearch.TabIndex = 2;
-            btnSearch.Click += btnSearch_Click;
-            // 
-            // btnAddOrder
-            // 
-            btnAddOrder.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnAddOrder.Cursor = Cursors.Hand;
-            btnAddOrder.DisabledState.BorderColor = Color.DarkGray;
-            btnAddOrder.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAddOrder.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAddOrder.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAddOrder.FillColor = Color.Orange;
-            btnAddOrder.Font = new Font("Work Sans", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAddOrder.ForeColor = Color.White;
-            btnAddOrder.HoverState.FillColor = Color.OrangeRed;
-            btnAddOrder.ImageAlign = HorizontalAlignment.Left;
-            btnAddOrder.ImageSize = new Size(0, 0);
-            btnAddOrder.IndicateFocus = true;
-            btnAddOrder.Location = new Point(897, 649);
-            btnAddOrder.Name = "btnAddOrder";
-            btnAddOrder.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            btnAddOrder.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            btnAddOrder.Size = new Size(79, 81);
-            btnAddOrder.TabIndex = 1;
-            btnAddOrder.Text = "+";
-            btnAddOrder.TextFormatNoPrefix = true;
-            btnAddOrder.Click += btnAddOrder_Click;
             // 
             // OrderInterface
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1008, 759);
+            ClientSize = new Size(882, 569);
             Controls.Add(pnContainer);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "OrderInterface";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "OrderInterface";
@@ -239,7 +219,6 @@
 
         private Guna.UI2.WinForms.Guna2Panel pnContainer;
         private Guna.UI2.WinForms.Guna2CircleButton btnAddOrder;
-        private Guna.UI2.WinForms.Guna2ImageButton btnSearch;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;

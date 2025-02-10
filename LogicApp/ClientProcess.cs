@@ -19,6 +19,10 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             {
                 try
                 {
+                    var clt = context.Clients.Where(cli =>  cli.Name == client.Name && cli.Prenom == client.Prenom && cli.Tel == client.Tel).FirstOrDefault();
+                    if (clt != null) 
+                        return clt;
+
                     context.Clients.Add(client);
                     var lines = context.SaveChanges();
                     return client;

@@ -127,8 +127,9 @@
             pnHeader.Controls.Add(label1);
             pnHeader.Dock = DockStyle.Top;
             pnHeader.Location = new Point(0, 0);
+            pnHeader.Margin = new Padding(2);
             pnHeader.Name = "pnHeader";
-            pnHeader.Size = new Size(1370, 45);
+            pnHeader.Size = new Size(1087, 36);
             pnHeader.TabIndex = 2;
             pnHeader.MouseDown += pnHeader_MouseDown;
             // 
@@ -139,10 +140,11 @@
             guna2ControlBox2.CustomizableEdges = customizableEdges1;
             guna2ControlBox2.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox2.IconColor = Color.White;
-            guna2ControlBox2.Location = new Point(1256, 1);
+            guna2ControlBox2.Location = new Point(996, 1);
+            guna2ControlBox2.Margin = new Padding(2);
             guna2ControlBox2.Name = "guna2ControlBox2";
             guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2ControlBox2.Size = new Size(56, 36);
+            guna2ControlBox2.Size = new Size(45, 29);
             guna2ControlBox2.TabIndex = 3;
             // 
             // guna2ControlBox1
@@ -151,19 +153,21 @@
             guna2ControlBox1.CustomizableEdges = customizableEdges3;
             guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(1312, 1);
+            guna2ControlBox1.Location = new Point(1041, 1);
+            guna2ControlBox1.Margin = new Padding(2);
             guna2ControlBox1.Name = "guna2ControlBox1";
             guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2ControlBox1.Size = new Size(56, 36);
+            guna2ControlBox1.Size = new Size(45, 29);
             guna2ControlBox1.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe Script", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(25, 5);
+            label1.Location = new Point(20, 4);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(128, 33);
+            label1.Size = new Size(102, 27);
             label1.TabIndex = 1;
             label1.Text = "New Order";
             // 
@@ -185,18 +189,20 @@
             panel2.Controls.Add(txtSearch);
             panel2.Controls.Add(guna2Panel1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 45);
+            panel2.Location = new Point(0, 36);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1370, 809);
+            panel2.Size = new Size(1087, 653);
             panel2.TabIndex = 1;
             // 
             // lblTotalPage
             // 
             lblTotalPage.AutoSize = true;
             lblTotalPage.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalPage.Location = new Point(775, 33);
+            lblTotalPage.Location = new Point(620, 26);
+            lblTotalPage.Margin = new Padding(2, 0, 2, 0);
             lblTotalPage.Name = "lblTotalPage";
-            lblTotalPage.Size = new Size(21, 23);
+            lblTotalPage.Size = new Size(18, 19);
             lblTotalPage.TabIndex = 12;
             lblTotalPage.Text = "1";
             // 
@@ -204,9 +210,10 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(758, 33);
+            label7.Location = new Point(606, 26);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(19, 23);
+            label7.Size = new Size(16, 19);
             label7.TabIndex = 12;
             label7.Text = "/";
             // 
@@ -214,9 +221,10 @@
             // 
             lblCurrentPage.AutoSize = true;
             lblCurrentPage.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCurrentPage.Location = new Point(741, 33);
+            lblCurrentPage.Location = new Point(593, 26);
+            lblCurrentPage.Margin = new Padding(2, 0, 2, 0);
             lblCurrentPage.Name = "lblCurrentPage";
-            lblCurrentPage.Size = new Size(21, 23);
+            lblCurrentPage.Size = new Size(18, 19);
             lblCurrentPage.TabIndex = 12;
             lblCurrentPage.Text = "1";
             // 
@@ -227,11 +235,12 @@
             guna2CirclePictureBox2.Cursor = Cursors.Hand;
             guna2CirclePictureBox2.FillColor = Color.Transparent;
             guna2CirclePictureBox2.ImageRotate = 0F;
-            guna2CirclePictureBox2.Location = new Point(806, 26);
+            guna2CirclePictureBox2.Location = new Point(645, 21);
+            guna2CirclePictureBox2.Margin = new Padding(2);
             guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
             guna2CirclePictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges5;
             guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox2.Size = new Size(42, 40);
+            guna2CirclePictureBox2.Size = new Size(34, 32);
             guna2CirclePictureBox2.TabIndex = 11;
             guna2CirclePictureBox2.TabStop = false;
             guna2CirclePictureBox2.Click += guna2CirclePictureBox2_Click;
@@ -243,24 +252,27 @@
             guna2CirclePictureBox1.Cursor = Cursors.Hand;
             guna2CirclePictureBox1.FillColor = Color.Transparent;
             guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.Location = new Point(682, 23);
+            guna2CirclePictureBox1.Location = new Point(546, 18);
+            guna2CirclePictureBox1.Margin = new Padding(2);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox1.Size = new Size(42, 40);
+            guna2CirclePictureBox1.Size = new Size(34, 32);
             guna2CirclePictureBox1.TabIndex = 10;
             guna2CirclePictureBox1.TabStop = false;
             guna2CirclePictureBox1.Click += guna2CirclePictureBox1_Click;
             // 
             // guna2Separator1
             // 
-            guna2Separator1.Location = new Point(17, 72);
+            guna2Separator1.Location = new Point(14, 58);
+            guna2Separator1.Margin = new Padding(2);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(850, 21);
+            guna2Separator1.Size = new Size(680, 17);
             guna2Separator1.TabIndex = 9;
             // 
             // dgvListProduct
             // 
+            dgvListProduct.AllowUserToAddRows = false;
             dgvListProduct.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvListProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -286,14 +298,15 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvListProduct.DefaultCellStyle = dataGridViewCellStyle3;
             dgvListProduct.GridColor = Color.FromArgb(231, 229, 255);
-            dgvListProduct.Location = new Point(15, 99);
+            dgvListProduct.Location = new Point(12, 79);
+            dgvListProduct.Margin = new Padding(2);
             dgvListProduct.Name = "dgvListProduct";
             dgvListProduct.ReadOnly = true;
             dgvListProduct.RowHeadersVisible = false;
             dgvListProduct.RowHeadersWidth = 51;
             dgvListProduct.RowTemplate.Height = 35;
             dgvListProduct.ScrollBars = ScrollBars.Vertical;
-            dgvListProduct.Size = new Size(852, 346);
+            dgvListProduct.Size = new Size(673, 277);
             dgvListProduct.TabIndex = 8;
             dgvListProduct.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvListProduct.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -352,7 +365,7 @@
             p_Intitule.MinimumWidth = 40;
             p_Intitule.Name = "p_Intitule";
             p_Intitule.ReadOnly = true;
-            p_Intitule.Width = 128;
+            p_Intitule.Width = 107;
             // 
             // p_Add
             // 
@@ -376,6 +389,8 @@
             // 
             // dgvSelectedProduct
             // 
+            dgvSelectedProduct.AllowUserToAddRows = false;
+            dgvSelectedProduct.AllowUserToDeleteRows = false;
             dataGridViewCellStyle4.BackColor = Color.White;
             dgvSelectedProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvSelectedProduct.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -401,7 +416,8 @@
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
             dgvSelectedProduct.DefaultCellStyle = dataGridViewCellStyle6;
             dgvSelectedProduct.GridColor = Color.FromArgb(231, 229, 255);
-            dgvSelectedProduct.Location = new Point(12, 467);
+            dgvSelectedProduct.Location = new Point(10, 374);
+            dgvSelectedProduct.Margin = new Padding(2);
             dgvSelectedProduct.Name = "dgvSelectedProduct";
             dgvSelectedProduct.ReadOnly = true;
             dgvSelectedProduct.RowHeadersVisible = false;
@@ -409,7 +425,7 @@
             dgvSelectedProduct.RowTemplate.Height = 35;
             dgvSelectedProduct.ScrollBars = ScrollBars.Vertical;
             dgvSelectedProduct.ShowCellToolTips = false;
-            dgvSelectedProduct.Size = new Size(855, 330);
+            dgvSelectedProduct.Size = new Size(675, 264);
             dgvSelectedProduct.TabIndex = 7;
             dgvSelectedProduct.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvSelectedProduct.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -495,7 +511,7 @@
             // 
             guna2Button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             guna2Button3.AutoRoundedCorners = true;
-            guna2Button3.BorderRadius = 17;
+            guna2Button3.BorderRadius = 14;
             guna2Button3.Cursor = Cursors.Hand;
             guna2Button3.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage");
             guna2Button3.CustomImages.HoveredImage = (Image)resources.GetObject("resource.HoveredImage");
@@ -514,11 +530,12 @@
             guna2Button3.ForeColor = Color.White;
             guna2Button3.HoverState.FillColor = Color.Black;
             guna2Button3.ImageSize = new Size(30, 30);
-            guna2Button3.Location = new Point(512, 26);
+            guna2Button3.Location = new Point(401, 21);
+            guna2Button3.Margin = new Padding(2);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.PressedColor = SystemColors.AppWorkspace;
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Button3.Size = new Size(64, 37);
+            guna2Button3.Size = new Size(51, 30);
             guna2Button3.TabIndex = 6;
             guna2Button3.TextAlign = HorizontalAlignment.Left;
             // 
@@ -527,9 +544,10 @@
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe Print", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = SystemColors.ControlDarkDark;
-            guna2HtmlLabel1.Location = new Point(29, 23);
+            guna2HtmlLabel1.Location = new Point(23, 18);
+            guna2HtmlLabel1.Margin = new Padding(2);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(148, 40);
+            guna2HtmlLabel1.Size = new Size(122, 33);
             guna2HtmlLabel1.TabIndex = 5;
             guna2HtmlLabel1.Text = "Products List";
             // 
@@ -548,14 +566,14 @@
             txtSearch.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtSearch.Font = new Font("Segoe UI", 9F);
             txtSearch.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSearch.Location = new Point(281, 26);
-            txtSearch.Margin = new Padding(3, 4, 3, 4);
+            txtSearch.Location = new Point(216, 21);
+            txtSearch.Margin = new Padding(2, 3, 2, 3);
             txtSearch.Name = "txtSearch";
             txtSearch.PasswordChar = '\0';
             txtSearch.PlaceholderText = "search...";
             txtSearch.SelectedText = "";
             txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            txtSearch.Size = new Size(236, 37);
+            txtSearch.Size = new Size(189, 30);
             txtSearch.TabIndex = 4;
             txtSearch.TextChanged += guna2TextBox1_TextChanged;
             // 
@@ -565,10 +583,11 @@
             guna2Panel1.Controls.Add(guna2Button1);
             guna2Panel1.CustomizableEdges = customizableEdges21;
             guna2Panel1.Dock = DockStyle.Right;
-            guna2Panel1.Location = new Point(886, 0);
+            guna2Panel1.Location = new Point(700, 0);
+            guna2Panel1.Margin = new Padding(2);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2Panel1.Size = new Size(484, 809);
+            guna2Panel1.Size = new Size(387, 653);
             guna2Panel1.TabIndex = 2;
             // 
             // guna2Panel2
@@ -578,10 +597,11 @@
             guna2Panel2.Controls.Add(gBClient);
             guna2Panel2.Controls.Add(GBType);
             guna2Panel2.CustomizableEdges = customizableEdges17;
-            guna2Panel2.Location = new Point(1, 3);
+            guna2Panel2.Location = new Point(1, 2);
+            guna2Panel2.Margin = new Padding(2);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2Panel2.Size = new Size(481, 620);
+            guna2Panel2.Size = new Size(385, 496);
             guna2Panel2.TabIndex = 2;
             // 
             // gbZone
@@ -594,9 +614,11 @@
             gbZone.Controls.Add(guna2HtmlLabel2);
             gbZone.Enabled = false;
             gbZone.FlatStyle = FlatStyle.Popup;
-            gbZone.Location = new Point(26, 392);
+            gbZone.Location = new Point(21, 314);
+            gbZone.Margin = new Padding(2);
             gbZone.Name = "gbZone";
-            gbZone.Size = new Size(443, 205);
+            gbZone.Padding = new Padding(2);
+            gbZone.Size = new Size(354, 164);
             gbZone.TabIndex = 1;
             gbZone.TabStop = false;
             gbZone.Text = "Zone de Livraison";
@@ -613,10 +635,11 @@
             cbQuatier.Font = new Font("Segoe UI", 10F);
             cbQuatier.ForeColor = Color.FromArgb(68, 88, 112);
             cbQuatier.ItemHeight = 30;
-            cbQuatier.Location = new Point(117, 143);
+            cbQuatier.Location = new Point(94, 114);
+            cbQuatier.Margin = new Padding(2);
             cbQuatier.Name = "cbQuatier";
             cbQuatier.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            cbQuatier.Size = new Size(312, 36);
+            cbQuatier.Size = new Size(250, 36);
             cbQuatier.TabIndex = 2;
             // 
             // cbSecteur
@@ -631,19 +654,22 @@
             cbSecteur.Font = new Font("Segoe UI", 10F);
             cbSecteur.ForeColor = Color.FromArgb(68, 88, 112);
             cbSecteur.ItemHeight = 30;
-            cbSecteur.Location = new Point(119, 49);
+            cbSecteur.Location = new Point(95, 39);
+            cbSecteur.Margin = new Padding(2);
             cbSecteur.Name = "cbSecteur";
             cbSecteur.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            cbSecteur.Size = new Size(310, 36);
+            cbSecteur.Size = new Size(249, 36);
             cbSecteur.TabIndex = 2;
+            cbSecteur.SelectedValueChanged += cbSecteur_SelectedValueChanged;
             // 
             // guna2HtmlLabel3
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Yu Gothic UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel3.Location = new Point(22, 152);
+            guna2HtmlLabel3.Location = new Point(18, 122);
+            guna2HtmlLabel3.Margin = new Padding(2);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(79, 27);
+            guna2HtmlLabel3.Size = new Size(60, 21);
             guna2HtmlLabel3.TabIndex = 0;
             guna2HtmlLabel3.Text = "Quatier *";
             // 
@@ -651,9 +677,10 @@
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Yu Gothic UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.Location = new Point(22, 58);
+            guna2HtmlLabel2.Location = new Point(18, 46);
+            guna2HtmlLabel2.Margin = new Padding(2);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(79, 27);
+            guna2HtmlLabel2.Size = new Size(60, 21);
             guna2HtmlLabel2.TabIndex = 0;
             guna2HtmlLabel2.Text = "Secteur *";
             // 
@@ -669,9 +696,11 @@
             gBClient.Controls.Add(label3);
             gBClient.Controls.Add(label2);
             gBClient.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            gBClient.Location = new Point(22, 118);
+            gBClient.Location = new Point(18, 94);
+            gBClient.Margin = new Padding(2);
             gBClient.Name = "gBClient";
-            gBClient.Size = new Size(447, 257);
+            gBClient.Padding = new Padding(2);
+            gBClient.Size = new Size(358, 206);
             gBClient.TabIndex = 0;
             gBClient.TabStop = false;
             gBClient.Text = "Client";
@@ -688,43 +717,48 @@
             cbTable.Font = new Font("Segoe UI", 10F);
             cbTable.ForeColor = Color.FromArgb(68, 88, 112);
             cbTable.ItemHeight = 30;
-            cbTable.Location = new Point(121, 190);
+            cbTable.Location = new Point(97, 152);
+            cbTable.Margin = new Padding(2);
             cbTable.Name = "cbTable";
             cbTable.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            cbTable.Size = new Size(312, 36);
+            cbTable.Size = new Size(250, 36);
             cbTable.TabIndex = 2;
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(121, 146);
+            txtPhone.Location = new Point(97, 117);
+            txtPhone.Margin = new Padding(2);
             txtPhone.Name = "txtPhone";
             txtPhone.PlaceholderText = "phone";
-            txtPhone.Size = new Size(312, 27);
+            txtPhone.Size = new Size(250, 23);
             txtPhone.TabIndex = 1;
             // 
             // txtSurname
             // 
-            txtSurname.Location = new Point(121, 93);
+            txtSurname.Location = new Point(97, 74);
+            txtSurname.Margin = new Padding(2);
             txtSurname.Name = "txtSurname";
             txtSurname.PlaceholderText = "surname";
-            txtSurname.Size = new Size(312, 27);
+            txtSurname.Size = new Size(250, 23);
             txtSurname.TabIndex = 1;
             // 
             // txtName
             // 
-            txtName.Location = new Point(121, 38);
+            txtName.Location = new Point(97, 30);
+            txtName.Margin = new Padding(2);
             txtName.Name = "txtName";
             txtName.PlaceholderText = "name";
-            txtName.Size = new Size(312, 27);
+            txtName.Size = new Size(250, 23);
             txtName.TabIndex = 1;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label5.Location = new Point(26, 206);
+            label5.Location = new Point(21, 165);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(56, 20);
+            label5.Size = new Size(43, 15);
             label5.TabIndex = 0;
             label5.Text = "Table *";
             // 
@@ -732,9 +766,10 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label4.Location = new Point(26, 146);
+            label4.Location = new Point(21, 117);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(37, 20);
+            label4.Size = new Size(28, 15);
             label4.TabIndex = 0;
             label4.Text = "tel *";
             // 
@@ -742,9 +777,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label3.Location = new Point(26, 93);
+            label3.Location = new Point(21, 74);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(74, 20);
+            label3.Size = new Size(57, 15);
             label3.TabIndex = 0;
             label3.Text = "Prenom *";
             // 
@@ -752,9 +788,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label2.Location = new Point(26, 45);
+            label2.Location = new Point(21, 36);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(54, 20);
+            label2.Size = new Size(42, 15);
             label2.TabIndex = 0;
             label2.Text = "Nom *";
             // 
@@ -764,9 +801,11 @@
             GBType.Controls.Add(RadBtnDeliver);
             GBType.Controls.Add(RadBtnOut);
             GBType.Controls.Add(RadbtnHere);
-            GBType.Location = new Point(22, 16);
+            GBType.Location = new Point(18, 13);
+            GBType.Margin = new Padding(2);
             GBType.Name = "GBType";
-            GBType.Size = new Size(447, 85);
+            GBType.Padding = new Padding(2);
+            GBType.Size = new Size(358, 68);
             GBType.TabIndex = 0;
             GBType.TabStop = false;
             GBType.Text = "Type";
@@ -775,12 +814,13 @@
             // 
             RadBtnDeliver.AutoSize = true;
             RadBtnDeliver.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
-            RadBtnDeliver.Location = new Point(340, 36);
+            RadBtnDeliver.Location = new Point(272, 29);
+            RadBtnDeliver.Margin = new Padding(2);
             RadBtnDeliver.Name = "RadBtnDeliver";
-            RadBtnDeliver.Size = new Size(84, 27);
+            RadBtnDeliver.Size = new Size(88, 23);
             RadBtnDeliver.TabIndex = 0;
             RadBtnDeliver.TabStop = true;
-            RadBtnDeliver.Text = "Deliver";
+            RadBtnDeliver.Text = "to Deliver";
             RadBtnDeliver.UseVisualStyleBackColor = true;
             RadBtnDeliver.CheckedChanged += RadbtnDeliver_CheckedChanged;
             // 
@@ -788,12 +828,13 @@
             // 
             RadBtnOut.AutoSize = true;
             RadBtnOut.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
-            RadBtnOut.Location = new Point(179, 36);
+            RadBtnOut.Location = new Point(143, 29);
+            RadBtnOut.Margin = new Padding(2);
             RadBtnOut.Name = "RadBtnOut";
-            RadBtnOut.Size = new Size(109, 27);
+            RadBtnOut.Size = new Size(106, 23);
             RadBtnOut.TabIndex = 0;
             RadBtnOut.TabStop = true;
-            RadBtnOut.Text = "take away";
+            RadBtnOut.Text = "to take away";
             RadBtnOut.UseVisualStyleBackColor = true;
             RadBtnOut.CheckedChanged += RadbtnHere_CheckedChanged;
             // 
@@ -801,12 +842,13 @@
             // 
             RadbtnHere.AutoSize = true;
             RadbtnHere.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold);
-            RadbtnHere.Location = new Point(28, 36);
+            RadbtnHere.Location = new Point(22, 29);
+            RadbtnHere.Margin = new Padding(2);
             RadbtnHere.Name = "RadbtnHere";
-            RadbtnHere.Size = new Size(94, 27);
+            RadbtnHere.Size = new Size(94, 23);
             RadbtnHere.TabIndex = 0;
             RadbtnHere.TabStop = true;
-            RadbtnHere.Text = "eat here";
+            RadbtnHere.Text = "to eat here";
             RadbtnHere.UseVisualStyleBackColor = true;
             RadbtnHere.CheckedChanged += RadbtnHere_CheckedChanged;
             // 
@@ -821,25 +863,27 @@
             guna2Button1.FillColor = Color.FromArgb(0, 192, 192);
             guna2Button1.Font = new Font("Segoe Print", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(172, 629);
+            guna2Button1.Location = new Point(138, 503);
+            guna2Button1.Margin = new Padding(2);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2Button1.Size = new Size(156, 43);
+            guna2Button1.Size = new Size(125, 34);
             guna2Button1.TabIndex = 1;
             guna2Button1.Text = "Save";
             guna2Button1.Click += guna2Button1_Click;
             // 
             // orderModal
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1370, 854);
+            ClientSize = new Size(1087, 689);
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(pnHeader);
             FormBorderStyle = FormBorderStyle.SizableToolWindow;
-            MaximumSize = new Size(1388, 950);
-            MinimumSize = new Size(1300, 800);
+            Margin = new Padding(2);
+            MaximumSize = new Size(1114, 768);
+            MinimumSize = new Size(1026, 648);
             Name = "orderModal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "orderModal";

@@ -395,6 +395,9 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.UpdatedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("updatedAt");
+            entity.Property(e => e.IsHoliday)
+                .HasColumnType("boolean")
+                .HasColumnName("isHoliday");
         });
 
         modelBuilder.Entity<Menuitem>(entity =>
