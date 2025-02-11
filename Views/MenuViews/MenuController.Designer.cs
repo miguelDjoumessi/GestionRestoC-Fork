@@ -118,7 +118,7 @@
             lblDescription.BackColor = Color.Black;
             lblDescription.Font = new Font("Segoe UI", 10.25F, FontStyle.Bold);
             lblDescription.ForeColor = Color.Cornsilk;
-            lblDescription.Location = new Point(77, 116);
+            lblDescription.Location = new Point(3, 91);
             lblDescription.MaximumSize = new Size(190, 0);
             lblDescription.Name = "lblDescription";
             lblDescription.Size = new Size(79, 21);
@@ -188,14 +188,14 @@
             ContextMenu.RenderStyle.SelectionForeColor = Color.White;
             ContextMenu.RenderStyle.SeparatorColor = Color.Gainsboro;
             ContextMenu.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            ContextMenu.Size = new Size(181, 70);
+            ContextMenu.Size = new Size(128, 48);
             // 
             // Edit
             // 
             Edit.Font = new Font("Berlin Sans FB", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Edit.Name = "Edit";
             Edit.Padding = new Padding(3, 1, 0, 1);
-            Edit.Size = new Size(183, 22);
+            Edit.Size = new Size(130, 22);
             Edit.Text = "Editer";
             Edit.Click += Edit_Click;
             // 
@@ -203,7 +203,7 @@
             // 
             delete.Font = new Font("Berlin Sans FB", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             delete.Name = "delete";
-            delete.Size = new Size(180, 22);
+            delete.Size = new Size(127, 22);
             delete.Text = "Supprimer";
             delete.Click += delete_Click;
             // 

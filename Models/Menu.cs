@@ -12,7 +12,7 @@ public partial class Menu : IHasTimestamp
 
     public string? Description { get; set; }
 
-    public bool? IsHoliday { get; set; }
+    public bool IsHoliday { get; set; }
 
     public DateTime CreatedAt { get; set; }
 

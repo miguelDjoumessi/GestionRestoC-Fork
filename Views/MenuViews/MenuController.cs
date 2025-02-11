@@ -1,4 +1,5 @@
-﻿using PROJET_C__GESTIONRESTO.Models;
+﻿using PROJET_C__GESTIONRESTO.LogicApp;
+using PROJET_C__GESTIONRESTO.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +17,13 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
         public static MenuController menuSelected = null;
         public bool isSelected = false;
         public Menu menu;
+        public readonly MenuProcess menuProcess = new();
 
-        public MenuController()
+        public MenuController(Menu menu)
         {
             InitializeComponent();
             picMenu.FillColor = Color.FromArgb(100, 3, 3, 3);
+            this.menu = menu;
         }
 
         private void guna2Panel2_Paint(object sender, PaintEventArgs e)
@@ -31,6 +34,11 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
         {
             if (isSelected)
                 SelectedMenu();
+            initComponent();
+            lblDescription.Location = new Point(
+                (picMenu.ClientSize.Width - lblDescription.Width) / 2,
+                (picMenu.ClientSize.Height - lblDescription.Height) / 2
+            );
         }
 
         private void RbDefMenu_CheckedChanged(object sender, EventArgs e)
@@ -46,7 +54,9 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
 
         private void picMenu_Click(object sender, EventArgs e)
         {
+            menuProcess.SelectedMenu(menu.Id);
             SelectedMenu();
+            MessageBox.Show("Vous venez de definir ce menu comme menu du jour", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void SelectedMenu()
@@ -60,7 +70,6 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
             RbDefMenu.Checked = true;
             pnHeader.FillColor = Color.OrangeRed;
             pnFooter.FillColor = Color.OrangeRed;
-
 
         }
 
@@ -87,8 +96,12 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
             var resultat = MessageBox.Show("Etes-vous vraiment sur de vouloir supprimer l'element", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if(resultat == DialogResult.Yes)
             {
-                this.Parent.Controls.Remove(this);
-                MessageBox.Show("the element have been delete with successufuly", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int result = menuProcess.DeleteMenu(menu.Id);
+                if(result > 0)
+                {
+                    this.Parent.Controls.Remove(this);
+                    MessageBox.Show("the element have been delete with successufuly", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 

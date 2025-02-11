@@ -99,20 +99,28 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             }
         }
 
-        public int DeleteProduct(int id)
+        public int DeleteMenu(int id)
         {
             int lines = 0;
             using (var context = new AppDbContext(connectionString))
             {
-                var menu = context.Menus.FirstOrDefault(m => m.Id == id);
-                if (menu != null)
+                try
                 {
-                    foreach (Menuitem menuitem in menu.Menuitems)
+                    var menu = context.Menus.FirstOrDefault(m => m.Id == id);
+                    if (menu != null)
                     {
-                        context.Menuitems.Remove(menuitem);
+                        foreach (Menuitem menuitem in menu.Menuitems)
+                        {
+                            context.Menuitems.Remove(menuitem);
+                        }
+                        context.Menus.Remove(menu);
+                        lines = context.SaveChanges();
                     }
-                    context.Menus.Remove(menu);
-                    lines = context.SaveChanges();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.InnerException?.Message);
                 }
 
                 return lines;
@@ -140,25 +148,29 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             return products;
         }
 
-        public List<object> FilterMenu(string searchValue)
+        public List<Menu> FindAll(string? filter = null)
         {
-            List<object>? filteredItems = new List<object>();
+            List<Menu>? menus = new List<Menu>();
 
             using (var context = new AppDbContext(connectionString))
             {
-                if (searchValue.GetType() == typeof(string))
+                try
                 {
-                    var items = context.Menus
-                            .Where("theme.Contains(@0)", searchValue)
-                            .ToList();
-
-                    if (items.Any())
+                    if (!string.IsNullOrEmpty(filter))
                     {
-                        filteredItems.Add(items);
+                        menus = context.Menus
+                                .Where(m => m.Theme.Contains(filter))
+                                .ToList();
                     }
+                    else
+                        menus = context.Menus.ToList();
+
+                }catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.InnerException?.Message);
                 }
 
-                return filteredItems;
+                return menus;
             }
         }
     }

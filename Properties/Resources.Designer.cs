@@ -93,6 +93,16 @@ namespace PROJET_C__GESTIONRESTO.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_button3 {
+            get {
+                object obj = ResourceManager.GetObject("add-button3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow__1_ {
             get {
                 object obj = ResourceManager.GetObject("arrow (1)", resourceCulture);
