@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using PROJET_C__GESTIONRESTO.Models;
 using PROJET_C__GESTIONRESTO.Orm;
 using System;
@@ -56,12 +57,19 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             int lines = 0;
             using (var context = new AppDbContext(connectionString))
             {
-                var menuitem = context.Menuitems.FirstOrDefault(mi => mi.Id == id);
-
-                if (menuitem != null)
+                try
                 {
-                    context.Menuitems.Remove(menuitem);
-                    lines = context.SaveChanges();
+                    var menuitem = context.Menuitems.FirstOrDefault(mi => mi.Id == id);
+
+                    if (menuitem != null)
+                    {
+                        context.Menuitems.Remove(menuitem);
+                        lines = context.SaveChanges();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.InnerException?.Message);
                 }
 
                 return lines;
@@ -107,6 +115,31 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
 
                 return list;
             }
+        }
+        public List<Menuitem>? FindMenuItemBy(int menuId, string? product = null)
+        {
+            List<Menuitem> items = new List<Menuitem>();
+            using(var context = new AppDbContext(connectionString))
+            {
+                try
+                {
+                    if(!string.IsNullOrEmpty(product))
+                        items = context.Menuitems
+                            .Where(m => m.Id == menuId && context.Products.Any(p => p.Id == m.Product && p.Designation.Contains(product)))
+                            .Include(m => m.ProductNavigation)
+                            .ToList();
+                    else
+                        items = context.Menuitems
+                            .Where(mi => mi.Menu == menuId)
+                            .Include(m => m.ProductNavigation)
+                            .ToList();
+                }catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.InnerException?.Message);
+                }
+            }
+
+            return items;
         }
     }
 }

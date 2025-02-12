@@ -103,6 +103,16 @@ namespace PROJET_C__GESTIONRESTO.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_button4 {
+            get {
+                object obj = ResourceManager.GetObject("add-button4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow__1_ {
             get {
                 object obj = ResourceManager.GetObject("arrow (1)", resourceCulture);
@@ -116,6 +126,16 @@ namespace PROJET_C__GESTIONRESTO.Properties {
         internal static System.Drawing.Bitmap arrow__2_ {
             get {
                 object obj = ResourceManager.GetObject("arrow (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bin {
+            get {
+                object obj = ResourceManager.GetObject("bin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +166,26 @@ namespace PROJET_C__GESTIONRESTO.Properties {
         internal static System.Drawing.Bitmap chevron_left_solid {
             get {
                 object obj = ResourceManager.GetObject("chevron-left-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cross {
+            get {
+                object obj = ResourceManager.GetObject("cross", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dairy_products {
+            get {
+                object obj = ResourceManager.GetObject("dairy-products", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +263,16 @@ namespace PROJET_C__GESTIONRESTO.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Leonardo_Kino_XL_Cre_une_mosaque_de_plats_africains_traditionn_0 {
+            get {
+                object obj = ResourceManager.GetObject("Leonardo_Kino_XL_Cre_une_mosaque_de_plats_africains_traditionn_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap next {
             get {
                 object obj = ResourceManager.GetObject("next", resourceCulture);
@@ -246,6 +296,16 @@ namespace PROJET_C__GESTIONRESTO.Properties {
         internal static System.Drawing.Bitmap previous {
             get {
                 object obj = ResourceManager.GetObject("previous", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap recycle_bin__1_ {
+            get {
+                object obj = ResourceManager.GetObject("recycle-bin (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -366,6 +426,26 @@ namespace PROJET_C__GESTIONRESTO.Properties {
         internal static System.Drawing.Bitmap table_ronde1 {
             get {
                 object obj = ResourceManager.GetObject("table-ronde1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap taro {
+            get {
+                object obj = ResourceManager.GetObject("taro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap taro1 {
+            get {
+                object obj = ResourceManager.GetObject("taro1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

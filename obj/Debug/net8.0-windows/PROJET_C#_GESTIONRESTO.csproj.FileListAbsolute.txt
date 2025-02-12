@@ -173,3 +173,6 @@ C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.MenuViews.MenuDash.resources
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.MenuViews.EditMenuView.resources
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.MenuViews.AddMenuView.resources
+C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.MenuViews.MenuContentView.resources
+C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.MenuViews.MenuItemView.resources
+C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.SimpleView.ProductController.resources

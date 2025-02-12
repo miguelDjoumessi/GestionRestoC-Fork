@@ -39,7 +39,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnHeader = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btnShowMenu = new Guna.UI2.WinForms.Guna2Button();
             lblTheme = new Guna.UI2.WinForms.Guna2HtmlLabel();
             picMenu = new Guna.UI2.WinForms.Guna2PictureBox();
             lblDescription = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -57,7 +57,7 @@
             // 
             // pnHeader
             // 
-            pnHeader.Controls.Add(guna2Button1);
+            pnHeader.Controls.Add(btnShowMenu);
             pnHeader.Controls.Add(lblTheme);
             pnHeader.CustomizableEdges = customizableEdges3;
             pnHeader.Dock = DockStyle.Top;
@@ -68,24 +68,25 @@
             pnHeader.Size = new Size(240, 41);
             pnHeader.TabIndex = 0;
             // 
-            // guna2Button1
+            // btnShowMenu
             // 
-            guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.BorderRadius = 9;
-            guna2Button1.CustomizableEdges = customizableEdges1;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.Cyan;
-            guna2Button1.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2Button1.ForeColor = Color.Black;
-            guna2Button1.Location = new Point(154, 9);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button1.Size = new Size(78, 21);
-            guna2Button1.TabIndex = 1;
-            guna2Button1.Text = "Afficher";
+            btnShowMenu.BackColor = Color.Transparent;
+            btnShowMenu.BorderRadius = 9;
+            btnShowMenu.CustomizableEdges = customizableEdges1;
+            btnShowMenu.DisabledState.BorderColor = Color.DarkGray;
+            btnShowMenu.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnShowMenu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnShowMenu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnShowMenu.FillColor = Color.Cyan;
+            btnShowMenu.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnShowMenu.ForeColor = Color.Black;
+            btnShowMenu.Location = new Point(154, 9);
+            btnShowMenu.Name = "btnShowMenu";
+            btnShowMenu.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnShowMenu.Size = new Size(78, 21);
+            btnShowMenu.TabIndex = 1;
+            btnShowMenu.Text = "Afficher";
+            btnShowMenu.Click += btnShowMenu_Click;
             // 
             // lblTheme
             // 
@@ -118,7 +119,7 @@
             lblDescription.BackColor = Color.Black;
             lblDescription.Font = new Font("Segoe UI", 10.25F, FontStyle.Bold);
             lblDescription.ForeColor = Color.Cornsilk;
-            lblDescription.Location = new Point(3, 91);
+            lblDescription.Location = new Point(63, 98);
             lblDescription.MaximumSize = new Size(190, 0);
             lblDescription.Name = "lblDescription";
             lblDescription.Size = new Size(79, 21);
@@ -240,6 +241,6 @@
         private Guna.UI2.WinForms.Guna2ContextMenuStrip ContextMenu;
         private ToolStripMenuItem Edit;
         private ToolStripMenuItem delete;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnShowMenu;
     }
 }

@@ -31,11 +31,17 @@
     <Compile Update="Views\MenuViews\EditMenuView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\MenuViews\MenuContentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\MenuViews\MenuController.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Views\MenuViews\MenuDash.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\MenuViews\MenuItemView.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Views\OrderInterface.cs">
       <SubType>Form</SubType>
@@ -53,6 +59,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\SimpleView\Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\SimpleView\ProductController.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

@@ -81,23 +81,22 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
 
         private void Edit_Click(object sender, EventArgs e)
         {
-            Menu m = new()
+            var editionModal = new EditMenuView(menu);
+            var result = editionModal.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                Id = 1,
-                Theme = "Mediévale",
-                Description = "Decouvrir les mets deguster a l'epoque medieval"
-
-            };
-            new EditMenuView(m).Show();
+                lblDescription.Text = editionModal.txtDescription.Text;
+                lblTheme.Text = editionModal.txtTheme.Text;
+            }
         }
 
         private void delete_Click(object sender, EventArgs e)
         {
             var resultat = MessageBox.Show("Etes-vous vraiment sur de vouloir supprimer l'element", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(resultat == DialogResult.Yes)
+            if (resultat == DialogResult.Yes)
             {
                 int result = menuProcess.DeleteMenu(menu.Id);
-                if(result > 0)
+                if (result > 0)
                 {
                     this.Parent.Controls.Remove(this);
                     MessageBox.Show("the element have been delete with successufuly", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -109,6 +108,12 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
         {
             lblTheme.Text = menu.Theme;
             lblDescription.Text = menu.Description;
+        }
+
+        private void btnShowMenu_Click(object sender, EventArgs e)
+        {
+            var modal = new MenuContentView(menu.Id);
+            var result = modal.ShowDialog();
         }
     }
 }

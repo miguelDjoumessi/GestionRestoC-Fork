@@ -31,7 +31,7 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
 
         protected override void btnSave_Click(object sender, EventArgs e)
         {
-            bool isChanged = (txtTheme.Text == menu.Theme && txtDescription.Text == menu.Description);
+            bool isChanged = (txtTheme.Text.Equals(menu.Theme) && txtDescription.Text.Equals(menu.Description));
 
             if(!(string.IsNullOrEmpty(txtTheme.Text) || string.IsNullOrEmpty(txtDescription.Text)) && !isChanged)
             {
@@ -41,12 +41,12 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
                     Description = txtDescription.Text
                 };
                 menuProcess.UpdateProduct(menu.Id, newMenu);
+                MessageBox.Show("Les modification ont ete enregistrer avec succes", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                MessageBox.Show("Yo" + 00);
                 this.Close();
             }
-
-            MessageBox.Show("Les champs ne doivent ni etre vide ni porter les infos initial", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            else
+                MessageBox.Show("Les champs ne doivent ni etre vide ni porter les infos initial", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         private void btnClose_Click_1(object sender, EventArgs e)

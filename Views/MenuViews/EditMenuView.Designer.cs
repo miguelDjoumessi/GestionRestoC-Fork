@@ -139,6 +139,7 @@
             txtTheme.Font = new Font("Segoe UI", 9F);
             txtTheme.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTheme.Location = new Point(73, 147);
+            txtTheme.Modified = true;
             txtTheme.Name = "txtTheme";
             txtTheme.PasswordChar = '\0';
             txtTheme.PlaceholderText = "ex: Plat exotique";
@@ -160,6 +161,7 @@
             txtDescription.Font = new Font("Segoe UI", 9F);
             txtDescription.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtDescription.Location = new Point(73, 223);
+            txtDescription.Modified = true;
             txtDescription.Multiline = true;
             txtDescription.Name = "txtDescription";
             txtDescription.PasswordChar = '\0';
@@ -200,7 +202,7 @@
 
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2TextBox txtTheme;
-        private Guna.UI2.WinForms.Guna2TextBox txtDescription;
+        public Guna.UI2.WinForms.Guna2TextBox txtTheme;
+        public Guna.UI2.WinForms.Guna2TextBox txtDescription;
     }
 }

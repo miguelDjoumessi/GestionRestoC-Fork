@@ -173,5 +173,20 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                 return menus;
             }
         }
+        public Menu? FindMenuBy(int id)
+        {
+            Menu? menu = null;
+            using(var context = new AppDbContext(connectionString))
+            {
+                try
+                {
+                    menu = context.Menus.Where(m => m.Id == id).FirstOrDefault();
+                }catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.InnerException?.Message);
+                }
+                return menu;
+            }
+        }
     }
 }
