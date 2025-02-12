@@ -96,6 +96,31 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             }
         }
 
+        public static List<Product> FindAll(string? filter = null)
+        {
+            var products = new List<Product>();
+            using(var context = new AppDbContext(connectionString))
+            {
+                try
+                {
+                    if (!string.IsNullOrEmpty(filter))
+                        products = context.Products
+                            .Where(p => p.Designation.Contains(filter))
+                            .Include(p => p.CategoryNavigation)
+                            .ToList();
+
+                    products = context.Products
+                            .Include(p => p.CategoryNavigation)
+                            .ToList();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.InnerException?.Message);
+                }
+                return products;
+            }
+        }
+
         public List<object> FilterProduct(string searchValue)
         {
             List<object>? filteredItems = new List<object>();

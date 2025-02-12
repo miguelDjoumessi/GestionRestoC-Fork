@@ -12,9 +12,36 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
 {
     public partial class ProductController : UserControl
     {
-        public ProductController()
+        public int product;
+        public bool isSelected = false;
+        public ProductController(int productId)
         {
             InitializeComponent();
+            product = productId;
+        }
+
+        private void guna2Panel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (!chkbSelection.Checked)
+            {
+                chkbSelection.Checked = true;
+                toggleIsSelected();
+            }
+            else
+            {
+                chkbSelection.Checked = false;
+                toggleIsSelected();
+            }
+        }
+
+        private void toggleIsSelected()
+        {
+            isSelected = chkbSelection.Checked;
+        }
+
+        private void chkbSelection_CheckedChanged(object sender, EventArgs e)
+        {
+            toggleIsSelected();
         }
     }
 }

@@ -33,6 +33,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            chkbSelection = new Guna.UI2.WinForms.Guna2CheckBox();
             lblDescription = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblName = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -48,6 +49,7 @@
             // 
             guna2Panel1.BackColor = Color.Transparent;
             guna2Panel1.BorderRadius = 6;
+            guna2Panel1.Controls.Add(chkbSelection);
             guna2Panel1.Controls.Add(lblDescription);
             guna2Panel1.Controls.Add(lblPrice);
             guna2Panel1.Controls.Add(lblName);
@@ -57,14 +59,30 @@
             guna2Panel1.Controls.Add(picImage);
             guna2Panel1.CustomizableEdges = customizableEdges3;
             guna2Panel1.FillColor = Color.White;
-            guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Location = new Point(3, 3);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.Color = Color.FromArgb(77, 77, 77);
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel1.ShadowDecoration.Enabled = true;
-            guna2Panel1.ShadowDecoration.Shadow = new Padding(8);
-            guna2Panel1.Size = new Size(190, 247);
+            guna2Panel1.Size = new Size(210, 265);
             guna2Panel1.TabIndex = 0;
+            guna2Panel1.MouseClick += guna2Panel1_MouseClick;
+            // 
+            // chkbSelection
+            // 
+            chkbSelection.AutoSize = true;
+            chkbSelection.CheckedState.BorderRadius = 0;
+            chkbSelection.CheckedState.BorderThickness = 0;
+            chkbSelection.CheckedState.FillColor = Color.FromArgb(255, 140, 26);
+            chkbSelection.Location = new Point(182, 242);
+            chkbSelection.Name = "chkbSelection";
+            chkbSelection.Size = new Size(15, 14);
+            chkbSelection.TabIndex = 5;
+            chkbSelection.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            chkbSelection.UncheckedState.BorderRadius = 0;
+            chkbSelection.UncheckedState.BorderThickness = 0;
+            chkbSelection.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            chkbSelection.CheckedChanged += chkbSelection_CheckedChanged;
             // 
             // lblDescription
             // 
@@ -99,9 +117,9 @@
             guna2HtmlLabel3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             guna2HtmlLabel3.Location = new Point(9, 185);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(67, 17);
+            guna2HtmlLabel3.Size = new Size(73, 17);
             guna2HtmlLabel3.TabIndex = 1;
-            guna2HtmlLabel3.Text = "Description";
+            guna2HtmlLabel3.Text = "Description :";
             // 
             // guna2HtmlLabel2
             // 
@@ -143,10 +161,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
-            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(guna2Panel1);
             Name = "ProductController";
-            Size = new Size(189, 250);
+            Size = new Size(222, 278);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picImage).EndInit();
@@ -160,8 +177,9 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblDescription;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblPrice;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblName;
+        private Guna.UI2.WinForms.Guna2CheckBox chkbSelection;
+        public Guna.UI2.WinForms.Guna2HtmlLabel lblDescription;
+        public Guna.UI2.WinForms.Guna2HtmlLabel lblPrice;
+        public Guna.UI2.WinForms.Guna2HtmlLabel lblName;
     }
 }

@@ -23,14 +23,14 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
         public MenuContentView(int menuId)
         {
             InitializeComponent();
-            var n = new ProductController();
-            LPanelList.Controls.Add(n);
             this.menuId = menuId;
         }
 
         private void MenuContentView_Load(object sender, EventArgs e)
         {
-            FillListProduct();
+            ProductController n = new ProductController(1);
+            LPanelList.Controls.Add(n);
+            //FillListProduct();
         }
 
         private void picClose_Click(object sender, EventArgs e)
@@ -45,6 +45,16 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
         private void txtSearchbar_TextChanged(object sender, EventArgs e)
         {
             FillListProduct();
+        }
+
+        private void picAdd_Click(object sender, EventArgs e)
+        {
+            var modal = new GetProductView();
+            var result = modal.ShowDialog();
+            if(result == DialogResult.OK)
+            {
+                MessageBox.Show("Les produits selectionner ont ete rajouter a la liste");
+            }
         }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]

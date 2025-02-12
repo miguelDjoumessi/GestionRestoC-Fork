@@ -116,6 +116,7 @@
             picAdd.Size = new Size(45, 45);
             picAdd.TabIndex = 6;
             picAdd.TabStop = false;
+            picAdd.Click += picAdd_Click;
             // 
             // txtSearchbar
             // 
