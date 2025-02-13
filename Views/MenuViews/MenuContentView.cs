@@ -20,17 +20,27 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
         private Point lastMousePosition;
         private int menuId;
         private MenuItemProcess menuItemProcess = new();
-        public MenuContentView(int menuId)
+        public MenuContentView(int menuId, string theme, string description)
         {
             InitializeComponent();
             this.menuId = menuId;
+            lblTheme.Text = theme;
+            lblDescribe.Text = description;
+            CentraliseLabel(lblTheme);
+            lblDescribe.Location = new Point(
+                (picImage.ClientSize.Width - lblDescribe.Width) / 2,
+                (picImage.ClientSize.Height - lblDescribe.Height) / 2
+            );
         }
 
         private void MenuContentView_Load(object sender, EventArgs e)
         {
-            ProductController n = new ProductController(1);
-            LPanelList.Controls.Add(n);
-            //FillListProduct();
+            FillListProduct();
+        }
+
+        private void txtSearchbar_Leave(object sender, EventArgs e)
+        {
+            FillListProduct();
         }
 
         private void picClose_Click(object sender, EventArgs e)
@@ -42,19 +52,25 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        private void txtSearchbar_TextChanged(object sender, EventArgs e)
-        {
-            FillListProduct();
-        }
 
         private void picAdd_Click(object sender, EventArgs e)
         {
             var modal = new GetProductView();
             var result = modal.ShowDialog();
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
-                MessageBox.Show("Les produits selectionner ont ete rajouter a la liste");
+                var prodSelected = modal.products;
+                if (prodSelected.Count > 0)
+                    foreach (var prod in prodSelected)
+                    {
+                        Menuitem menuitem = new();
+                        menuitem.Product = prod;
+                        menuitem.Menu = menuId;
+
+                        menuItemProcess.CreateProduct(menuitem);
+                    }
             }
+            FillListProduct();
         }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
@@ -99,9 +115,23 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
 
         }
 
-
-
-
+        protected void CentraliseLabel(Label lb)
+        {
+            lb.Location = new Point(
+                (lb.Parent.ClientSize.Width - lb.Width) / 2,
+                (lb.Parent.ClientSize.Height - lb.Height) / 2
+            );
+        }
+        // Pour l'ajout d'un ombre porter derriere le formulaire
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= 0x20000; // CS_DROPSHADOW
+                return cp;
+            }
+        }
 
         // Simulation du redimensionnement de la fenetre
         //protected override void WndProc(ref Message m)

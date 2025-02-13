@@ -48,14 +48,14 @@
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             LPanelList = new FlowLayoutPanel();
-            label1 = new Label();
-            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            lblDescribe = new Label();
+            picImage = new Guna.UI2.WinForms.Guna2PictureBox();
             pnHeader = new Guna.UI2.WinForms.Guna2Panel();
+            lblTheme = new Label();
             picClose = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnWindow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAdd).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picImage).BeginInit();
             pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             SuspendLayout();
@@ -70,8 +70,8 @@
             pnWindow.Controls.Add(guna2HtmlLabel2);
             pnWindow.Controls.Add(guna2Separator1);
             pnWindow.Controls.Add(LPanelList);
-            pnWindow.Controls.Add(label1);
-            pnWindow.Controls.Add(guna2PictureBox1);
+            pnWindow.Controls.Add(lblDescribe);
+            pnWindow.Controls.Add(picImage);
             pnWindow.Controls.Add(pnHeader);
             pnWindow.CustomizableEdges = customizableEdges11;
             pnWindow.Dock = DockStyle.Fill;
@@ -82,7 +82,7 @@
             pnWindow.ShadowDecoration.CustomizableEdges = customizableEdges12;
             pnWindow.ShadowDecoration.Enabled = true;
             pnWindow.ShadowDecoration.Shadow = new Padding(10);
-            pnWindow.Size = new Size(650, 900);
+            pnWindow.Size = new Size(600, 800);
             pnWindow.TabIndex = 0;
             pnWindow.MouseDown += pnWindow_MouseDown;
             pnWindow.MouseHover += pnWindow_MouseHover;
@@ -95,7 +95,7 @@
             lblListEmpty.BackColor = Color.Transparent;
             lblListEmpty.Font = new Font("Montserrat", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblListEmpty.ForeColor = Color.FromArgb(189, 190, 188);
-            lblListEmpty.Location = new Point(191, 514);
+            lblListEmpty.Location = new Point(147, 505);
             lblListEmpty.Name = "lblListEmpty";
             lblListEmpty.Size = new Size(289, 38);
             lblListEmpty.TabIndex = 7;
@@ -110,10 +110,10 @@
             picAdd.CustomizableEdges = customizableEdges1;
             picAdd.FillColor = Color.Transparent;
             picAdd.ImageRotate = 0F;
-            picAdd.Location = new Point(563, 241);
+            picAdd.Location = new Point(522, 241);
             picAdd.Name = "picAdd";
             picAdd.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            picAdd.Size = new Size(45, 45);
+            picAdd.Size = new Size(41, 45);
             picAdd.TabIndex = 6;
             picAdd.TabStop = false;
             picAdd.Click += picAdd_Click;
@@ -139,7 +139,7 @@
             txtSearchbar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtSearchbar.Size = new Size(178, 23);
             txtSearchbar.TabIndex = 5;
-            txtSearchbar.TextChanged += txtSearchbar_TextChanged;
+            txtSearchbar.Leave += txtSearchbar_Leave;
             // 
             // guna2HtmlLabel2
             // 
@@ -156,7 +156,7 @@
             guna2Separator1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Separator1.Location = new Point(32, 283);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(584, 10);
+            guna2Separator1.Size = new Size(534, 10);
             guna2Separator1.TabIndex = 3;
             // 
             // LPanelList
@@ -166,44 +166,45 @@
             LPanelList.Location = new Point(38, 307);
             LPanelList.Name = "LPanelList";
             LPanelList.Padding = new Padding(20, 0, 10, 0);
-            LPanelList.Size = new Size(578, 581);
+            LPanelList.Size = new Size(528, 467);
             LPanelList.TabIndex = 2;
             // 
-            // label1
+            // lblDescribe
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(26, 26, 26);
-            label1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label1.ForeColor = Color.Gainsboro;
-            label1.Location = new Point(116, 75);
-            label1.Name = "label1";
-            label1.Size = new Size(81, 19);
-            label1.TabIndex = 1;
-            label1.Text = "Description";
+            lblDescribe.AutoSize = true;
+            lblDescribe.BackColor = Color.FromArgb(26, 26, 26);
+            lblDescribe.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            lblDescribe.ForeColor = Color.Gainsboro;
+            lblDescribe.Location = new Point(112, 92);
+            lblDescribe.MaximumSize = new Size(550, 0);
+            lblDescribe.Name = "lblDescribe";
+            lblDescribe.Size = new Size(81, 19);
+            lblDescribe.TabIndex = 1;
+            lblDescribe.Text = "Description";
             // 
-            // guna2PictureBox1
+            // picImage
             // 
-            guna2PictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            guna2PictureBox1.BackgroundImage = (Image)resources.GetObject("guna2PictureBox1.BackgroundImage");
-            guna2PictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            guna2PictureBox1.BorderRadius = 6;
-            guna2PictureBox1.CustomizableEdges = customizableEdges5;
-            guna2PictureBox1.FillColor = Color.FromArgb(150, 26, 26, 26);
-            guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(0, 40);
-            guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2PictureBox1.Size = new Size(649, 192);
-            guna2PictureBox1.TabIndex = 0;
-            guna2PictureBox1.TabStop = false;
+            picImage.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            picImage.BackgroundImage = (Image)resources.GetObject("picImage.BackgroundImage");
+            picImage.BackgroundImageLayout = ImageLayout.Stretch;
+            picImage.BorderRadius = 6;
+            picImage.CustomizableEdges = customizableEdges5;
+            picImage.FillColor = Color.FromArgb(150, 26, 26, 26);
+            picImage.ImageRotate = 0F;
+            picImage.Location = new Point(0, 40);
+            picImage.Name = "picImage";
+            picImage.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            picImage.Size = new Size(599, 192);
+            picImage.TabIndex = 0;
+            picImage.TabStop = false;
             // 
             // pnHeader
             // 
             pnHeader.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnHeader.BackColor = Color.Transparent;
             pnHeader.BorderRadius = 6;
+            pnHeader.Controls.Add(lblTheme);
             pnHeader.Controls.Add(picClose);
-            pnHeader.Controls.Add(guna2HtmlLabel1);
             customizableEdges9.BottomLeft = false;
             customizableEdges9.BottomRight = false;
             pnHeader.CustomizableEdges = customizableEdges9;
@@ -211,9 +212,20 @@
             pnHeader.Location = new Point(0, 0);
             pnHeader.Name = "pnHeader";
             pnHeader.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            pnHeader.Size = new Size(650, 40);
+            pnHeader.Size = new Size(600, 40);
             pnHeader.TabIndex = 0;
             pnHeader.MouseDown += pnHeader_MouseDown;
+            // 
+            // lblTheme
+            // 
+            lblTheme.AutoSize = true;
+            lblTheme.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTheme.ForeColor = Color.FromArgb(217, 217, 217);
+            lblTheme.Location = new Point(271, 6);
+            lblTheme.Name = "lblTheme";
+            lblTheme.Size = new Size(50, 25);
+            lblTheme.TabIndex = 2;
+            lblTheme.Text = "Title";
             // 
             // picClose
             // 
@@ -222,7 +234,7 @@
             picClose.CustomizableEdges = customizableEdges7;
             picClose.FillColor = Color.Transparent;
             picClose.ImageRotate = 0F;
-            picClose.Location = new Point(610, 9);
+            picClose.Location = new Point(566, 11);
             picClose.Name = "picClose";
             picClose.ShadowDecoration.CustomizableEdges = customizableEdges8;
             picClose.Size = new Size(20, 20);
@@ -230,22 +242,11 @@
             picClose.TabStop = false;
             picClose.Click += picClose_Click;
             // 
-            // guna2HtmlLabel1
-            // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Segoe UI Black", 15.2F, FontStyle.Bold);
-            guna2HtmlLabel1.ForeColor = Color.FromArgb(217, 217, 217);
-            guna2HtmlLabel1.Location = new Point(262, 3);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(110, 30);
-            guna2HtmlLabel1.TabIndex = 0;
-            guna2HtmlLabel1.Text = "Title Menu";
-            // 
             // MenuContentView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(650, 900);
+            ClientSize = new Size(600, 800);
             Controls.Add(pnWindow);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MenuContentView";
@@ -254,7 +255,7 @@
             pnWindow.ResumeLayout(false);
             pnWindow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picAdd).EndInit();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picImage).EndInit();
             pnHeader.ResumeLayout(false);
             pnHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
@@ -265,9 +266,9 @@
 
         private Guna.UI2.WinForms.Guna2Panel pnWindow;
         private Guna.UI2.WinForms.Guna2Panel pnHeader;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Label label1;
+        private Guna.UI2.WinForms.Guna2PictureBox picImage;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle;
+        private Label lblDescribe;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private FlowLayoutPanel LPanelList;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchbar;
@@ -275,5 +276,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox picAdd;
         private Guna.UI2.WinForms.Guna2PictureBox picClose;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblListEmpty;
+        private Label lblTheme;
     }
 }

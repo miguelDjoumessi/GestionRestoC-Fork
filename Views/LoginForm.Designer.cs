@@ -32,17 +32,17 @@ namespace PROJET_C__GESTIONRESTO.Views
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            CustomizableEdges customizableEdges10 = new CustomizableEdges();
-            CustomizableEdges customizableEdges11 = new CustomizableEdges();
-            CustomizableEdges customizableEdges8 = new CustomizableEdges();
-            CustomizableEdges customizableEdges9 = new CustomizableEdges();
-            CustomizableEdges customizableEdges6 = new CustomizableEdges();
-            CustomizableEdges customizableEdges7 = new CustomizableEdges();
-            CustomizableEdges customizableEdges4 = new CustomizableEdges();
-            CustomizableEdges customizableEdges5 = new CustomizableEdges();
-            CustomizableEdges customizableEdges2 = new CustomizableEdges();
-            CustomizableEdges customizableEdges3 = new CustomizableEdges();
-            CustomizableEdges customizableEdges1 = new CustomizableEdges();
+            CustomizableEdges customizableEdges32 = new CustomizableEdges();
+            CustomizableEdges customizableEdges33 = new CustomizableEdges();
+            CustomizableEdges customizableEdges30 = new CustomizableEdges();
+            CustomizableEdges customizableEdges31 = new CustomizableEdges();
+            CustomizableEdges customizableEdges28 = new CustomizableEdges();
+            CustomizableEdges customizableEdges29 = new CustomizableEdges();
+            CustomizableEdges customizableEdges26 = new CustomizableEdges();
+            CustomizableEdges customizableEdges27 = new CustomizableEdges();
+            CustomizableEdges customizableEdges24 = new CustomizableEdges();
+            CustomizableEdges customizableEdges25 = new CustomizableEdges();
+            CustomizableEdges customizableEdges23 = new CustomizableEdges();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
@@ -79,7 +79,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             // 
             guna2TextBox1.BorderColor = Color.White;
             guna2TextBox1.BorderRadius = 8;
-            guna2TextBox1.CustomizableEdges = customizableEdges10;
+            guna2TextBox1.CustomizableEdges = customizableEdges32;
             guna2TextBox1.DefaultText = "";
             guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -90,14 +90,14 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2TextBox1.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox1.IconLeft = Properties.Resources.user_regular__1_;
-            guna2TextBox1.Location = new Point(24, 273);
-            guna2TextBox1.Margin = new Padding(4, 5, 4, 5);
+            guna2TextBox1.Location = new Point(21, 205);
+            guna2TextBox1.Margin = new Padding(4);
             guna2TextBox1.Name = "guna2TextBox1";
             guna2TextBox1.PasswordChar = '\0';
             guna2TextBox1.PlaceholderText = "Enter Username";
             guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            guna2TextBox1.Size = new Size(392, 43);
+            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges33;
+            guna2TextBox1.Size = new Size(343, 32);
             guna2TextBox1.TabIndex = 4;
             guna2TextBox1.TextAlign = HorizontalAlignment.Center;
             guna2TextBox1.TextChanged += guna2TextBox1_TextChanged;
@@ -106,7 +106,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             // 
             guna2TextBox2.BorderColor = Color.White;
             guna2TextBox2.BorderRadius = 8;
-            guna2TextBox2.CustomizableEdges = customizableEdges8;
+            guna2TextBox2.CustomizableEdges = customizableEdges30;
             guna2TextBox2.DefaultText = "";
             guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -116,14 +116,14 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2TextBox2.Font = new Font("Segoe UI", 9F);
             guna2TextBox2.ForeColor = Color.FromArgb(64, 64, 64);
             guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Location = new Point(24, 342);
-            guna2TextBox2.Margin = new Padding(4, 5, 4, 5);
+            guna2TextBox2.Location = new Point(21, 256);
+            guna2TextBox2.Margin = new Padding(4);
             guna2TextBox2.Name = "guna2TextBox2";
             guna2TextBox2.PasswordChar = '*';
             guna2TextBox2.PlaceholderText = "Enter Password";
             guna2TextBox2.SelectedText = "";
-            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            guna2TextBox2.Size = new Size(392, 43);
+            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges31;
+            guna2TextBox2.Size = new Size(343, 32);
             guna2TextBox2.TabIndex = 5;
             guna2TextBox2.TextAlign = HorizontalAlignment.Center;
             // 
@@ -134,11 +134,12 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2ToggleSwitch1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             guna2ToggleSwitch1.CheckedState.InnerBorderColor = Color.White;
             guna2ToggleSwitch1.CheckedState.InnerColor = Color.White;
-            guna2ToggleSwitch1.CustomizableEdges = customizableEdges6;
-            guna2ToggleSwitch1.Location = new Point(198, 411);
+            guna2ToggleSwitch1.CustomizableEdges = customizableEdges28;
+            guna2ToggleSwitch1.Location = new Point(173, 308);
+            guna2ToggleSwitch1.Margin = new Padding(3, 2, 3, 2);
             guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
-            guna2ToggleSwitch1.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            guna2ToggleSwitch1.Size = new Size(34, 18);
+            guna2ToggleSwitch1.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            guna2ToggleSwitch1.Size = new Size(30, 14);
             guna2ToggleSwitch1.TabIndex = 6;
             guna2ToggleSwitch1.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
             guna2ToggleSwitch1.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
@@ -151,9 +152,9 @@ namespace PROJET_C__GESTIONRESTO.Views
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(246, 411);
+            label3.Location = new Point(215, 308);
             label3.Name = "label3";
-            label3.Size = new Size(120, 18);
+            label3.Size = new Size(97, 16);
             label3.TabIndex = 7;
             label3.Text = "Show password";
             // 
@@ -161,8 +162,8 @@ namespace PROJET_C__GESTIONRESTO.Views
             // 
             guna2GradientButton1.AutoRoundedCorners = true;
             guna2GradientButton1.BackColor = Color.Transparent;
-            guna2GradientButton1.BorderRadius = 23;
-            guna2GradientButton1.CustomizableEdges = customizableEdges4;
+            guna2GradientButton1.BorderRadius = 17;
+            guna2GradientButton1.CustomizableEdges = customizableEdges26;
             guna2GradientButton1.DisabledState.BorderColor = Color.DarkGray;
             guna2GradientButton1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2GradientButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -172,10 +173,11 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2GradientButton1.FillColor2 = Color.FromArgb(212, 59, 102);
             guna2GradientButton1.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2GradientButton1.ForeColor = Color.White;
-            guna2GradientButton1.Location = new Point(24, 461);
+            guna2GradientButton1.Location = new Point(21, 346);
+            guna2GradientButton1.Margin = new Padding(3, 2, 3, 2);
             guna2GradientButton1.Name = "guna2GradientButton1";
-            guna2GradientButton1.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            guna2GradientButton1.Size = new Size(392, 48);
+            guna2GradientButton1.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            guna2GradientButton1.Size = new Size(343, 36);
             guna2GradientButton1.TabIndex = 8;
             guna2GradientButton1.Text = "LOGIN";
             guna2GradientButton1.Click += guna2GradientButton1_Click;
@@ -191,7 +193,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges2;
+            guna2Button1.CustomizableEdges = customizableEdges24;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -199,10 +201,11 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2Button1.FillColor = Color.FromArgb(174, 34, 73);
             guna2Button1.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(395, -1);
+            guna2Button1.Location = new Point(346, -1);
+            guna2Button1.Margin = new Padding(3, 2, 3, 2);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            guna2Button1.Size = new Size(47, 34);
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            guna2Button1.Size = new Size(41, 26);
             guna2Button1.TabIndex = 10;
             guna2Button1.Text = "X";
             guna2Button1.Click += guna2Button1_Click;
@@ -211,11 +214,12 @@ namespace PROJET_C__GESTIONRESTO.Views
             // 
             guna2CirclePictureBox1.Image = Properties.Resources.utilisateur;
             guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.Location = new Point(99, 61);
+            guna2CirclePictureBox1.Location = new Point(87, 46);
+            guna2CirclePictureBox1.Margin = new Padding(3, 2, 3, 2);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges23;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox1.Size = new Size(247, 189);
+            guna2CirclePictureBox1.Size = new Size(216, 142);
             guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2CirclePictureBox1.TabIndex = 12;
             guna2CirclePictureBox1.TabStop = false;
@@ -225,9 +229,9 @@ namespace PROJET_C__GESTIONRESTO.Views
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(62, 35);
+            label1.Location = new Point(54, 26);
             label1.Name = "label1";
-            label1.Size = new Size(283, 21);
+            label1.Size = new Size(235, 19);
             label1.TabIndex = 13;
             label1.Text = "Restaurant Management System";
             // 
@@ -236,9 +240,9 @@ namespace PROJET_C__GESTIONRESTO.Views
             linkLabel1.ActiveLinkColor = Color.Black;
             linkLabel1.AutoSize = true;
             linkLabel1.LinkColor = Color.FromArgb(174, 34, 73);
-            linkLabel1.Location = new Point(12, 529);
+            linkLabel1.Location = new Point(10, 397);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(127, 20);
+            linkLabel1.Size = new Size(100, 15);
             linkLabel1.TabIndex = 15;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Forgot password?";
@@ -248,18 +252,18 @@ namespace PROJET_C__GESTIONRESTO.Views
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(174, 34, 73);
-            label2.Location = new Point(167, 9);
+            label2.Location = new Point(146, 7);
             label2.Name = "label2";
-            label2.Size = new Size(91, 19);
+            label2.Size = new Size(76, 17);
             label2.TabIndex = 16;
             label2.Text = "User Login";
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(41, 39, 40);
-            ClientSize = new Size(435, 563);
+            ClientSize = new Size(381, 422);
             Controls.Add(label2);
             Controls.Add(linkLabel1);
             Controls.Add(label1);

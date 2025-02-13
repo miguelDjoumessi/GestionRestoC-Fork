@@ -173,7 +173,7 @@
             BackColor = Color.White;
             Controls.Add(guna2Panel1);
             Name = "MenuItemView";
-            Size = new Size(513, 180);
+            Size = new Size(506, 180);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picDelete).EndInit();

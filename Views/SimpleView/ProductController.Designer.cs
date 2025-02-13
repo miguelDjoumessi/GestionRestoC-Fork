@@ -87,9 +87,11 @@
             // lblDescription
             // 
             lblDescription.BackColor = Color.Transparent;
-            lblDescription.Location = new Point(82, 185);
+            lblDescription.ForeColor = Color.DimGray;
+            lblDescription.Location = new Point(35, 208);
+            lblDescription.MaximumSize = new Size(40, 17);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(63, 17);
+            lblDescription.Size = new Size(40, 17);
             lblDescription.TabIndex = 4;
             lblDescription.Text = "Description";
             // 
@@ -97,6 +99,7 @@
             // 
             lblPrice.BackColor = Color.Transparent;
             lblPrice.Location = new Point(46, 156);
+            lblPrice.MaximumSize = new Size(50, 0);
             lblPrice.Name = "lblPrice";
             lblPrice.Size = new Size(29, 17);
             lblPrice.TabIndex = 3;
@@ -106,6 +109,7 @@
             // 
             lblName.BackColor = Color.Transparent;
             lblName.Location = new Point(89, 128);
+            lblName.MaximumSize = new Size(100, 0);
             lblName.Name = "lblName";
             lblName.Size = new Size(33, 17);
             lblName.TabIndex = 2;
@@ -152,7 +156,7 @@
             picImage.Location = new Point(2, 1);
             picImage.Name = "picImage";
             picImage.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            picImage.Size = new Size(188, 121);
+            picImage.Size = new Size(208, 121);
             picImage.TabIndex = 0;
             picImage.TabStop = false;
             // 

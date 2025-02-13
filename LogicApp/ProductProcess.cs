@@ -108,8 +108,8 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                             .Where(p => p.Designation.Contains(filter))
                             .Include(p => p.CategoryNavigation)
                             .ToList();
-
-                    products = context.Products
+                    else
+                        products = context.Products
                             .Include(p => p.CategoryNavigation)
                             .ToList();
                 }

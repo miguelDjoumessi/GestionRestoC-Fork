@@ -112,7 +112,7 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
 
         private void btnShowMenu_Click(object sender, EventArgs e)
         {
-            var modal = new MenuContentView(menu.Id);
+            var modal = new MenuContentView(menu.Id, menu.Theme, menu.Description);
             var result = modal.ShowDialog();
         }
     }

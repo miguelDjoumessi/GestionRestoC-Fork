@@ -123,9 +123,9 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             {
                 try
                 {
-                    if(!string.IsNullOrEmpty(product))
+                    if (!string.IsNullOrEmpty(product))
                         items = context.Menuitems
-                            .Where(m => m.Id == menuId && context.Products.Any(p => p.Id == m.Product && p.Designation.Contains(product)))
+                            .Where(m => m.Menu == menuId && context.Products.Any(p => p.Id == m.Product && p.Designation.Contains(product)))
                             .Include(m => m.ProductNavigation)
                             .ToList();
                     else

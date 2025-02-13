@@ -53,5 +53,14 @@ namespace PROJET_C__GESTIONRESTO.Views.MenuViews
         {
             this.Close();
         }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= 0x20000; // CS_DROPSHADOW
+                return cp;
+            }
+        }
     }
 }

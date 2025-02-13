@@ -59,14 +59,15 @@
             guna2Panel1.Controls.Add(txtSearchbar);
             guna2Panel1.Controls.Add(guna2HtmlLabel1);
             guna2Panel1.CustomizableEdges = customizableEdges7;
+            guna2Panel1.Dock = DockStyle.Fill;
             guna2Panel1.FillColor = Color.White;
-            guna2Panel1.Location = new Point(8, 10);
+            guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.Color = Color.FromArgb(89, 89, 89);
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Panel1.ShadowDecoration.Enabled = true;
             guna2Panel1.ShadowDecoration.Shadow = new Padding(8, 0, 8, 8);
-            guna2Panel1.Size = new Size(520, 599);
+            guna2Panel1.Size = new Size(516, 605);
             guna2Panel1.TabIndex = 0;
             // 
             // lblListEmpty
@@ -93,7 +94,7 @@
             btnClose.FillColor = Color.Black;
             btnClose.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             btnClose.ForeColor = Color.White;
-            btnClose.Location = new Point(394, 559);
+            btnClose.Location = new Point(394, 563);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnClose.Size = new Size(101, 28);
@@ -112,7 +113,7 @@
             btnValide.FillColor = Color.FromArgb(77, 77, 255);
             btnValide.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             btnValide.ForeColor = Color.White;
-            btnValide.Location = new Point(288, 559);
+            btnValide.Location = new Point(288, 563);
             btnValide.Name = "btnValide";
             btnValide.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnValide.Size = new Size(101, 28);
@@ -157,7 +158,7 @@
             txtSearchbar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtSearchbar.Size = new Size(183, 23);
             txtSearchbar.TabIndex = 1;
-            txtSearchbar.TextChanged += txtSearchbar_TextChanged;
+            txtSearchbar.Leave += txtSearchbar_Leave;
             // 
             // guna2HtmlLabel1
             // 
@@ -173,12 +174,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(540, 621);
+            ClientSize = new Size(516, 605);
             Controls.Add(guna2Panel1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "GetProductView";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "GetProductView";
             Load += GetProductView_Load;
             guna2Panel1.ResumeLayout(false);
