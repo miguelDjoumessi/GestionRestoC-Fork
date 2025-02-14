@@ -23,6 +23,8 @@ namespace PROJET_C__GESTIONRESTO.Views
         public LoginForm()
         {
             InitializeComponent();
+            var configuration = ConfigurationHelper.GetConfiguration();
+            MainClass.connectionString = configuration.GetValue<string>("ConnectionString:MySqlConnection");
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -61,7 +63,9 @@ namespace PROJET_C__GESTIONRESTO.Views
             }
             if (MainClass.IsValidUser(name, password))
             {
-                MessageBox.Show("Connexion reussie");
+                Form1 Dash = new Form1();
+                Dash.Show();
+                this.Hide();
             }
             else
             {

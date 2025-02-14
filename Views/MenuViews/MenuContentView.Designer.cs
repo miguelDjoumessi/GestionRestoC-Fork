@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuContentView));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnWindow = new Guna.UI2.WinForms.Guna2Panel();
             lblListEmpty = new Guna.UI2.WinForms.Guna2HtmlLabel();
             picAdd = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -53,6 +54,7 @@
             pnHeader = new Guna.UI2.WinForms.Guna2Panel();
             lblTheme = new Label();
             picClose = new Guna.UI2.WinForms.Guna2PictureBox();
+            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             pnWindow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAdd).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picImage).BeginInit();
@@ -73,13 +75,13 @@
             pnWindow.Controls.Add(lblDescribe);
             pnWindow.Controls.Add(picImage);
             pnWindow.Controls.Add(pnHeader);
-            pnWindow.CustomizableEdges = customizableEdges11;
+            pnWindow.CustomizableEdges = customizableEdges23;
             pnWindow.Dock = DockStyle.Fill;
             pnWindow.FillColor = Color.White;
             pnWindow.Location = new Point(0, 0);
             pnWindow.Name = "pnWindow";
             pnWindow.ShadowDecoration.Color = Color.FromArgb(180, 26, 26, 26);
-            pnWindow.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            pnWindow.ShadowDecoration.CustomizableEdges = customizableEdges24;
             pnWindow.ShadowDecoration.Enabled = true;
             pnWindow.ShadowDecoration.Shadow = new Padding(10);
             pnWindow.Size = new Size(600, 800);
@@ -107,12 +109,12 @@
             picAdd.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             picAdd.BackgroundImage = Properties.Resources.add_button4;
             picAdd.BackgroundImageLayout = ImageLayout.Stretch;
-            picAdd.CustomizableEdges = customizableEdges1;
+            picAdd.CustomizableEdges = customizableEdges13;
             picAdd.FillColor = Color.Transparent;
             picAdd.ImageRotate = 0F;
             picAdd.Location = new Point(522, 241);
             picAdd.Name = "picAdd";
-            picAdd.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            picAdd.ShadowDecoration.CustomizableEdges = customizableEdges14;
             picAdd.Size = new Size(41, 45);
             picAdd.TabIndex = 6;
             picAdd.TabStop = false;
@@ -122,7 +124,7 @@
             // 
             txtSearchbar.BorderColor = SystemColors.AppWorkspace;
             txtSearchbar.BorderRadius = 8;
-            txtSearchbar.CustomizableEdges = customizableEdges3;
+            txtSearchbar.CustomizableEdges = customizableEdges15;
             txtSearchbar.DefaultText = "";
             txtSearchbar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtSearchbar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -136,7 +138,7 @@
             txtSearchbar.PasswordChar = '\0';
             txtSearchbar.PlaceholderText = "Search.....";
             txtSearchbar.SelectedText = "";
-            txtSearchbar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtSearchbar.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtSearchbar.Size = new Size(178, 23);
             txtSearchbar.TabIndex = 5;
             txtSearchbar.Leave += txtSearchbar_Leave;
@@ -188,12 +190,12 @@
             picImage.BackgroundImage = (Image)resources.GetObject("picImage.BackgroundImage");
             picImage.BackgroundImageLayout = ImageLayout.Stretch;
             picImage.BorderRadius = 6;
-            picImage.CustomizableEdges = customizableEdges5;
+            picImage.CustomizableEdges = customizableEdges17;
             picImage.FillColor = Color.FromArgb(150, 26, 26, 26);
             picImage.ImageRotate = 0F;
             picImage.Location = new Point(0, 40);
             picImage.Name = "picImage";
-            picImage.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            picImage.ShadowDecoration.CustomizableEdges = customizableEdges18;
             picImage.Size = new Size(599, 192);
             picImage.TabIndex = 0;
             picImage.TabStop = false;
@@ -205,13 +207,13 @@
             pnHeader.BorderRadius = 6;
             pnHeader.Controls.Add(lblTheme);
             pnHeader.Controls.Add(picClose);
-            customizableEdges9.BottomLeft = false;
-            customizableEdges9.BottomRight = false;
-            pnHeader.CustomizableEdges = customizableEdges9;
+            customizableEdges21.BottomLeft = false;
+            customizableEdges21.BottomRight = false;
+            pnHeader.CustomizableEdges = customizableEdges21;
             pnHeader.FillColor = Color.FromArgb(26, 26, 26);
             pnHeader.Location = new Point(0, 0);
             pnHeader.Name = "pnHeader";
-            pnHeader.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            pnHeader.ShadowDecoration.CustomizableEdges = customizableEdges22;
             pnHeader.Size = new Size(600, 40);
             pnHeader.TabIndex = 0;
             pnHeader.MouseDown += pnHeader_MouseDown;
@@ -231,16 +233,21 @@
             // 
             picClose.BackgroundImage = Properties.Resources.cross;
             picClose.BackgroundImageLayout = ImageLayout.Stretch;
-            picClose.CustomizableEdges = customizableEdges7;
+            picClose.CustomizableEdges = customizableEdges19;
             picClose.FillColor = Color.Transparent;
             picClose.ImageRotate = 0F;
             picClose.Location = new Point(566, 11);
             picClose.Name = "picClose";
-            picClose.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            picClose.ShadowDecoration.CustomizableEdges = customizableEdges20;
             picClose.Size = new Size(20, 20);
             picClose.TabIndex = 1;
             picClose.TabStop = false;
             picClose.Click += picClose_Click;
+            // 
+            // guna2ShadowForm1
+            // 
+            guna2ShadowForm1.BorderRadius = 8;
+            guna2ShadowForm1.TargetForm = this;
             // 
             // MenuContentView
             // 
@@ -277,5 +284,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox picClose;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblListEmpty;
         private Label lblTheme;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }

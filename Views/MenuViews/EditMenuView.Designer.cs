@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditMenuView));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -42,6 +43,7 @@
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txtTheme = new Guna.UI2.WinForms.Guna2TextBox();
             txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2Panel2.SuspendLayout();
@@ -52,8 +54,9 @@
             guna2Panel1.CustomBorderColor = Color.Silver;
             guna2Panel1.CustomBorderThickness = new Padding(1);
             guna2Panel1.FillColor = Color.Transparent;
+            guna2Panel1.Location = new Point(5, 5);
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            guna2Panel1.Size = new Size(401, 67);
+            guna2Panel1.Size = new Size(391, 67);
             // 
             // label1
             // 
@@ -75,9 +78,9 @@
             // 
             // guna2Panel2
             // 
-            guna2Panel2.Location = new Point(0, 407);
+            guna2Panel2.Location = new Point(5, 402);
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            guna2Panel2.Size = new Size(401, 46);
+            guna2Panel2.Size = new Size(391, 46);
             // 
             // btnClose
             // 
@@ -110,7 +113,7 @@
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(45, 112);
+            guna2HtmlLabel1.Location = new Point(50, 117);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(61, 23);
             guna2HtmlLabel1.TabIndex = 4;
@@ -120,7 +123,7 @@
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.Location = new Point(45, 190);
+            guna2HtmlLabel2.Location = new Point(50, 195);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(95, 23);
             guna2HtmlLabel2.TabIndex = 4;
@@ -139,7 +142,6 @@
             txtTheme.Font = new Font("Segoe UI", 9F);
             txtTheme.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTheme.Location = new Point(73, 147);
-            txtTheme.Modified = true;
             txtTheme.Name = "txtTheme";
             txtTheme.PasswordChar = '\0';
             txtTheme.PlaceholderText = "ex: Plat exotique";
@@ -161,7 +163,6 @@
             txtDescription.Font = new Font("Segoe UI", 9F);
             txtDescription.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtDescription.Location = new Point(73, 223);
-            txtDescription.Modified = true;
             txtDescription.Multiline = true;
             txtDescription.Name = "txtDescription";
             txtDescription.PasswordChar = '\0';
@@ -170,6 +171,11 @@
             txtDescription.ShadowDecoration.CustomizableEdges = customizableEdges9;
             txtDescription.Size = new Size(294, 147);
             txtDescription.TabIndex = 6;
+            // 
+            // guna2ShadowForm1
+            // 
+            guna2ShadowForm1.BorderRadius = 8;
+            guna2ShadowForm1.TargetForm = this;
             // 
             // EditMenuView
             // 
@@ -182,6 +188,7 @@
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(guna2HtmlLabel1);
             Name = "EditMenuView";
+            Padding = new Padding(5);
             Text = "EditMenuView";
             Load += EditMenuView_Load;
             Controls.SetChildIndex(guna2Panel2, 0);
@@ -204,5 +211,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         public Guna.UI2.WinForms.Guna2TextBox txtTheme;
         public Guna.UI2.WinForms.Guna2TextBox txtDescription;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }

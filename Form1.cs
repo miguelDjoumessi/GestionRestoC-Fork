@@ -6,6 +6,7 @@ using PROJET_C__GESTIONRESTO.Services;
 using PROJET_C__GESTIONRESTO.Usefull.Mail;
 using PROJET_C__GESTIONRESTO.Views;
 using PROJET_C__GESTIONRESTO.Views.MenuViews;
+using PROJET_C__GESTIONRESTO.Views.ReservationView;
 using System.Runtime.InteropServices;
 using System.Security.AccessControl;
 using System.Security.Principal;
@@ -84,7 +85,7 @@ namespace PROJET_C__GESTIONRESTO
 
         private void btnStock_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+            OpenChildForm(new ReservationDash(), sender);
 
         }
 

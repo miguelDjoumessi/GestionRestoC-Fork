@@ -19,7 +19,7 @@ namespace PROJET_C__GESTIONRESTO.Usefull
 {
     class MainClass
     {
-        private static string? connectionString;
+        public static string? connectionString;
         public MainClass()
         {
             var configuration = ConfigurationHelper.GetConfiguration();
