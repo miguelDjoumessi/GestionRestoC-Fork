@@ -25,13 +25,14 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
 
                     context.Clients.Add(client);
                     var lines = context.SaveChanges();
-                    return client;
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Found Exception: " + ex.InnerException, ex);
+                    MessageBox.Show("Error: " + ex.InnerException?.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
+
+                return client;
             }
         }
 

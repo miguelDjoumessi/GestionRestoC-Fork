@@ -31,19 +31,19 @@ public partial class AppDbContext : DbContext
             var entity = (IHasTimestamp)entry.Entity;
             if (entry.State == EntityState.Added)
             {
-                entity.CreatedAt = DateTime.UtcNow;
+                entity.CreatedAt = DateTime.Now;
                 entity.UpdatedAt = entity.CreatedAt;
             }
             else if (entry.State == EntityState.Modified)
             {
-                entity.UpdatedAt = DateTime.UtcNow;
+                entity.UpdatedAt = DateTime.Now;
             }
         }
 
         return base.SaveChanges();
     }
 
-    public virtual DbSet<Attribution> Attributions { get; set; }
+    public virtual DbSet<Booking> Booking { get; set; }
 
     public virtual DbSet<Cart> Carts { get; set; }
 
@@ -85,46 +85,56 @@ public partial class AppDbContext : DbContext
             .UseCollation("utf8_general_ci")
             .HasCharSet("utf8");
 
-        modelBuilder.Entity<Attribution>(entity =>
+        modelBuilder.Entity<Booking>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
-            entity.ToTable("attribution");
+            entity.ToTable("booking");
 
-            entity.HasIndex(e => e.Client, "fk_Reservation_Client1_idx");
+            entity.HasIndex(e => e.Client, "booking_ibfk_1");
 
-            entity.HasIndex(e => e.Table, "fk_Reservation_Table1_idx");
+            entity.HasIndex(e => e.Table, "booking_ibfk_2");
 
             entity.Property(e => e.Id)
                 .HasColumnType("int(11)")
                 .HasColumnName("id");
-            entity.Property(e => e.Client).HasColumnType("int(11)");
+            entity.Property(e => e.Client)
+                .HasColumnType("int(11)")
+                .HasColumnName("owner"); 
             entity.Property(e => e.CreatedAt)
                 .HasColumnType("datetime")
-                .HasColumnName("createdAt");
-            entity.Property(e => e.FinishAt)
-                .HasColumnType("datetime")
-                .HasColumnName("finishAt");
-            entity.Property(e => e.StartAt)
-                .HasColumnType("datetime")
-                .HasColumnName("startAt");
+                .HasColumnName("created_at");
             entity.Property(e => e.State)
-                .HasMaxLength(45)
+                .HasMaxLength(10)
                 .HasColumnName("state");
-            entity.Property(e => e.Table).HasColumnType("int(11)");
+            entity.Property(e => e.requestState)
+                .HasMaxLength(10)
+                .HasColumnName("requestState");
+            entity.Property(e => e.Persons)
+                .HasColumnType("int(2)")
+                .HasColumnName("persons");
+            entity.Property(e => e.Tarif)
+                .HasColumnType("decimal")
+                .HasColumnName("tarif");
+            entity.Property(e => e.Period)
+                .HasMaxLength(10)
+                .HasColumnName("period");
+            entity.Property(e => e.Table)
+                .HasColumnType("int(11)")
+                .HasColumnName("tab"); 
             entity.Property(e => e.UpdatedAt)
                 .HasColumnType("datetime")
-                .HasColumnName("updatedAt");
+                .HasColumnName("updated_at");
 
-            entity.HasOne(d => d.ClientNavigation).WithMany(p => p.Attributions)
+            entity.HasOne(d => d.ClientNavigation).WithMany(p => p.Books)
                 .HasForeignKey(d => d.Client)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_Reservation_Client1");
+                .HasConstraintName("booking_ibfk_1");
 
-            entity.HasOne(d => d.TableNavigation).WithMany(p => p.Attributions)
+            entity.HasOne(d => d.TableNavigation).WithMany(p => p.Books)
                 .HasForeignKey(d => d.Table)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_Reservation_Table1");
+                .HasConstraintName("booking_ibfk_2");
         });
 
         modelBuilder.Entity<Cart>(entity =>

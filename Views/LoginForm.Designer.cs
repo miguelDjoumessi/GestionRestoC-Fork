@@ -32,17 +32,17 @@ namespace PROJET_C__GESTIONRESTO.Views
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            CustomizableEdges customizableEdges32 = new CustomizableEdges();
-            CustomizableEdges customizableEdges33 = new CustomizableEdges();
-            CustomizableEdges customizableEdges30 = new CustomizableEdges();
-            CustomizableEdges customizableEdges31 = new CustomizableEdges();
-            CustomizableEdges customizableEdges28 = new CustomizableEdges();
-            CustomizableEdges customizableEdges29 = new CustomizableEdges();
-            CustomizableEdges customizableEdges26 = new CustomizableEdges();
-            CustomizableEdges customizableEdges27 = new CustomizableEdges();
-            CustomizableEdges customizableEdges24 = new CustomizableEdges();
-            CustomizableEdges customizableEdges25 = new CustomizableEdges();
-            CustomizableEdges customizableEdges23 = new CustomizableEdges();
+            CustomizableEdges customizableEdges10 = new CustomizableEdges();
+            CustomizableEdges customizableEdges11 = new CustomizableEdges();
+            CustomizableEdges customizableEdges8 = new CustomizableEdges();
+            CustomizableEdges customizableEdges9 = new CustomizableEdges();
+            CustomizableEdges customizableEdges6 = new CustomizableEdges();
+            CustomizableEdges customizableEdges7 = new CustomizableEdges();
+            CustomizableEdges customizableEdges4 = new CustomizableEdges();
+            CustomizableEdges customizableEdges5 = new CustomizableEdges();
+            CustomizableEdges customizableEdges2 = new CustomizableEdges();
+            CustomizableEdges customizableEdges3 = new CustomizableEdges();
+            CustomizableEdges customizableEdges1 = new CustomizableEdges();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
@@ -79,8 +79,8 @@ namespace PROJET_C__GESTIONRESTO.Views
             // 
             guna2TextBox1.BorderColor = Color.White;
             guna2TextBox1.BorderRadius = 8;
-            guna2TextBox1.CustomizableEdges = customizableEdges32;
-            guna2TextBox1.DefaultText = "";
+            guna2TextBox1.CustomizableEdges = customizableEdges10;
+            guna2TextBox1.DefaultText = "johndoe@gmail.com";
             guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -96,7 +96,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2TextBox1.PasswordChar = '\0';
             guna2TextBox1.PlaceholderText = "Enter Username";
             guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges33;
+            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges11;
             guna2TextBox1.Size = new Size(343, 32);
             guna2TextBox1.TabIndex = 4;
             guna2TextBox1.TextAlign = HorizontalAlignment.Center;
@@ -106,8 +106,8 @@ namespace PROJET_C__GESTIONRESTO.Views
             // 
             guna2TextBox2.BorderColor = Color.White;
             guna2TextBox2.BorderRadius = 8;
-            guna2TextBox2.CustomizableEdges = customizableEdges30;
-            guna2TextBox2.DefaultText = "";
+            guna2TextBox2.CustomizableEdges = customizableEdges8;
+            guna2TextBox2.DefaultText = "\r\n1234";
             guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             guna2TextBox2.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -122,7 +122,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2TextBox2.PasswordChar = '*';
             guna2TextBox2.PlaceholderText = "Enter Password";
             guna2TextBox2.SelectedText = "";
-            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges31;
+            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges9;
             guna2TextBox2.Size = new Size(343, 32);
             guna2TextBox2.TabIndex = 5;
             guna2TextBox2.TextAlign = HorizontalAlignment.Center;
@@ -134,11 +134,11 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2ToggleSwitch1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             guna2ToggleSwitch1.CheckedState.InnerBorderColor = Color.White;
             guna2ToggleSwitch1.CheckedState.InnerColor = Color.White;
-            guna2ToggleSwitch1.CustomizableEdges = customizableEdges28;
+            guna2ToggleSwitch1.CustomizableEdges = customizableEdges6;
             guna2ToggleSwitch1.Location = new Point(173, 308);
             guna2ToggleSwitch1.Margin = new Padding(3, 2, 3, 2);
             guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
-            guna2ToggleSwitch1.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            guna2ToggleSwitch1.ShadowDecoration.CustomizableEdges = customizableEdges7;
             guna2ToggleSwitch1.Size = new Size(30, 14);
             guna2ToggleSwitch1.TabIndex = 6;
             guna2ToggleSwitch1.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
@@ -163,7 +163,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2GradientButton1.AutoRoundedCorners = true;
             guna2GradientButton1.BackColor = Color.Transparent;
             guna2GradientButton1.BorderRadius = 17;
-            guna2GradientButton1.CustomizableEdges = customizableEdges26;
+            guna2GradientButton1.CustomizableEdges = customizableEdges4;
             guna2GradientButton1.DisabledState.BorderColor = Color.DarkGray;
             guna2GradientButton1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2GradientButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -176,7 +176,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2GradientButton1.Location = new Point(21, 346);
             guna2GradientButton1.Margin = new Padding(3, 2, 3, 2);
             guna2GradientButton1.Name = "guna2GradientButton1";
-            guna2GradientButton1.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            guna2GradientButton1.ShadowDecoration.CustomizableEdges = customizableEdges5;
             guna2GradientButton1.Size = new Size(343, 36);
             guna2GradientButton1.TabIndex = 8;
             guna2GradientButton1.Text = "LOGIN";
@@ -193,7 +193,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges24;
+            guna2Button1.CustomizableEdges = customizableEdges2;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -204,7 +204,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2Button1.Location = new Point(346, -1);
             guna2Button1.Margin = new Padding(3, 2, 3, 2);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges3;
             guna2Button1.Size = new Size(41, 26);
             guna2Button1.TabIndex = 10;
             guna2Button1.Text = "X";
@@ -217,7 +217,7 @@ namespace PROJET_C__GESTIONRESTO.Views
             guna2CirclePictureBox1.Location = new Point(87, 46);
             guna2CirclePictureBox1.Margin = new Padding(3, 2, 3, 2);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges1;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(216, 142);
             guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;

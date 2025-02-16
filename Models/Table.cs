@@ -16,7 +16,7 @@ public partial class Table : IHasTimestamp
 
     public DateTime UpdatedAt { get; set; }
 
-    public virtual ICollection<Attribution> Attributions { get; set; } = new List<Attribution>();
+    public virtual ICollection<Booking> Books { get; set; } = new List<Booking>();
 
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }

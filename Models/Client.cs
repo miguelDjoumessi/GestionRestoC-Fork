@@ -20,7 +20,7 @@ public partial class Client : IHasTimestamp
 
     public int? Employee { get; set; }
 
-    public virtual ICollection<Attribution> Attributions { get; set; } = new List<Attribution>();
+    public virtual ICollection<Booking> Books { get; set; } = new List<Booking>();
 
     public virtual Employee EmployeeNavigation { get; set; } = null!;
 

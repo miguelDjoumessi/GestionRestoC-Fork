@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PROJET_C__GESTIONRESTO.Models;
 using Microsoft.EntityFrameworkCore;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PROJET_C__GESTIONRESTO.LogicApp
 {
@@ -42,6 +43,49 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                 }
 
                 return paginationResult;
+            }
+        }
+
+        public static List<Table> FindTableReservedBy(string period)
+        {
+            List<Table> tables = new List<Table>();
+            using (var context = new AppDbContext(connectionString))
+            {
+                try
+                {
+                    tables = context.Tables.Where(t => 
+                                 context.Booking.Any(b => b.Table == t.Id && 
+                                    b.Period == period &&
+                                    b.State == "active" &&
+                                    b.CreatedAt.Date == DateTime.Today
+                                 )
+                            )
+                            .ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                return tables;
+            }
+        }
+
+        public static List<Table> GetAll()
+        {
+            List<Table> tables = new List<Table>();
+            using (var context = new AppDbContext(connectionString))
+            {
+                try
+                {
+                    tables = context.Tables.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                return tables;
             }
         }
     }

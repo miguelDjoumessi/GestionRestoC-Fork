@@ -178,3 +178,4 @@ C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.SimpleView.ProductController.resources
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.SimpleView.GetProductView.resources
 C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.ReservationView.ReservationDash.resources
+C:\Users\AMD\Documents\LiPRO Dev\C#\GestionRestoC-Fork\obj\Debug\net8.0-windows\PROJET_C__GESTIONRESTO.Views.ReservationView.FormAddBooking.resources

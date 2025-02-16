@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -82,6 +83,7 @@
             guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             pnHeader = new Guna.UI2.WinForms.Guna2Panel();
             pnContainer = new Guna.UI2.WinForms.Guna2Panel();
+            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             pnSlidebar.SuspendLayout();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBoxLogo).BeginInit();
@@ -494,6 +496,11 @@
             pnContainer.Size = new Size(728, 645);
             pnContainer.TabIndex = 4;
             // 
+            // guna2ShadowForm1
+            // 
+            guna2ShadowForm1.ShadowColor = Color.FromArgb(64, 64, 64);
+            guna2ShadowForm1.TargetForm = this;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -538,5 +545,6 @@
         private Guna.UI2.WinForms.Guna2Panel pnHeader;
         private Guna.UI2.WinForms.Guna2Panel pnContainer;
         private Guna.UI2.WinForms.Guna2Button btnReservation;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }

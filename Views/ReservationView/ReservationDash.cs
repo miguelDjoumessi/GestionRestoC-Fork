@@ -17,5 +17,10 @@ namespace PROJET_C__GESTIONRESTO.Views.ReservationView
             InitializeComponent();
         }
 
+        private void btnAddBooking_Click(object sender, EventArgs e)
+        {
+            FormAddBooking modal = new FormAddBooking();
+            modal.ShowDialog();
+        }
     }
 }
