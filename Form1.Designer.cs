@@ -31,8 +31,6 @@
             components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -63,14 +61,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             openFileDialog1 = new OpenFileDialog();
             openFileDialog2 = new OpenFileDialog();
             pnSlidebar = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
+            btnLogout = new Guna.UI2.WinForms.Guna2Button();
             btnSetting = new Guna.UI2.WinForms.Guna2Button();
             btnStats = new Guna.UI2.WinForms.Guna2Button();
             btnReservation = new Guna.UI2.WinForms.Guna2Button();
-            btnStock = new Guna.UI2.WinForms.Guna2Button();
             btnOrder = new Guna.UI2.WinForms.Guna2Button();
             btnMenu = new Guna.UI2.WinForms.Guna2Button();
             btnArticle = new Guna.UI2.WinForms.Guna2Button();
@@ -84,6 +83,7 @@
             pnHeader = new Guna.UI2.WinForms.Guna2Panel();
             pnContainer = new Guna.UI2.WinForms.Guna2Panel();
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
+            btnStock = new Guna.UI2.WinForms.Guna2Button();
             pnSlidebar.SuspendLayout();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBoxLogo).BeginInit();
@@ -101,11 +101,11 @@
             // pnSlidebar
             // 
             pnSlidebar.AllowDrop = true;
-            pnSlidebar.Controls.Add(guna2Button8);
+            pnSlidebar.Controls.Add(btnStock);
+            pnSlidebar.Controls.Add(btnLogout);
             pnSlidebar.Controls.Add(btnSetting);
             pnSlidebar.Controls.Add(btnStats);
             pnSlidebar.Controls.Add(btnReservation);
-            pnSlidebar.Controls.Add(btnStock);
             pnSlidebar.Controls.Add(btnOrder);
             pnSlidebar.Controls.Add(btnMenu);
             pnSlidebar.Controls.Add(btnArticle);
@@ -121,43 +121,49 @@
             pnSlidebar.Size = new Size(247, 645);
             pnSlidebar.TabIndex = 0;
             // 
-            // guna2Button8
+            // btnLogout
             // 
-            guna2Button8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            guna2Button8.BackColor = Color.Transparent;
-            guna2Button8.Cursor = Cursors.Hand;
-            guna2Button8.CustomImages.ImageAlign = HorizontalAlignment.Left;
-            guna2Button8.CustomImages.ImageOffset = new Point(0, -1);
-            guna2Button8.CustomImages.ImageSize = new Size(30, 30);
-            guna2Button8.CustomizableEdges = customizableEdges1;
-            guna2Button8.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button8.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button8.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button8.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button8.FillColor = Color.Transparent;
-            guna2Button8.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            guna2Button8.ForeColor = Color.DarkGray;
-            guna2Button8.HoverState.FillColor = Color.Transparent;
-            guna2Button8.HoverState.Font = new Font("Montserrat", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2Button8.HoverState.ForeColor = Color.White;
-            guna2Button8.Location = new Point(13, 594);
-            guna2Button8.Margin = new Padding(3, 2, 3, 2);
-            guna2Button8.Name = "guna2Button8";
-            guna2Button8.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button8.Size = new Size(135, 42);
-            guna2Button8.TabIndex = 1;
-            guna2Button8.Text = "logout";
-            guna2Button8.TextAlign = HorizontalAlignment.Left;
-            guna2Button8.TextOffset = new Point(30, 0);
+            btnLogout.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnLogout.BackColor = Color.Transparent;
+            btnLogout.Cursor = Cursors.Hand;
+            btnLogout.CustomImages.CheckedImage = Properties.Resources.door_open_43dp_GRAY_FILL0_wght400_GRAD0_opsz40;
+            btnLogout.CustomImages.HoveredImage = Properties.Resources.door_open_43dp_WHITE_FILL0_wght400_GRAD0_opsz40;
+            btnLogout.CustomImages.Image = Properties.Resources.door_open_43dp_GRAY_FILL0_wght400_GRAD0_opsz40;
+            btnLogout.CustomImages.ImageAlign = HorizontalAlignment.Left;
+            btnLogout.CustomImages.ImageOffset = new Point(0, -1);
+            btnLogout.CustomImages.ImageSize = new Size(30, 30);
+            btnLogout.CustomizableEdges = customizableEdges3;
+            btnLogout.DisabledState.BorderColor = Color.DarkGray;
+            btnLogout.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLogout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLogout.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLogout.FillColor = Color.Transparent;
+            btnLogout.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            btnLogout.ForeColor = Color.DarkGray;
+            btnLogout.HoverState.FillColor = Color.Transparent;
+            btnLogout.HoverState.Font = new Font("Montserrat", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.HoverState.ForeColor = Color.White;
+            btnLogout.Location = new Point(13, 594);
+            btnLogout.Margin = new Padding(3, 2, 3, 2);
+            btnLogout.Name = "btnLogout";
+            btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnLogout.Size = new Size(135, 42);
+            btnLogout.TabIndex = 1;
+            btnLogout.Text = "logout";
+            btnLogout.TextAlign = HorizontalAlignment.Left;
+            btnLogout.TextOffset = new Point(30, 0);
             // 
             // btnSetting
             // 
             btnSetting.BackColor = Color.Transparent;
             btnSetting.Cursor = Cursors.Hand;
+            btnSetting.CustomImages.CheckedImage = Properties.Resources.settings;
+            btnSetting.CustomImages.HoveredImage = Properties.Resources.settings__1_;
+            btnSetting.CustomImages.Image = Properties.Resources.settings;
             btnSetting.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnSetting.CustomImages.ImageOffset = new Point(0, -2);
             btnSetting.CustomImages.ImageSize = new Size(30, 30);
-            btnSetting.CustomizableEdges = customizableEdges3;
+            btnSetting.CustomizableEdges = customizableEdges5;
             btnSetting.DisabledState.BorderColor = Color.DarkGray;
             btnSetting.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSetting.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -167,10 +173,10 @@
             btnSetting.ForeColor = Color.DarkGray;
             btnSetting.HoverState.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnSetting.HoverState.ForeColor = Color.White;
-            btnSetting.Location = new Point(51, 421);
+            btnSetting.Location = new Point(51, 430);
             btnSetting.Margin = new Padding(3, 2, 3, 2);
             btnSetting.Name = "btnSetting";
-            btnSetting.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnSetting.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnSetting.Size = new Size(135, 42);
             btnSetting.TabIndex = 1;
             btnSetting.Text = "Settings";
@@ -182,10 +188,13 @@
             // 
             btnStats.BackColor = Color.Transparent;
             btnStats.Cursor = Cursors.Hand;
+            btnStats.CustomImages.CheckedImage = Properties.Resources.equalizer_43dp_GRAY_FILL0_wght400_GRAD0_opsz40;
+            btnStats.CustomImages.HoveredImage = Properties.Resources.equalizer_43dp_FFF_FILL0_wght400_GRAD0_opsz40;
+            btnStats.CustomImages.Image = Properties.Resources.equalizer_43dp_GRAY_FILL0_wght400_GRAD0_opsz401;
             btnStats.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnStats.CustomImages.ImageOffset = new Point(0, -2);
             btnStats.CustomImages.ImageSize = new Size(30, 30);
-            btnStats.CustomizableEdges = customizableEdges5;
+            btnStats.CustomizableEdges = customizableEdges7;
             btnStats.DisabledState.BorderColor = Color.DarkGray;
             btnStats.DisabledState.CustomBorderColor = Color.DarkGray;
             btnStats.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -195,10 +204,10 @@
             btnStats.ForeColor = Color.DarkGray;
             btnStats.HoverState.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnStats.HoverState.ForeColor = Color.White;
-            btnStats.Location = new Point(51, 374);
+            btnStats.Location = new Point(51, 376);
             btnStats.Margin = new Padding(3, 2, 3, 2);
             btnStats.Name = "btnStats";
-            btnStats.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnStats.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnStats.Size = new Size(135, 42);
             btnStats.TabIndex = 1;
             btnStats.Text = "Repports";
@@ -210,10 +219,13 @@
             // 
             btnReservation.BackColor = Color.Transparent;
             btnReservation.Cursor = Cursors.Hand;
+            btnReservation.CustomImages.CheckedImage = Properties.Resources.event_27dp_GRAY_FILL0_wght400_GRAD0_opsz24;
+            btnReservation.CustomImages.HoveredImage = Properties.Resources.event_24dp_WHITE_FILL0_wght400_GRAD0_opsz241;
+            btnReservation.CustomImages.Image = Properties.Resources.event_27dp_GRAY_FILL0_wght400_GRAD0_opsz241;
             btnReservation.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnReservation.CustomImages.ImageOffset = new Point(0, -2);
             btnReservation.CustomImages.ImageSize = new Size(30, 30);
-            btnReservation.CustomizableEdges = customizableEdges7;
+            btnReservation.CustomizableEdges = customizableEdges9;
             btnReservation.DisabledState.BorderColor = Color.DarkGray;
             btnReservation.DisabledState.CustomBorderColor = Color.DarkGray;
             btnReservation.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -226,7 +238,7 @@
             btnReservation.Location = new Point(51, 326);
             btnReservation.Margin = new Padding(3, 2, 3, 2);
             btnReservation.Name = "btnReservation";
-            btnReservation.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnReservation.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnReservation.Size = new Size(144, 42);
             btnReservation.TabIndex = 1;
             btnReservation.Text = "Reservation";
@@ -234,38 +246,13 @@
             btnReservation.TextOffset = new Point(45, 0);
             btnReservation.Click += btnStock_Click;
             // 
-            // btnStock
-            // 
-            btnStock.BackColor = Color.Transparent;
-            btnStock.Cursor = Cursors.Hand;
-            btnStock.CustomImages.ImageAlign = HorizontalAlignment.Left;
-            btnStock.CustomImages.ImageOffset = new Point(0, -2);
-            btnStock.CustomImages.ImageSize = new Size(30, 30);
-            btnStock.CustomizableEdges = customizableEdges9;
-            btnStock.DisabledState.BorderColor = Color.DarkGray;
-            btnStock.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnStock.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnStock.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnStock.FillColor = Color.Transparent;
-            btnStock.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            btnStock.ForeColor = Color.DarkGray;
-            btnStock.HoverState.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnStock.HoverState.ForeColor = Color.White;
-            btnStock.Location = new Point(51, 279);
-            btnStock.Margin = new Padding(3, 2, 3, 2);
-            btnStock.Name = "btnStock";
-            btnStock.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnStock.Size = new Size(135, 42);
-            btnStock.TabIndex = 1;
-            btnStock.Text = "Stock";
-            btnStock.TextAlign = HorizontalAlignment.Left;
-            btnStock.TextOffset = new Point(45, 0);
-            btnStock.Click += btnStock_Click;
-            // 
             // btnOrder
             // 
             btnOrder.BackColor = Color.Transparent;
             btnOrder.Cursor = Cursors.Hand;
+            btnOrder.CustomImages.CheckedImage = Properties.Resources.receipt_long_43dp_GRAY_FILL0_wght400_GRAD0_opsz40;
+            btnOrder.CustomImages.HoveredImage = Properties.Resources.receipt_long_43dp_WHITE_FILL0_wght400_GRAD0_opsz40;
+            btnOrder.CustomImages.Image = Properties.Resources.receipt_long_43dp_GRAY_FILL0_wght400_GRAD0_opsz401;
             btnOrder.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnOrder.CustomImages.ImageOffset = new Point(0, -2);
             btnOrder.CustomImages.ImageSize = new Size(30, 30);
@@ -294,6 +281,9 @@
             // 
             btnMenu.BackColor = Color.Transparent;
             btnMenu.Cursor = Cursors.Hand;
+            btnMenu.CustomImages.CheckedImage = Properties.Resources.menu_book_43dp_GRAY_FILL0_wght400_GRAD0_opsz40;
+            btnMenu.CustomImages.HoveredImage = Properties.Resources.menu_book_43dp_WHITE_FILL0_wght400_GRAD0_opsz40;
+            btnMenu.CustomImages.Image = Properties.Resources.menu_book_43dp_GRAY_FILL0_wght400_GRAD0_opsz401;
             btnMenu.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnMenu.CustomImages.ImageOffset = new Point(0, -2);
             btnMenu.CustomImages.ImageSize = new Size(30, 30);
@@ -322,6 +312,9 @@
             // 
             btnArticle.BackColor = Color.Transparent;
             btnArticle.Cursor = Cursors.Hand;
+            btnArticle.CustomImages.CheckedImage = Properties.Resources.restaurant_43dp_GRAY_FILL0_wght400_GRAD0_opsz40;
+            btnArticle.CustomImages.HoveredImage = Properties.Resources.restaurant_43dp_WHITE_FILL0_wght400_GRAD0_opsz40;
+            btnArticle.CustomImages.Image = Properties.Resources.restaurant_43dp_GRAY_FILL0_wght400_GRAD0_opsz401;
             btnArticle.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnArticle.CustomImages.ImageOffset = new Point(0, -2);
             btnArticle.CustomImages.ImageSize = new Size(30, 30);
@@ -350,6 +343,9 @@
             // 
             btnHome.BackColor = Color.Transparent;
             btnHome.Cursor = Cursors.Hand;
+            btnHome.CustomImages.CheckedImage = Properties.Resources.home_43dp_GRAY_FILL0_wght400_GRAD0_opsz40;
+            btnHome.CustomImages.HoveredImage = Properties.Resources.house_solid__3_1;
+            btnHome.CustomImages.Image = Properties.Resources.home_43dp_GRAY_FILL0_wght400_GRAD0_opsz40;
             btnHome.CustomImages.ImageAlign = HorizontalAlignment.Left;
             btnHome.CustomImages.ImageOffset = new Point(0, -2);
             btnHome.CustomImages.ImageSize = new Size(30, 30);
@@ -392,7 +388,7 @@
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             guna2HtmlLabel1.ForeColor = Color.FromArgb(246, 240, 240);
-            guna2HtmlLabel1.Location = new Point(82, 22);
+            guna2HtmlLabel1.Location = new Point(76, 20);
             guna2HtmlLabel1.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(111, 23);
@@ -401,13 +397,16 @@
             // 
             // picBoxLogo
             // 
+            picBoxLogo.BackgroundImage = Properties.Resources.restaurant3;
+            picBoxLogo.BackgroundImageLayout = ImageLayout.Zoom;
             picBoxLogo.CustomizableEdges = customizableEdges19;
+            picBoxLogo.FillColor = Color.Transparent;
             picBoxLogo.ImageRotate = 0F;
-            picBoxLogo.Location = new Point(3, 2);
+            picBoxLogo.Location = new Point(19, 7);
             picBoxLogo.Margin = new Padding(3, 2, 3, 2);
             picBoxLogo.Name = "picBoxLogo";
             picBoxLogo.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            picBoxLogo.Size = new Size(68, 60);
+            picBoxLogo.Size = new Size(50, 50);
             picBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picBoxLogo.TabIndex = 0;
             picBoxLogo.TabStop = false;
@@ -495,11 +494,44 @@
             pnContainer.ShadowDecoration.Enabled = true;
             pnContainer.Size = new Size(728, 645);
             pnContainer.TabIndex = 4;
+            pnContainer.Paint += pnContainer_Paint;
             // 
             // guna2ShadowForm1
             // 
             guna2ShadowForm1.ShadowColor = Color.FromArgb(64, 64, 64);
             guna2ShadowForm1.TargetForm = this;
+            // 
+            // btnStock
+            // 
+            btnStock.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnStock.BackColor = Color.Transparent;
+            btnStock.Cursor = Cursors.Hand;
+            btnStock.CustomImages.CheckedImage = Properties.Resources.inventory_43dp_GRAY_FILL0_wght400_GRAD0_opsz402;
+            btnStock.CustomImages.HoveredImage = Properties.Resources.inventory_43dp_WHITE_FILL0_wght400_GRAD0_opsz40;
+            btnStock.CustomImages.Image = Properties.Resources.inventory_43dp_GRAY_FILL0_wght400_GRAD0_opsz401;
+            btnStock.CustomImages.ImageAlign = HorizontalAlignment.Left;
+            btnStock.CustomImages.ImageOffset = new Point(0, -1);
+            btnStock.CustomImages.ImageSize = new Size(30, 30);
+            btnStock.CustomizableEdges = customizableEdges1;
+            btnStock.DisabledState.BorderColor = Color.DarkGray;
+            btnStock.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnStock.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnStock.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnStock.FillColor = Color.Transparent;
+            btnStock.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            btnStock.ForeColor = Color.DarkGray;
+            btnStock.HoverState.FillColor = Color.Transparent;
+            btnStock.HoverState.Font = new Font("Montserrat", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnStock.HoverState.ForeColor = Color.White;
+            btnStock.Location = new Point(51, 278);
+            btnStock.Margin = new Padding(3, 2, 3, 2);
+            btnStock.Name = "btnStock";
+            btnStock.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnStock.Size = new Size(135, 42);
+            btnStock.TabIndex = 1;
+            btnStock.Text = "Stock";
+            btnStock.TextAlign = HorizontalAlignment.Left;
+            btnStock.TextOffset = new Point(30, 0);
             // 
             // Form1
             // 
@@ -535,16 +567,16 @@
         private Guna.UI2.WinForms.Guna2Button btnOrder;
         private Guna.UI2.WinForms.Guna2Button btnMenu;
         private Guna.UI2.WinForms.Guna2Button btnArticle;
-        private Guna.UI2.WinForms.Guna2Button btnStock;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private Guna.UI2.WinForms.Guna2Button btnSetting;
         private Guna.UI2.WinForms.Guna2Button btnStats;
-        private Guna.UI2.WinForms.Guna2Button guna2Button8;
+        private Guna.UI2.WinForms.Guna2Button btnLogout;
         private Guna.UI2.WinForms.Guna2Panel pnHeader;
         private Guna.UI2.WinForms.Guna2Panel pnContainer;
         private Guna.UI2.WinForms.Guna2Button btnReservation;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private Guna.UI2.WinForms.Guna2Button btnStock;
     }
 }

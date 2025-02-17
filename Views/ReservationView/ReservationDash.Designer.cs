@@ -150,7 +150,7 @@
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = Color.Black;
             dataGridViewCellStyle3.Padding = new Padding(5, 0, 0, 3);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(239, 241, 243);
             dataGridViewCellStyle3.SelectionForeColor = Color.Black;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvListBook.DefaultCellStyle = dataGridViewCellStyle3;
@@ -163,9 +163,6 @@
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = SystemColors.Control;
             dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.Empty;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Empty;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Empty;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
             dgvListBook.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvListBook.RowHeadersVisible = false;
@@ -275,10 +272,10 @@
             btnAddBooking.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAddBooking.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnAddBooking.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAddBooking.FillColor = Color.FromArgb(102, 255, 179);
+            btnAddBooking.FillColor = Color.FromArgb(22, 160, 133);
             btnAddBooking.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddBooking.ForeColor = Color.Green;
-            btnAddBooking.Image = Properties.Resources.cross__1_2;
+            btnAddBooking.ForeColor = Color.White;
+            btnAddBooking.Image = Properties.Resources.cross__3_3;
             btnAddBooking.ImageOffset = new Point(-1, 0);
             btnAddBooking.ImageSize = new Size(15, 15);
             btnAddBooking.Location = new Point(682, 89);

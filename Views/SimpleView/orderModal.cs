@@ -353,6 +353,7 @@ namespace PROJET_C__GESTIONRESTO.Views.SimpleView
                 }
             }
         }
+
         private Client CheckIfClientExist(string name, string surname, string phone)
         {
             using (var context = new AppDbContext(connectionString))

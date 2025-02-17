@@ -124,5 +124,10 @@ namespace PROJET_C__GESTIONRESTO
         {
             Application.Exit();
         }
+
+        private void pnContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
