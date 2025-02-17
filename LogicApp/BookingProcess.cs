@@ -1,4 +1,5 @@
-﻿using PROJET_C__GESTIONRESTO.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using PROJET_C__GESTIONRESTO.Models;
 using PROJET_C__GESTIONRESTO.Orm;
 using PROJET_C__GESTIONRESTO.Usefull;
 using System;
@@ -41,12 +42,17 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             {
                 try
                 {
-                    if (filter != null)
+                    if (!string.IsNullOrEmpty(filter))
                         bookInfos = context.Booking
                             .Where(b => context.Clients.Any(clt => b.Client == clt.Id && (clt.Name.Contains(filter) || clt.Tel.Contains(filter))))
+                            .Include(b => b.ClientNavigation)
+                            .Include(b => b.TableNavigation)
                             .GetPaginedItems(page);
-
-                    bookInfos = context.Booking.GetPaginedItems(page);
+                    else
+                        bookInfos = context.Booking
+                            .Include(b => b.ClientNavigation)
+                            .Include(b => b.TableNavigation)
+                            .GetPaginedItems(page);
                 }
                 catch (Exception ex)
                 {
@@ -66,10 +72,15 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                 {
                     if (filter != "all")
                         bookInfos = context.Booking
-                            .Where(b => b.requestState.Equals(filter) || b.State.Equals(filter) || b.Period.Equals(filter))
+                            .Where(b => b.RequestState.Equals(filter) || b.State.Equals(filter) || b.Period.Equals(filter))
+                            .Include(b => b.ClientNavigation)
+                            .Include(b => b.TableNavigation)
                             .GetPaginedItems(page);
-
-                    bookInfos = context.Booking.GetPaginedItems(page);
+                    else
+                        bookInfos = context.Booking
+                            .Include(b => b.ClientNavigation)
+                            .Include(b => b.TableNavigation)
+                            .GetPaginedItems(page);
                 }
                 catch (Exception ex)
                 {

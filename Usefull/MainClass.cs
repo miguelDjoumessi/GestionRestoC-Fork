@@ -92,7 +92,6 @@ namespace PROJET_C__GESTIONRESTO.Usefull
 
                     var nameProp = column.Split('_')[1];
                     var props = typeof(T).GetProperty(nameProp, BindingFlags.Public | BindingFlags.Instance);
-
                     if (props != null)
                     {
                         var value = props.GetValue(data);
@@ -121,7 +120,7 @@ namespace PROJET_C__GESTIONRESTO.Usefull
                                 }
                                 catch (Exception ex)
                                 {
-                                    MessageBox.Show("Une erreur est survenu lors de l'affichage de la colonne categorie: " + ex.Message);
+                                    MessageBox.Show("Error: " + ex.InnerException?.Message);
                                 }
                             }
                         }

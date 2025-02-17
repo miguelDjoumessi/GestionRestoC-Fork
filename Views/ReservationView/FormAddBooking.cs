@@ -52,11 +52,11 @@ namespace PROJET_C__GESTIONRESTO.Views.ReservationView
             book.Persons = (int)nudPersons.Value;
             book.Table = Convert.ToInt32(cbTable.SelectedItem.ToString());
             book.State = "active";
-            book.requestState = "pending";
+            book.RequestState = "accepted";
             book = BookingProcess.SaveBook(book);
             if (book != null)
             {
-                this.DialogResult = DialogResult.OK;
+                this.DialogResult = DialogResult.OK; 
                 this.Close();
             }
         }
@@ -107,11 +107,7 @@ namespace PROJET_C__GESTIONRESTO.Views.ReservationView
         private void FillTable()
         {
             cbTable.Items.Clear();
-            var tables = TableProcess.GetAll();
-            var tablesR = TableProcess.FindTableReservedBy(cbPeriod.Text);
-
-            if(tablesR.Count > 0) 
-                tables = tables.FindAll(t => tablesR.Any(tr => tr.Id != t.Id));
+            var tables = TableProcess.FindTableNotReservedBy(cbPeriod.Text);
 
             if (tables.Count > 0)
                 foreach (var table in tables)

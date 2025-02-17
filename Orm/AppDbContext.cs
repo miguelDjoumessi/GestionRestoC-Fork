@@ -107,7 +107,7 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.State)
                 .HasMaxLength(10)
                 .HasColumnName("state");
-            entity.Property(e => e.requestState)
+            entity.Property(e => e.RequestState)
                 .HasMaxLength(10)
                 .HasColumnName("requestState");
             entity.Property(e => e.Persons)

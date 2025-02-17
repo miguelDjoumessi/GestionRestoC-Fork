@@ -138,7 +138,8 @@
             cbPeriod.ForeColor = Color.FromArgb(68, 88, 112);
             cbPeriod.ItemHeight = 30;
             cbPeriod.Items.AddRange(new object[] { "day ", "evening" });
-            cbPeriod.ItemsAppearance.SelectedBackColor = Color.White;
+            cbPeriod.ItemsAppearance.SelectedBackColor = Color.RoyalBlue;
+            cbPeriod.ItemsAppearance.SelectedForeColor = Color.White;
             cbPeriod.Location = new Point(233, 119);
             cbPeriod.Name = "cbPeriod";
             cbPeriod.ShadowDecoration.CustomizableEdges = customizableEdges16;
@@ -182,7 +183,8 @@
             cbTable.ForeColor = Color.FromArgb(68, 88, 112);
             cbTable.ItemHeight = 30;
             cbTable.Items.AddRange(new object[] { "1 - reservé", "2" });
-            cbTable.ItemsAppearance.SelectedBackColor = Color.White;
+            cbTable.ItemsAppearance.SelectedBackColor = Color.RoyalBlue;
+            cbTable.ItemsAppearance.SelectedForeColor = Color.White;
             cbTable.Location = new Point(233, 255);
             cbTable.Name = "cbTable";
             cbTable.ShadowDecoration.CustomizableEdges = customizableEdges14;

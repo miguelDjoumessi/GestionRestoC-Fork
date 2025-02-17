@@ -12,7 +12,7 @@ public partial class Booking: IHasTimestamp
 
     public decimal? Tarif {  get; set; }
 
-    public string? requestState {  get; set; }
+    public string? RequestState {  get; set; }
 
     public int? Persons { get; set; }
 

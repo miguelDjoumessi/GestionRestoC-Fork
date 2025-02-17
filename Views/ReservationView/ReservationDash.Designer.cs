@@ -36,6 +36,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -49,16 +50,16 @@
             dgvListBook = new Guna.UI2.WinForms.Guna2DataGridView();
             clt_Name = new DataGridViewTextBoxColumn();
             clt_Tel = new DataGridViewTextBoxColumn();
-            clt_Person = new DataGridViewTextBoxColumn();
-            clt_Table = new DataGridViewTextBoxColumn();
+            clt_Persons = new DataGridViewTextBoxColumn();
+            clt_Position = new DataGridViewTextBoxColumn();
             clt_RequestState = new DataGridViewTextBoxColumn();
-            clt_Status = new DataGridViewTextBoxColumn();
-            reserv_update = new DataGridViewImageColumn();
+            clt_State = new DataGridViewTextBoxColumn();
+            cancelation = new DataGridViewImageColumn();
             guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             btnAddBooking = new Guna.UI2.WinForms.Guna2Button();
             cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
-            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            btnLeft = new Guna.UI2.WinForms.Guna2CircleButton();
+            btnRight = new Guna.UI2.WinForms.Guna2CircleButton();
             lbPage = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvListBook).BeginInit();
@@ -113,7 +114,7 @@
             txtSearchbar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtSearchbar.IconRight = Properties.Resources.search_24dp_GRAY_FILL0_wght400_GRAD0_opsz24;
             txtSearchbar.IconRightOffset = new Point(5, 0);
-            txtSearchbar.Location = new Point(434, 34);
+            txtSearchbar.Location = new Point(434, 33);
             txtSearchbar.Name = "txtSearchbar";
             txtSearchbar.Padding = new Padding(10, 5, 10, 5);
             txtSearchbar.PasswordChar = '\0';
@@ -123,9 +124,12 @@
             txtSearchbar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtSearchbar.Size = new Size(196, 30);
             txtSearchbar.TabIndex = 4;
+            txtSearchbar.TextChanged += txtSearchbar_TextChanged;
             // 
             // dgvListBook
             // 
+            dgvListBook.AllowUserToAddRows = false;
+            dgvListBook.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvListBook.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvListBook.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -134,30 +138,43 @@
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.Padding = new Padding(5, 0, 0, 3);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(204, 102, 255);
+            dataGridViewCellStyle2.SelectionBackColor = Color.Plum;
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvListBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvListBook.ColumnHeadersHeight = 30;
             dgvListBook.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvListBook.Columns.AddRange(new DataGridViewColumn[] { clt_Name, clt_Tel, clt_Person, clt_Table, clt_RequestState, clt_Status, reserv_update });
+            dgvListBook.Columns.AddRange(new DataGridViewColumn[] { clt_Name, clt_Tel, clt_Persons, clt_Position, clt_RequestState, clt_State, cancelation });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
             dataGridViewCellStyle3.Padding = new Padding(5, 0, 0, 3);
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvListBook.DefaultCellStyle = dataGridViewCellStyle3;
             dgvListBook.GridColor = Color.FromArgb(239, 241, 243);
+            dgvListBook.ImeMode = ImeMode.KatakanaHalf;
             dgvListBook.Location = new Point(12, 13);
             dgvListBook.Name = "dgvListBook";
+            dgvListBook.ReadOnly = true;
             dgvListBook.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.Empty;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Empty;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Empty;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvListBook.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvListBook.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9.200001F);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(221, 153, 255);
-            dgvListBook.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 9.200001F);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(150, 170, 170, 170);
+            dgvListBook.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dgvListBook.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.FromArgb(150, 170, 170, 170);
+            dgvListBook.RowTemplate.DividerHeight = 1;
+            dgvListBook.RowTemplate.Height = 38;
             dgvListBook.Size = new Size(740, 490);
             dgvListBook.TabIndex = 5;
             dgvListBook.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGrid;
@@ -174,12 +191,12 @@
             dgvListBook.ThemeStyle.HeaderStyle.ForeColor = Color.Black;
             dgvListBook.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvListBook.ThemeStyle.HeaderStyle.Height = 30;
-            dgvListBook.ThemeStyle.ReadOnly = false;
+            dgvListBook.ThemeStyle.ReadOnly = true;
             dgvListBook.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvListBook.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvListBook.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dgvListBook.ThemeStyle.RowsStyle.ForeColor = Color.Black;
-            dgvListBook.ThemeStyle.RowsStyle.Height = 25;
+            dgvListBook.ThemeStyle.RowsStyle.Height = 38;
             dgvListBook.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(239, 241, 243);
             dgvListBook.ThemeStyle.RowsStyle.SelectionForeColor = Color.Black;
             // 
@@ -188,46 +205,53 @@
             clt_Name.FillWeight = 106.006767F;
             clt_Name.HeaderText = "Name";
             clt_Name.Name = "clt_Name";
+            clt_Name.ReadOnly = true;
             // 
             // clt_Tel
             // 
             clt_Tel.FillWeight = 106.006767F;
             clt_Tel.HeaderText = "Contact";
             clt_Tel.Name = "clt_Tel";
+            clt_Tel.ReadOnly = true;
             // 
-            // clt_Person
+            // clt_Persons
             // 
-            clt_Person.FillWeight = 106.006767F;
-            clt_Person.HeaderText = "Person";
-            clt_Person.Name = "clt_Person";
+            clt_Persons.FillWeight = 106.006767F;
+            clt_Persons.HeaderText = "Persons";
+            clt_Persons.Name = "clt_Persons";
+            clt_Persons.ReadOnly = true;
             // 
-            // clt_Table
+            // clt_Position
             // 
-            clt_Table.FillWeight = 106.006767F;
-            clt_Table.HeaderText = "Table";
-            clt_Table.Name = "clt_Table";
+            clt_Position.FillWeight = 106.006767F;
+            clt_Position.HeaderText = "Table";
+            clt_Position.Name = "clt_Position";
+            clt_Position.ReadOnly = true;
             // 
             // clt_RequestState
             // 
             clt_RequestState.FillWeight = 106.006767F;
             clt_RequestState.HeaderText = "Request";
             clt_RequestState.Name = "clt_RequestState";
+            clt_RequestState.ReadOnly = true;
             // 
-            // clt_Status
+            // clt_State
             // 
-            clt_Status.FillWeight = 106.006767F;
-            clt_Status.HeaderText = "Status";
-            clt_Status.Name = "clt_Status";
+            clt_State.FillWeight = 106.006767F;
+            clt_State.HeaderText = "Status";
+            clt_State.Name = "clt_State";
+            clt_State.ReadOnly = true;
             // 
-            // reserv_update
+            // cancelation
             // 
-            reserv_update.FillWeight = 63.9593925F;
-            reserv_update.HeaderText = "";
-            reserv_update.Image = Properties.Resources.canceled;
-            reserv_update.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            reserv_update.Name = "reserv_update";
-            reserv_update.Resizable = DataGridViewTriState.True;
-            reserv_update.SortMode = DataGridViewColumnSortMode.Automatic;
+            cancelation.FillWeight = 63.9593925F;
+            cancelation.HeaderText = "";
+            cancelation.Image = Properties.Resources.canceled;
+            cancelation.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            cancelation.Name = "cancelation";
+            cancelation.ReadOnly = true;
+            cancelation.Resizable = DataGridViewTriState.True;
+            cancelation.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // guna2ShadowPanel1
             // 
@@ -280,7 +304,7 @@
             cbFilter.Font = new Font("Segoe UI", 10F);
             cbFilter.ForeColor = Color.FromArgb(68, 88, 112);
             cbFilter.ItemHeight = 30;
-            cbFilter.Items.AddRange(new object[] { "all", "", "pending", "rejected", "accepted", "", "valide", "cancelled", "", "day", "evening" });
+            cbFilter.Items.AddRange(new object[] { "all", "", "pending", "rejected", "accepted", "", "active", "cancelled", "", "day", "evening" });
             cbFilter.ItemsAppearance.SelectedBackColor = Color.White;
             cbFilter.Location = new Point(636, 34);
             cbFilter.Name = "cbFilter";
@@ -288,46 +312,49 @@
             cbFilter.Size = new Size(145, 36);
             cbFilter.TabIndex = 9;
             cbFilter.ValueMember = "filter";
+            cbFilter.SelectedIndexChanged += cbFilter_SelectedIndexChanged;
             // 
-            // guna2CircleButton1
+            // btnLeft
             // 
-            guna2CircleButton1.Cursor = Cursors.Hand;
-            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2CircleButton1.FillColor = Color.FromArgb(179, 179, 179);
-            guna2CircleButton1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2CircleButton1.ForeColor = Color.White;
-            guna2CircleButton1.HoverState.FillColor = Color.FromArgb(255, 92, 51);
-            guna2CircleButton1.Location = new Point(26, 89);
-            guna2CircleButton1.Name = "guna2CircleButton1";
-            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton1.Size = new Size(35, 35);
-            guna2CircleButton1.TabIndex = 10;
-            guna2CircleButton1.Text = "<";
-            guna2CircleButton1.TextOffset = new Point(-2, -1);
+            btnLeft.Cursor = Cursors.Hand;
+            btnLeft.DisabledState.BorderColor = Color.DarkGray;
+            btnLeft.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLeft.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLeft.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLeft.FillColor = Color.FromArgb(179, 179, 179);
+            btnLeft.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLeft.ForeColor = Color.White;
+            btnLeft.HoverState.FillColor = Color.FromArgb(255, 92, 51);
+            btnLeft.Location = new Point(26, 89);
+            btnLeft.Name = "btnLeft";
+            btnLeft.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            btnLeft.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            btnLeft.Size = new Size(35, 35);
+            btnLeft.TabIndex = 10;
+            btnLeft.Text = "<";
+            btnLeft.TextOffset = new Point(-2, -1);
+            btnLeft.Click += btnRight_Click;
             // 
-            // guna2CircleButton2
+            // btnRight
             // 
-            guna2CircleButton2.Cursor = Cursors.Hand;
-            guna2CircleButton2.DisabledState.BorderColor = Color.DarkGray;
-            guna2CircleButton2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2CircleButton2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2CircleButton2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2CircleButton2.FillColor = Color.FromArgb(179, 179, 179);
-            guna2CircleButton2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            guna2CircleButton2.ForeColor = Color.White;
-            guna2CircleButton2.HoverState.FillColor = Color.FromArgb(255, 92, 51);
-            guna2CircleButton2.Location = new Point(121, 89);
-            guna2CircleButton2.Name = "guna2CircleButton2";
-            guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton2.Size = new Size(35, 35);
-            guna2CircleButton2.TabIndex = 11;
-            guna2CircleButton2.Text = ">";
-            guna2CircleButton2.TextOffset = new Point(2, -1);
+            btnRight.Cursor = Cursors.Hand;
+            btnRight.DisabledState.BorderColor = Color.DarkGray;
+            btnRight.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnRight.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnRight.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnRight.FillColor = Color.FromArgb(179, 179, 179);
+            btnRight.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnRight.ForeColor = Color.White;
+            btnRight.HoverState.FillColor = Color.FromArgb(255, 92, 51);
+            btnRight.Location = new Point(121, 89);
+            btnRight.Name = "btnRight";
+            btnRight.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnRight.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            btnRight.Size = new Size(35, 35);
+            btnRight.TabIndex = 11;
+            btnRight.Text = ">";
+            btnRight.TextOffset = new Point(2, -1);
+            btnRight.Click += btnLeft_Click;
             // 
             // lbPage
             // 
@@ -346,8 +373,8 @@
             BackColor = Color.FromArgb(255, 253, 253);
             ClientSize = new Size(820, 660);
             Controls.Add(lbPage);
-            Controls.Add(guna2CircleButton2);
-            Controls.Add(guna2CircleButton1);
+            Controls.Add(btnRight);
+            Controls.Add(btnLeft);
             Controls.Add(cbFilter);
             Controls.Add(btnAddBooking);
             Controls.Add(guna2ShadowPanel1);
@@ -372,18 +399,18 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchbar;
         private Guna.UI2.WinForms.Guna2DataGridView dgvListBook;
-        private DataGridViewTextBoxColumn clt_Name;
-        private DataGridViewTextBoxColumn clt_Tel;
-        private DataGridViewTextBoxColumn clt_Person;
-        private DataGridViewTextBoxColumn clt_Table;
-        private DataGridViewTextBoxColumn clt_RequestState;
-        private DataGridViewTextBoxColumn clt_Status;
-        private DataGridViewImageColumn reserv_update;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private Guna.UI2.WinForms.Guna2Button btnAddBooking;
         private Guna.UI2.WinForms.Guna2ComboBox cbFilter;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
+        private Guna.UI2.WinForms.Guna2CircleButton btnLeft;
+        private Guna.UI2.WinForms.Guna2CircleButton btnRight;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbPage;
+        private DataGridViewTextBoxColumn clt_Name;
+        private DataGridViewTextBoxColumn clt_Tel;
+        private DataGridViewTextBoxColumn clt_Persons;
+        private DataGridViewTextBoxColumn clt_Position;
+        private DataGridViewTextBoxColumn clt_RequestState;
+        private DataGridViewTextBoxColumn clt_State;
+        private DataGridViewImageColumn cancelation;
     }
 }

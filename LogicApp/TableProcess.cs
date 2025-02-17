@@ -46,7 +46,7 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
             }
         }
 
-        public static List<Table> FindTableReservedBy(string period)
+        public static List<Table> FindTableNotReservedBy(string period)
         {
             List<Table> tables = new List<Table>();
             using (var context = new AppDbContext(connectionString))
@@ -54,11 +54,11 @@ namespace PROJET_C__GESTIONRESTO.LogicApp
                 try
                 {
                     tables = context.Tables.Where(t => 
-                                 context.Booking.Any(b => b.Table == t.Id && 
+                                 !(context.Booking.Any(b => b.Table == t.Id && 
                                     b.Period == period &&
                                     b.State == "active" &&
                                     b.CreatedAt.Date == DateTime.Today
-                                 )
+                                 ))
                             )
                             .ToList();
                 }
